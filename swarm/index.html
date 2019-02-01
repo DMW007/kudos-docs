@@ -317,9 +317,141 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docker Swarm
+      </label>
+    
     <a href="./" title="Docker Swarm" class="md-nav__link md-nav__link--active">
       Docker Swarm
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" title="General" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" title="SECURITY" class="md-nav__link">
+    SECURITY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-outline" title="STEPS - OUTLINE:" class="md-nav__link">
+    STEPS - OUTLINE:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gateway-storage" title="Gateway + storage" class="md-nav__link">
+    Gateway + storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-swarm" title="Create swarm" class="md-nav__link">
+    Create swarm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-manual" title="STEPS - MANUAL:" class="md-nav__link">
+    STEPS - MANUAL:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-nfs-server-in-centos" title="Setup NFS server in centos" class="md-nav__link">
+    Setup NFS server in centos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-docker-compose-on-centos" title="Install Docker &amp; Docker-compose on CentOS" class="md-nav__link">
+    Install Docker &amp; Docker-compose on CentOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-nginx-load-balancer" title="RUN NGINX LOAD BALANCER" class="md-nav__link">
+    RUN NGINX LOAD BALANCER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-node-swarm" title="Create Node Swarm" class="md-nav__link">
+    Create Node Swarm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-nfs-on-all-swarm-nodes" title="Mount NFS ON all swarm nodes" class="md-nav__link">
+    Mount NFS ON all swarm nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-proxy-portainer" title="Deploy proxy &amp; portainer" class="md-nav__link">
+    Deploy proxy &amp; portainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-commandssteps" title="Optional commands/steps" class="md-nav__link">
+    Optional commands/steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gotchas" title="Gotchas" class="md-nav__link">
+    Gotchas
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -341,6 +473,125 @@
     
   
   
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#general" title="General" class="md-nav__link">
+    General
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" title="SECURITY" class="md-nav__link">
+    SECURITY
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-outline" title="STEPS - OUTLINE:" class="md-nav__link">
+    STEPS - OUTLINE:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gateway-storage" title="Gateway + storage" class="md-nav__link">
+    Gateway + storage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-swarm" title="Create swarm" class="md-nav__link">
+    Create swarm
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-manual" title="STEPS - MANUAL:" class="md-nav__link">
+    STEPS - MANUAL:
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup-nfs-server-in-centos" title="Setup NFS server in centos" class="md-nav__link">
+    Setup NFS server in centos
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-docker-docker-compose-on-centos" title="Install Docker &amp; Docker-compose on CentOS" class="md-nav__link">
+    Install Docker &amp; Docker-compose on CentOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-nginx-load-balancer" title="RUN NGINX LOAD BALANCER" class="md-nav__link">
+    RUN NGINX LOAD BALANCER
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-node-swarm" title="Create Node Swarm" class="md-nav__link">
+    Create Node Swarm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mount-nfs-on-all-swarm-nodes" title="Mount NFS ON all swarm nodes" class="md-nav__link">
+    Mount NFS ON all swarm nodes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-proxy-portainer" title="Deploy proxy &amp; portainer" class="md-nav__link">
+    Deploy proxy &amp; portainer
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-commandssteps" title="Optional commands/steps" class="md-nav__link">
+    Optional commands/steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gotchas" title="Gotchas" class="md-nav__link">
+    Gotchas
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -353,7 +604,6 @@
                 
                 
                 <h1 id="docker-swarm">Docker Swarm<a class="headerlink" href="#docker-swarm" title="Permanent link">&para;</a></h1>
-<h1 id="outstanding">Outstanding<a class="headerlink" href="#outstanding" title="Permanent link">&para;</a></h1>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Logging is not so reliable, look into custom logging drivers. logstash?</li>
@@ -371,8 +621,8 @@
 <li>mongodb auth + add creds</li>
 <li>docker repo access config is basic auth</li>
 </ul>
-<h1 id="steps-outline">STEPS - OUTLINE:<a class="headerlink" href="#steps-outline" title="Permanent link">&para;</a></h1>
-<h2 id="gateway-storage">Gateway + storage<a class="headerlink" href="#gateway-storage" title="Permanent link">&para;</a></h2>
+<h2 id="steps-outline">STEPS - OUTLINE:<a class="headerlink" href="#steps-outline" title="Permanent link">&para;</a></h2>
+<h3 id="gateway-storage">Gateway + storage<a class="headerlink" href="#gateway-storage" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Create a CentOS 7 host with external IP</li>
 <li>Map DNS to instance</li>
@@ -380,7 +630,7 @@
 <li>Install docker + docker-compose</li>
 <li>Deploy nginx load balancer via docker-compose</li>
 </ol>
-<h2 id="create-swarm">Create swarm<a class="headerlink" href="#create-swarm" title="Permanent link">&para;</a></h2>
+<h3 id="create-swarm">Create swarm<a class="headerlink" href="#create-swarm" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Create CoreOS hosts</li>
 <li>Connect all nodes into a swarm</li>
@@ -388,8 +638,8 @@
 <li>Set up docker config to access private image repo</li>
 <li>Deploy app with required config and images</li>
 </ol>
-<h1 id="steps-manual">STEPS - MANUAL:<a class="headerlink" href="#steps-manual" title="Permanent link">&para;</a></h1>
-<h2 id="setup-nfs-server-in-centos">Setup NFS server in centos<a class="headerlink" href="#setup-nfs-server-in-centos" title="Permanent link">&para;</a></h2>
+<h2 id="steps-manual">STEPS - MANUAL:<a class="headerlink" href="#steps-manual" title="Permanent link">&para;</a></h2>
+<h3 id="setup-nfs-server-in-centos">Setup NFS server in centos<a class="headerlink" href="#setup-nfs-server-in-centos" title="Permanent link">&para;</a></h3>
 <pre><code>sudo su
 firewall-cmd --permanent --zone=public --add-service=nfs
 firewall-cmd --reload
@@ -403,7 +653,7 @@ echo &quot;/data/nfs 10.142.0.1/24(rw,sync,no_subtree_check,no_root_squash)&quot
 exportfs -a
 </code></pre>
 
-<h2 id="install-docker-docker-compose-on-centos">Install Docker &amp; Docker-compose on CentOS<a class="headerlink" href="#install-docker-docker-compose-on-centos" title="Permanent link">&para;</a></h2>
+<h3 id="install-docker-docker-compose-on-centos">Install Docker &amp; Docker-compose on CentOS<a class="headerlink" href="#install-docker-docker-compose-on-centos" title="Permanent link">&para;</a></h3>
 <pre><code>curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker support
@@ -411,7 +661,7 @@ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.22.0/do
 sudo chmod +x /usr/local/bin/docker-compose
 </code></pre>
 
-<h2 id="run-nginx-load-balancer">RUN NGINX LOAD BALANCER<a class="headerlink" href="#run-nginx-load-balancer" title="Permanent link">&para;</a></h2>
+<h3 id="run-nginx-load-balancer">RUN NGINX LOAD BALANCER<a class="headerlink" href="#run-nginx-load-balancer" title="Permanent link">&para;</a></h3>
 <ul>
 <li>From local machine transfer docker compose and other config :
   <code>gcloud compute scp . support@gateway-1:/opt/setup/ --recurse</code></li>
@@ -421,7 +671,7 @@ sudo chmod +x /usr/local/bin/docker-compose
  docker-compose up -d 
 </code></pre>
 
-<h2 id="create-node-swarm">Create Node Swarm<a class="headerlink" href="#create-node-swarm" title="Permanent link">&para;</a></h2>
+<h3 id="create-node-swarm">Create Node Swarm<a class="headerlink" href="#create-node-swarm" title="Permanent link">&para;</a></h3>
 <pre><code>docker swarm init
 docker swarm join-token manager
 &lt;run printed join command&gt;
