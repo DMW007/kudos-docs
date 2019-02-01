@@ -352,9 +352,9 @@
               
                 
                 
-                <h1 id="docker-swarm">Docker Swarm</h1>
-<h1 id="outstanding">Outstanding</h1>
-<h2 id="general">General</h2>
+                <h1 id="docker-swarm">Docker Swarm<a class="headerlink" href="#docker-swarm" title="Permanent link">&para;</a></h1>
+<h1 id="outstanding">Outstanding<a class="headerlink" href="#outstanding" title="Permanent link">&para;</a></h1>
+<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Logging is not so reliable, look into custom logging drivers. logstash?</li>
 <li>Delivery model? script?</li>
@@ -364,15 +364,15 @@
 <li>Resource allocation through compose</li>
 <li>Resource monitoring? Does portainer do that?</li>
 </ul>
-<h2 id="security">SECURITY</h2>
+<h2 id="security">SECURITY<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Storage is on externally accessible machine?!</li>
 <li>but nfs server is only allowed on local ip mask</li>
 <li>mongodb auth + add creds</li>
 <li>docker repo access config is basic auth</li>
 </ul>
-<h1 id="steps-outline">STEPS - OUTLINE:</h1>
-<h2 id="gateway-storage">Gateway + storage</h2>
+<h1 id="steps-outline">STEPS - OUTLINE:<a class="headerlink" href="#steps-outline" title="Permanent link">&para;</a></h1>
+<h2 id="gateway-storage">Gateway + storage<a class="headerlink" href="#gateway-storage" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Create a CentOS 7 host with external IP</li>
 <li>Map DNS to instance</li>
@@ -380,7 +380,7 @@
 <li>Install docker + docker-compose</li>
 <li>Deploy nginx load balancer via docker-compose</li>
 </ol>
-<h2 id="create-swarm">Create swarm</h2>
+<h2 id="create-swarm">Create swarm<a class="headerlink" href="#create-swarm" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Create CoreOS hosts</li>
 <li>Connect all nodes into a swarm</li>
@@ -388,8 +388,8 @@
 <li>Set up docker config to access private image repo</li>
 <li>Deploy app with required config and images</li>
 </ol>
-<h1 id="steps-manual">STEPS - MANUAL:</h1>
-<h2 id="setup-nfs-server-in-centos">Setup NFS server in centos</h2>
+<h1 id="steps-manual">STEPS - MANUAL:<a class="headerlink" href="#steps-manual" title="Permanent link">&para;</a></h1>
+<h2 id="setup-nfs-server-in-centos">Setup NFS server in centos<a class="headerlink" href="#setup-nfs-server-in-centos" title="Permanent link">&para;</a></h2>
 <pre><code>sudo su
 firewall-cmd --permanent --zone=public --add-service=nfs
 firewall-cmd --reload
@@ -403,7 +403,7 @@ echo &quot;/data/nfs 10.142.0.1/24(rw,sync,no_subtree_check,no_root_squash)&quot
 exportfs -a
 </code></pre>
 
-<h2 id="install-docker-docker-compose-on-centos">Install Docker &amp; Docker-compose on CentOS</h2>
+<h2 id="install-docker-docker-compose-on-centos">Install Docker &amp; Docker-compose on CentOS<a class="headerlink" href="#install-docker-docker-compose-on-centos" title="Permanent link">&para;</a></h2>
 <pre><code>curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker support
@@ -411,7 +411,7 @@ sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.22.0/do
 sudo chmod +x /usr/local/bin/docker-compose
 </code></pre>
 
-<h2 id="run-nginx-load-balancer">RUN NGINX LOAD BALANCER</h2>
+<h2 id="run-nginx-load-balancer">RUN NGINX LOAD BALANCER<a class="headerlink" href="#run-nginx-load-balancer" title="Permanent link">&para;</a></h2>
 <ul>
 <li>From local machine transfer docker compose and other config :
   <code>gcloud compute scp . support@gateway-1:/opt/setup/ --recurse</code></li>
@@ -421,17 +421,17 @@ sudo chmod +x /usr/local/bin/docker-compose
  docker-compose up -d 
 </code></pre>
 
-<h2 id="create-node-swarm">Create Node Swarm</h2>
+<h2 id="create-node-swarm">Create Node Swarm<a class="headerlink" href="#create-node-swarm" title="Permanent link">&para;</a></h2>
 <pre><code>docker swarm init
 docker swarm join-token manager
 &lt;run printed join command&gt;
 </code></pre>
 
-<h3 id="mount-nfs-on-all-swarm-nodes">Mount NFS ON all swarm nodes</h3>
+<h3 id="mount-nfs-on-all-swarm-nodes">Mount NFS ON all swarm nodes<a class="headerlink" href="#mount-nfs-on-all-swarm-nodes" title="Permanent link">&para;</a></h3>
 <pre><code>sudo mkdir -p /data/nfs &amp;&amp; sudo mount 10.142.0.5:/data/nfs /data/nfs
 </code></pre>
 
-<h3 id="deploy-proxy-portainer">Deploy proxy &amp; portainer</h3>
+<h3 id="deploy-proxy-portainer">Deploy proxy &amp; portainer<a class="headerlink" href="#deploy-proxy-portainer" title="Permanent link">&para;</a></h3>
 <ul>
 <li>On a swarm manager node-1:</li>
 </ul>
@@ -465,7 +465,7 @@ docker stack deploy -c proxy.yml proxy
 docker stack deploy -c portainer.yml portainer
 </code></pre>
 
-<h3 id="optional-commandssteps">Optional commands/steps</h3>
+<h3 id="optional-commandssteps">Optional commands/steps<a class="headerlink" href="#optional-commandssteps" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>deploy app with registry auth
@@ -509,7 +509,7 @@ mongo &quot;mongodb://mongo1:27017,mongo2:27017,mongo3:27017/myDB?replicaSet=rs0
 sudo chmod +x /opt/bin/docker-compose
 </code></pre>
 
-<h2 id="gotchas">Gotchas</h2>
+<h2 id="gotchas">Gotchas<a class="headerlink" href="#gotchas" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Volumes need to be manually removed on all nodes if they are broken or config is updated, they are not removed as part of the stack</li>
 <li>traefik labels need to be on the container not on the service, i.e. under <code>deploy:</code></li>
