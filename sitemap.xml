@@ -26,7 +26,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/boards/integration/</loc>
+     <loc>https://docs.kudosapps.com/boards/wasconfig/</loc>
+     <lastmod>2019-02-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/widgets/</loc>
      <lastmod>2019-02-05</lastmod>
      <changefreq>daily</changefreq>
     </url>

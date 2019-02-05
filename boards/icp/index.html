@@ -332,6 +332,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-secrets" title="Setup secrets" class="md-nav__link">
+    Setup secrets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-kudos-boards" title="Deploy Kudos Boards" class="md-nav__link">
     Deploy Kudos Boards
   </a>
@@ -339,8 +346,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrate-into-ibm-connections" title="Integrate into IBM Connections" class="md-nav__link">
-    Integrate into IBM Connections
+  <a href="#add-websphere-config" title="Add Websphere Config" class="md-nav__link">
+    Add Websphere Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-ibm-connections-widgets" title="Add IBM Connections widgets" class="md-nav__link">
+    Add IBM Connections widgets
   </a>
   
 </li>
@@ -393,8 +407,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../integration/" title="Connections Integration" class="md-nav__link">
-      Connections Integration
+    <a href="../wasconfig/" title="WAS Config" class="md-nav__link">
+      WAS Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../widgets/" title="Connections Widgets" class="md-nav__link">
+      Connections Widgets
     </a>
   </li>
 
@@ -468,6 +494,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-secrets" title="Setup secrets" class="md-nav__link">
+    Setup secrets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-kudos-boards" title="Deploy Kudos Boards" class="md-nav__link">
     Deploy Kudos Boards
   </a>
@@ -475,8 +508,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrate-into-ibm-connections" title="Integrate into IBM Connections" class="md-nav__link">
-    Integrate into IBM Connections
+  <a href="#add-websphere-config" title="Add Websphere Config" class="md-nav__link">
+    Add Websphere Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-ibm-connections-widgets" title="Add IBM Connections widgets" class="md-nav__link">
+    Add IBM Connections widgets
   </a>
   
 </li>
@@ -507,30 +547,142 @@
                 
                 <h1 id="kudos-boards-for-ibm-cloud-private">Kudos Boards for IBM Cloud Private<a class="headerlink" href="#kudos-boards-for-ibm-cloud-private" title="Permanent link">&para;</a></h1>
 <p>Basic instructions for deploying Kudos Boards into IBM Cloud Private for on-premise IBM Connections environments</p>
+<hr />
 <h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
 <ol>
-<li>IBM Spectrum CFC is installed and running</li>
+<li>IBM Cloud Private is installed and running</li>
 <li>WebSphere environment with Web Server</li>
 <li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a> is installed</li>
-<li>Install helm (TODO add url)</li>
+<li><a href="https://docs.helm.sh/using_helm/#installing-helm">helm</a> is installed</li>
+<li>mongodb setup and running</li>
+<li>S3 storage setup and running. For local S3 we recommend <a href="https://www.minio.io/">minio</a></li>
+<li>SMTP gateway setup for email notifications</li>
+<li><a href="/assets/kudos-boards.tgz">Kudos Boards helm chart</a> downloaded</li>
+<li><a href="/assets/config/boards-icp.yml">Config file</a> downloaded</li>
+<li>Dockerhub account setup with access to Kudos Boards repository, send your account details to support@kudosboards.com if you don't already have this.</li>
+<li>SSL certificate - You will need to use a certificate that covers at least the 2 domains you plan to use, for example Kudos Boards cloud uses the domains <code>https://kudosboards.com</code> and <code>https://api.kudosboards.com</code>. The certificate should be pem encoded with a separate key file.</li>
 </ol>
+<hr />
 <h3 id="login-to-kubectl">Login to kubectl<a class="headerlink" href="#login-to-kubectl" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Open Spectrum Console</li>
+<li>Open ICP Console</li>
 <li>Go to <code>Admin</code> (top right)</li>
 <li>Click <code>Config Client</code></li>
 <li>Copy the contents shown</li>
 <li>Open your command line (cmd)</li>
 <li>Paste the commands copied earlier and press enter</li>
 </ol>
+<hr />
+<h3 id="setup-secrets">Setup secrets<a class="headerlink" href="#setup-secrets" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Dockerhub credentials</p>
+<pre><code>kubectl create secret docker-registry dockerhub --docker-server=docker.io --docker-username=&lt;username&gt; --docker-password=&lt;password&gt; --docker-email=&lt;email&gt; --namespace=kudosboards
+</code></pre>
+</li>
+<li>
+<p>SSL certificate details</p>
+<pre><code>kubectl create secret tls kudosboards-domain-secret --key &lt;/path/to/keyfile&gt; --cert &lt;/path/to/certificate&gt; --namespace=kudosboards
+</code></pre>
+</li>
+</ol>
+<hr />
 <h3 id="deploy-kudos-boards">Deploy Kudos Boards<a class="headerlink" href="#deploy-kudos-boards" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Update helm values file</li>
-<li>helm imstall command (TODO)</li>
-<li>add new DNS record for Kudos Boards URL ie <code>boards.isw.net.au</code></li>
+<li>
+<p>Update Config file</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global.env.APP_URI</td>
+<td>Your <code>&lt;BOARDS_URL&gt;</code></td>
+</tr>
+<tr>
+<td>global.env.API_GATEWAY</td>
+<td>You need to provide an alternate url here for the app to communicate with the api, for example our cloud app uses <code>https://api.kudosboards.com</code></td>
+</tr>
+<tr>
+<td>global.env.S3_ENDPOINT</td>
+<td>Enter your S3 URL</td>
+</tr>
+<tr>
+<td>global.env.S3_ACCESS_KEY</td>
+<td>Enter your S3 Access Key</td>
+</tr>
+<tr>
+<td>global.env.S3_SECRET_KEY</td>
+<td>Enter your S3 Secret Key</td>
+</tr>
+<tr>
+<td>boards.ingress.hosts</td>
+<td>Your API_GATEWAY url as above without https</td>
+</tr>
+<tr>
+<td>boards.ingress.tls.hosts</td>
+<td>Your API_GATEWAY url as above without https</td>
+</tr>
+<tr>
+<td>boards.webfront.ingress.hosts</td>
+<td>Your APP_URI url as above without https</td>
+</tr>
+<tr>
+<td>boards.webfront.ingress.tls.hosts</td>
+<td>Your APP_URI url as above without https</td>
+</tr>
+<tr>
+<td>boards.core.env.NOTIFIER_EMAIL_HOST</td>
+<td>Your SMTP gateway URL</td>
+</tr>
+<tr>
+<td>boards.core.env.NOTIFIER_EMAIL_USERNAME</td>
+<td>Your SMTP gateway username</td>
+</tr>
+<tr>
+<td>boards.core.env.NOTIFIER_EMAIL_PASSWORD</td>
+<td>Your SMTP gateway password</td>
+</tr>
+<tr>
+<td>boards.app.env.MONGO_URI</td>
+<td>Your mongo connection string, which should include all servers from your replica set, username and password, default database and any required options. This database will store all information about boards, lists and cards</td>
+</tr>
+<tr>
+<td>boards.licence.env.MONGO_URI</td>
+<td>Your mongo connection string, which should include all servers from your replica set, username and password, default database and any required options. This database will store all licencing information</td>
+</tr>
+<tr>
+<td>boards.notification.env.MONGO_URI</td>
+<td>Your mongo connection string, which should include all servers from your replica set, username and password, default database and any required options. This database will store all information about notifications</td>
+</tr>
+<tr>
+<td>boards.user.env.MONGO_URI</td>
+<td>Your mongo connection string, which should include all servers from your replica set, username and password, default database and any required options. This database will store all information about users</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Use helm to install boards with your values</p>
+<pre><code>helm init
+helm upgrade kudos-boards kudos-boards.tgz -f boards-icp.yml --namespace kudosboards -i
+</code></pre>
+</li>
+<li>
+<p>add new DNS record for Kudos Boards URL ie <code>boards.example.com</code></p>
+</li>
 </ol>
-<h3 id="integrate-into-ibm-connections">Integrate into IBM Connections<a class="headerlink" href="#integrate-into-ibm-connections" title="Permanent link">&para;</a></h3>
-<p>Please follow <a href="/boards/integration/">these instructions</a></p>
+<hr />
+<h3 id="add-websphere-config">Add Websphere Config<a class="headerlink" href="#add-websphere-config" title="Permanent link">&para;</a></h3>
+<p>Please follow <a href="/boards/wasconfig/">these instructions</a></p>
+<hr />
+<h3 id="add-ibm-connections-widgets">Add IBM Connections widgets<a class="headerlink" href="#add-ibm-connections-widgets" title="Permanent link">&para;</a></h3>
+<p>Please follow <a href="/boards/widgets/">these instructions</a></p>
+<hr />
 <h3 id="notes-on-ibm-spectrum-cfc-naming">Notes on IBM Spectrum CFC Naming<a class="headerlink" href="#notes-on-ibm-spectrum-cfc-naming" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Application (aka Deployments)</li>
