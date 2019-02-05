@@ -339,6 +339,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#integrate-into-ibm-connections" title="Integrate into IBM Connections" class="md-nav__link">
+    Integrate into IBM Connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes-on-ibm-spectrum-cfc-naming" title="Notes on IBM Spectrum CFC Naming" class="md-nav__link">
     Notes on IBM Spectrum CFC Naming
   </a>
@@ -376,6 +383,18 @@
   <li class="md-nav__item">
     <a href="../websphere/" title="Websphere" class="md-nav__link">
       Websphere
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../integration/" title="Connections Integration" class="md-nav__link">
+      Connections Integration
     </a>
   </li>
 
@@ -456,6 +475,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#integrate-into-ibm-connections" title="Integrate into IBM Connections" class="md-nav__link">
+    Integrate into IBM Connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes-on-ibm-spectrum-cfc-naming" title="Notes on IBM Spectrum CFC Naming" class="md-nav__link">
     Notes on IBM Spectrum CFC Naming
   </a>
@@ -502,118 +528,9 @@
 <li>Update helm values file</li>
 <li>helm imstall command (TODO)</li>
 <li>add new DNS record for Kudos Boards URL ie <code>boards.isw.net.au</code></li>
-<li>Open WebSphere ISC -&gt; open web server -&gt; edit <code>http.conf</code> -&gt; add another VirtualHost
-  <pre>
-    &lt;VirtualHost *:443&gt;
-      ServerName boards.isw.net.au
-      #Kudos Boards
-      ProxyPreserveHost On
-      ProxyPass / http://<server-ip>/
-      ProxyPassReverse / http://<server-ip>/
-      #End Kudos Boards
-      SSLEnable
-        # Disable SSLv2
-        SSLProtocolDisable SSLv2
-        # Set strong ciphers
-        SSLCipherSpec TLS_RSA_WITH_AES_128_CBC_SHA
-        SSLCipherSpec TLS_RSA_WITH_AES_256_CBC_SHA
-        SSLCipherSpec SSL_RSA_WITH_3DES_EDE_CBC_SHA
-    &lt;/VirtualHost&gt;
-  </pre></li>
-<li>
-<p>Setup Community Widget</p>
-<p>Check out the widgets-config.xml file.</p>
-<pre><code>execfile("profilesAdmin.py")
-ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell())
-</code></pre>
-<p>Edit the widgets-config.xml file. Under the <resource type="community"> section, then under <widgets>, then within <definitions> add the following.</p>
-<pre><code>&lt;!-- Kudos Boards --&gt;
-&lt;widgetDef defId="KudosBoards" modes="view fullpage" url="https://&lt;BOARDS_URL&gt;/boards/community/connections" themes="wpthemeNarrow wpthemeWide wpthemeBanner" uniqueInstance="true"&gt;
-    &lt;itemSet&gt;
-        &lt;item name="resourceId" value="{resourceId}"/&gt;
-    &lt;/itemSet&gt;
-&lt;/widgetDef&gt;
-&lt;!-- END Kudos Boards --&gt;
-</code></pre>
-<p>Check in the widgets-config.xml file.</p>
-<pre><code>ProfilesConfigService.checkInWidgetConfig()
-</code></pre>
-</li>
-<li>
-<p>Setup Activity Stream widget</p>
-<p>Access Homepage-&gt;Administrator</p>
-<p>Select the following:</p>
-<ul>
-<li>Open Social Gadget</li>
-<li>Trusted and Use SSO</li>
-<li>Show for Activity Stream events</li>
-<li>All servers</li>
-</ul>
-<p>Click the Add Mapping button.</p>
-<p>Add a Mapping for the Kudos Boards service to the Kudos client. Ensure OAuth Client is set to conn-ee and the Service name is Kudos Boards.
-Click the Ok button</p>
-<p>Enter The following:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Title</td>
-<td><code>Kudos Boards Activity Stream</code></td>
-</tr>
-<tr>
-<td>Description</td>
-<td><code>Kudos Boards is awesome</code></td>
-</tr>
-<tr>
-<td>URL Address</td>
-<td><code>http://&lt;BOARDS_URL&gt;/stream/connections</code></td>
-</tr>
-<tr>
-<td>Secure URL Address</td>
-<td><code>https://&lt;BOARDS_URL&gt;/stream/connections</code></td>
-</tr>
-<tr>
-<td>ICON URL</td>
-<td><code>http://&lt;BOARDS_URL&gt;/favicon.ico</code></td>
-</tr>
-<tr>
-<td>ICON SECURE URL</td>
-<td><code>https://&lt;BOARDS_URL&gt;/favicon.ico</code></td>
-</tr>
-</tbody>
-</table>
-<p>Select:
-<em> Use IBM Connections specific tags
-</em> Opened by default</p>
-<p>Select the following Prerequisites:
-<em> oauthprovider
-</em> webresources
-<em> oauth
-</em> opensocial
-Scroll down and Click Save</p>
-</li>
-<li>
-<p>Register Widgets (IBM Connections 6.0 CR1 onwards)</p>
-<p>```
-execfile("newsAdmin.py")</p>
-<p>NewsWidgetCatalogService.addWidget(title="Kudos Boards", url="http://<BOARDS_URL>/boards/community/connection" ,secureUrl="https://<BOARDS_URL>"/boards/community/connections, categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
-NewsWidgetCatalogService.enableWidget("<ID_RETURNED>")</p>
-<p>NewsWidgetCatalogService.clearWidgetCaches()
-```</p>
-</li>
-<li>
-<p>Register OAuth</p>
-<p><code>execfile('oauthAdmin.py')
-OAuthApplicationRegistrationService.addApplication('kudosboards', 'KudosBoards', '&lt;URL&gt;')</code></p>
-<p><URL> should be your <BOARDS_URL>/auth/connections (TODO confirm)
-That will return with both a clientsecret and clientid that you need to input in the provider settings in Step 11.</p>
-</li>
 </ol>
+<h3 id="integrate-into-ibm-connections">Integrate into IBM Connections<a class="headerlink" href="#integrate-into-ibm-connections" title="Permanent link">&para;</a></h3>
+<p>Please follow <a href="/boards/integration/">these instructions</a></p>
 <h3 id="notes-on-ibm-spectrum-cfc-naming">Notes on IBM Spectrum CFC Naming<a class="headerlink" href="#notes-on-ibm-spectrum-cfc-naming" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Application (aka Deployments)</li>
