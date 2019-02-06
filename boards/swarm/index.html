@@ -330,6 +330,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-Requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-config-file" title="Update Config file" class="md-nav__link">
+    Update Config file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" title="Deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-websphere-config" title="Add Websphere Config" class="md-nav__link">
     Add Websphere Config
   </a>
@@ -339,6 +360,13 @@
         <li class="md-nav__item">
   <a href="#add-ibm-connections-widgets" title="Add IBM Connections widgets" class="md-nav__link">
     Add IBM Connections widgets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" title="Advanced" class="md-nav__link">
+    Advanced
   </a>
   
 </li>
@@ -445,6 +473,27 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pre-requisites" title="Pre-Requisites" class="md-nav__link">
+    Pre-Requisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-config-file" title="Update Config file" class="md-nav__link">
+    Update Config file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy" title="Deploy" class="md-nav__link">
+    Deploy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-websphere-config" title="Add Websphere Config" class="md-nav__link">
     Add Websphere Config
   </a>
@@ -454,6 +503,13 @@
         <li class="md-nav__item">
   <a href="#add-ibm-connections-widgets" title="Add IBM Connections widgets" class="md-nav__link">
     Add IBM Connections widgets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" title="Advanced" class="md-nav__link">
+    Advanced
   </a>
   
 </li>
@@ -478,11 +534,77 @@
                 <h1 id="kudos-boards-for-docker-swarm">Kudos Boards for Docker Swarm<a class="headerlink" href="#kudos-boards-for-docker-swarm" title="Permanent link">&para;</a></h1>
 <p>Basic instructions for deploying Kudos Boards into Docker Swarm for on-premise IBM Connections environments</p>
 <hr />
+<h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Docker swarm with portainer is up and running <a href="/swarm/">guide</a></li>
+<li>WebSphere environment with Web Server</li>
+<li>SMTP gateway setup for email notifications</li>
+<li><a href="/assets/config/boards-swarm.yml">Config File</a> downloaded</li>
+<li>Dockerhub account setup with access to Kudos Boards repository, send your account details to support@kudosboards.com if you don't already have this.</li>
+<li>SSL certificate - You will need to use a certificate that covers at least the 2 domains you plan to use, for example Kudos Boards cloud uses the domains <code>https://kudosboards.com</code> and <code>https://api.kudosboards.com</code>. The certificate should be pem encoded with a separate key file.</li>
+</ol>
+<hr />
+<h3 id="update-config-file">Update Config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-minio-access</td>
+<td>Your minio ACCESS KEY as defined in your docker swarm config</td>
+</tr>
+<tr>
+<td>x-minio-secret</td>
+<td>Your minio SECRET KEY as defined in your docker swarm config</td>
+</tr>
+<tr>
+<td>x-app-env.APP_URI</td>
+<td>Your main URL</td>
+</tr>
+<tr>
+<td>services.webfront.deploy.labels</td>
+<td>Update the <MAIN_URL> with your main URL</td>
+</tr>
+<tr>
+<td>services.webfront.environment.API_GATEWAY</td>
+<td>Your api URL</td>
+</tr>
+<tr>
+<td>services.core.deploy.labels</td>
+<td>Update the <API_URL> with your api URL</td>
+</tr>
+<tr>
+<td>services.user.environment.ENSURE_TEAMS</td>
+<td>update the example team as follows:<br><strong>name</strong> Your company name<br><strong>externalId</strong> your connections url base64 encoded<br><strong>clientSecret</strong> Your oAuth client secret as defined in connections<br><strong>clientID</strong> Your oAuth client id<br><strong>baseURL</strong> Your connections URL</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open portainer and login</li>
+<li>Select your primary endpoint</li>
+<li>Choose Stacks from the side menu</li>
+<li>Click Add Stack</li>
+<li>Name your stack kudos-boards</li>
+<li>paste your config from from above into the web editor</li>
+<li>Click "Deploy the stack"</li>
+</ol>
+<hr />
 <h3 id="add-websphere-config">Add Websphere Config<a class="headerlink" href="#add-websphere-config" title="Permanent link">&para;</a></h3>
 <p>Please follow <a href="/boards/wasconfig/">these instructions</a></p>
 <hr />
 <h3 id="add-ibm-connections-widgets">Add IBM Connections widgets<a class="headerlink" href="#add-ibm-connections-widgets" title="Permanent link">&para;</a></h3>
 <p>Please follow <a href="/boards/widgets/">these instructions</a></p>
+<hr />
+<h3 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h3>
+<p>You can also run Kudos Boards with externally hosted mongo database and/or S3 storage.
+For assistance with this contact support@kudosboards.com</p>
+<hr />
                 
                   
                 
