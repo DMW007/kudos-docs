@@ -681,8 +681,62 @@
 <li>3 Swarm managers (CoreOS)</li>
 </ul>
 <p>If you have more managers or workers just extend the config where indicated below.</p>
-<p>If you are testing this setup, you can get away with quite small servers (we have had success with 2 cores and 1.7gb ram) however if you plan to include the logging and/or monitoring services then you should expect to dedicate an additional 2gb ram minimum for each of these sevices.</p>
-<p>The Gateway Server will be used for storing all persistent data in nfs shares, if you are setting this environment up for a production system athen you should ensure that you have a suitably performant disk for the path <code>/data</code> on this server, you should also ensure that this folder is backed up appropriately.</p>
+<p>If you are testing this setup, you can get away with quite small servers (we have had success with 2 cores and 1.7gb ram) however if you plan to include the logging and/or monitoring services then you should expect to dedicate an additional 1gb ram minimum for each of these sevices.</p>
+<p>The Gateway Server will be used for storing all persistent data in nfs shares, if you are setting this environment up for a production system then you should ensure that you have a suitably performant disk for the path <code>/data</code> on this server, you should also ensure that this folder is backed up appropriately.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Small (test)</th>
+<th>Medium (&lt;1000 users)</th>
+<th>Large (&gt;1000 users)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Gateway</strong></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td><strong>Managers</strong></td>
+<td>3</td>
+<td>3</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>Workers</strong></td>
+<td>0</td>
+<td>0</td>
+<td>1 per extra 5000 users</td>
+</tr>
+<tr>
+<td><strong>Memory</strong></td>
+<td>2GB</td>
+<td>4GB</td>
+<td>8GB</td>
+</tr>
+<tr>
+<td><strong>CPU</strong></td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>Disk (Nodes)</strong></td>
+<td>20GB</td>
+<td>40GB</td>
+<td>100GB min</td>
+</tr>
+<tr>
+<td><strong>Disk (Gateway)</strong></td>
+<td>20GB</td>
+<td>40GB</td>
+<td>100GB min</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="network-setup">Network setup<a class="headerlink" href="#network-setup" title="Permanent link">&para;</a></h2>
 <p>The setup below will establish some internal networking rules to help protect your environment.<br />
@@ -696,7 +750,7 @@ When configuring the servers, you will need to enable the following network rule
 <h2 id="setup-ansible">Setup Ansible<a class="headerlink" href="#setup-ansible" title="Permanent link">&para;</a></h2>
 <p>Throughout this guide we will use ansible to setup the servers and deploy services (stacks) to the swarm.</p>
 <p>If you have access to a Mac or Linux machine, <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">follow these instructions</a> to get up and running.</p>
-<p>Whilst that document states windows is not supported, We have success running ansible under windows by enabling WSL (Windows subsystem for Linux), installing Ubuntu from the windows store and proceeding with the Ubuntu instructions linked.</p>
+<p>Whilst that document states windows is not supported, We have had success running ansible under windows by enabling WSL (Windows subsystem for Linux), installing Ubuntu from the windows store and proceeding with the Ubuntu instructions linked.</p>
 <p>Refer to <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">this document from Microsoft</a> for more information on WSL and the windows store options.</p>
 <p>TODO: they need access to our ansible setup!!!</p>
 <hr />
