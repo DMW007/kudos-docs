@@ -506,6 +506,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-to-apps-menu" title="Add to Apps Menu" class="md-nav__link">
+    Add to Apps Menu
+  </a>
+  
+</li>
+      
       
       
       
@@ -736,6 +743,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-to-apps-menu" title="Add to Apps Menu" class="md-nav__link">
+    Add to Apps Menu
+  </a>
+  
+</li>
+      
       
       
       
@@ -841,6 +855,58 @@ NewsWidgetCatalogService.enableWidget("&lt;ID_RETURNED&gt;")
 
 NewsWidgetCatalogService.clearWidgetCaches()
 </code></pre>
+<h3 id="add-to-apps-menu">Add to Apps Menu<a class="headerlink" href="#add-to-apps-menu" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>If you have not customised the apps.jsp file for your connections environment, please make a copy of the file.</p>
+<ul>
+<li>
+<p>You can access the file from:</p>
+<pre><code>&lt;WAS_home&gt;/profiles/&lt;profile_name&gt;/installedApps/&lt;cell_name&gt;/Homepage.ear/homepage.war/nav/templates/menu
+</code></pre>
+</li>
+<li>
+<p>Paste the copy into the common\nav\templates subdirectory in the customization directory:</p>
+<pre><code>&lt;installdir&gt;\data\shared\customization\common\nav\templates\menu\apps.jsp
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>To add the Kudos Boards App Link add the following lines towards the bottom of the apps.jsp file before the </table> element, replacing <BOARDS_URL> with your URL</p>
+<pre><code>--%&gt;&lt;tr&gt;&lt;%--
+  --%&gt;&lt;th scope="row" class="lotusNowrap"&gt;&lt;%--
+    --%&gt;&lt;img width="16" src="https:/&lt;BOARDS_URL&gt;&lt;strong&gt;&lt;fmt:message key="connections.component.name.kudos.boards" /&gt;&lt;/strong&gt;&lt;/a&gt;&lt;%--
+  --%&gt;&lt;/th&gt;&lt;%--
+  --%&gt;&lt;td class="lotusNowrap lotusLastCell"&gt;&lt;%--
+    --%&gt;&lt;a href="https://&lt;BOARDS_URL&gt;/todos/assigned"&gt;&lt;fmt:message key="label.menu.kudos.boards.todos" /&gt;&lt;/a&gt;&lt;%--
+  --%&gt;&lt;/td&gt;&lt;%--
+  --%&gt;&lt;td class="lotusNowrap lotusLastCell"&gt;&lt;%--
+    --%&gt;&lt;a href="https://&lt;BOARDS_URL&gt;/boards/templates/public"&gt;&lt;fmt:message key="label.menu.kudos.boards.templates" /&gt;&lt;/a&gt;&lt;%--
+  --%&gt;&lt;/td&gt;&lt;%--
+--%&gt;&lt;/tr&gt;&lt;%--
+</code></pre>
+</li>
+<li>
+<p>Save and close the file</p>
+</li>
+<li>
+<p>Add the Kudos Boards Strings for the Apps Menu</p>
+<ul>
+<li>
+<p>Download the <a href="/assets/strings.zip">strings files</a> and extract the files to the Connections strings customisation directory:</p>
+<pre><code>&lt;CONNECTIONS_CUSTOMIZATION_PATH&gt;/strings
+</code></pre>
+</li>
+<li>
+<p>Note: Please append the lines to the files if they already exist. Extra languages can also be added</p>
+</li>
+</ul>
+</li>
+<li>
+<p>The changes will take effect when the cluster(s) are restarted</p>
+</li>
+</ul>
                 
                   
                 
