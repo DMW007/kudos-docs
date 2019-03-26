@@ -407,8 +407,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../boards/icp/" title="IBM ICP (Kubernetes)" class="md-nav__link">
-      IBM ICP (Kubernetes)
+    <a href="../../boards/kubernetes/" title="Kubernetes (IBM ICP)" class="md-nav__link">
+      Kubernetes (IBM ICP)
     </a>
   </li>
 
@@ -777,6 +777,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -926,7 +938,7 @@
                   <h1>Docker Swarm</h1>
                 
                 <h2 id="overview-introduction">Overview / Introduction<a class="headerlink" href="#overview-introduction" title="Permanent link">&para;</a></h2>
-<p>While there are many ways to setup a docker swarm environment, this document will step through setting up a functional environment that includes:</p>
+<p>This document will step through setting up a functional docker swarm environment that includes:</p>
 <ul>
 <li>Shared storage with nfs</li>
 <li>http(s) proxy <em>traefik</em></li>
@@ -1012,10 +1024,7 @@ When configuring the servers, you will need to enable the following network rule
 </ul>
 <hr />
 <h2 id="setup-ansible">Setup Ansible<a class="headerlink" href="#setup-ansible" title="Permanent link">&para;</a></h2>
-<p>Throughout this guide we will use ansible to setup the servers and deploy services (stacks) to the swarm.</p>
-<p>If you have access to a Mac or Linux machine, <a href="https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html">follow these instructions</a> to get up and running.</p>
-<p>Whilst that document states windows is not supported, We have had success running ansible under windows by enabling WSL (Windows subsystem for Linux), installing Ubuntu from the windows store and proceeding with the Ubuntu instructions linked.</p>
-<p>Refer to <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10">this document from Microsoft</a> for more information on WSL and the windows store options.</p>
+<p>See <a href="/tools/ansible/">Ansible setup guide</a>.</p>
 <p>Download and extract <a href="/assets/docker-swarm-blank.zip">This zip file</a></p>
 <hr />
 <h2 id="server-access">Server access<a class="headerlink" href="#server-access" title="Permanent link">&para;</a></h2>
@@ -1189,6 +1198,20 @@ docker node rm &lt;node_id&gt;
             </div>
           </a>
         
+        
+          <a href="../../kubernetes/" title="Kubernetes" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Kubernetes
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
         
       </nav>
     </div>
