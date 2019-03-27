@@ -445,6 +445,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ssl-network-setup" title="SSL / network setup" class="md-nav__link">
+    SSL / network setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setup-oauth" title="Setup OAuth" class="md-nav__link">
     Setup OAuth
   </a>
@@ -473,8 +480,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-secret" title="Setup secret" class="md-nav__link">
-    Setup secret
+  <a href="#setup-secrets" title="Setup secrets" class="md-nav__link">
+    Setup secrets
   </a>
   
 </li>
@@ -804,6 +811,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ssl-network-setup" title="SSL / network setup" class="md-nav__link">
+    SSL / network setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#setup-oauth" title="Setup OAuth" class="md-nav__link">
     Setup OAuth
   </a>
@@ -832,8 +846,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-secret" title="Setup secret" class="md-nav__link">
-    Setup secret
+  <a href="#setup-secrets" title="Setup secrets" class="md-nav__link">
+    Setup secrets
   </a>
   
 </li>
@@ -913,18 +927,84 @@
 <li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a> is installed</li>
 <li><a href="https://docs.helm.sh/using_helm/#installing-helm">helm</a> is installed</li>
 <li>SMTP gateway setup for email notifications if required</li>
-<li><a href="/assets/kudos-boards.tgz">Kudos Boards helm chart</a> downloaded</li>
 <li>Ansible is installed, see <a href="/tools/ansible/">Ansible</a></li>
+<li><a href="">Kudos Boards helm chart</a> downloaded (TBC)</li>
+<li><a href="">Kudos Boards ansible roles</a> downloaded and extracted (TBC)</li>
 <li><a href="https://hub.docker.com">Dockerhub</a> account setup with access to Kudos Boards repository, send your account details to support@kudosboards.com if you don't already have this.</li>
-<li>SSL certificate - You will need to use a certificate that covers at least the 2 domains you plan to use, for example Kudos Boards cloud uses the domains <code>https://kudosboards.com</code> and <code>https://api.kudosboards.com</code>. The certificate should be pem encoded with a separate key file. We'll refer to these below as BOARDS_URL and API_URL respectively.</li>
 </ol>
+<hr />
+<h3 id="ssl-network-setup">SSL / network setup<a class="headerlink" href="#ssl-network-setup" title="Permanent link">&para;</a></h3>
+<p>Kubernetes for on premise environments requires a reverse proxy in place to properly route traffic, there are a number of different ways this reverse proxy can be configured and Kudos Boards aim to match whatever you already have in place. Some examples of network routing:</p>
+<p><strong>Separate domain(s) for Kudos Boards</strong></p>
+<blockquote>
+<p>e.g. https://boards.example.com</p>
+</blockquote>
+<ul>
+<li>This option requires your reverse proxy to be able to match any current domains as well as the new one for Kudos Boards (either by using SNI or a compatible certificate for all domains)</li>
+<li>You will require certificate coverage for 2 domains, e.g. <code>https://example.com</code> (referred to as BOARDS_URL below) and <code>https://api.example.com</code> (referred to as API_URL below).</li>
+<li>You may resolve the certificate in your proxy and forward the traffic unencrypted to kubernetes -OR- forward the encrypted traffic and perform the certificate resolution in kubernetes (described in config below).</li>
+</ul>
+<p><strong>Kudos Boards as a path on your existing domain</strong></p>
+<blockquote>
+<p>e.g. https://example.com/boards</p>
+</blockquote>
+<ul>
+<li>All certificate resolution needs to happen on the proxy server</li>
+<li>additional config required to make Boards webfront handle redirects, details below</li>
+<li>You will need to proxy 2 paths <code>https://example.com/boards</code> (referred to as BOARDS_URL below) and <code>https://example.com/api-boards</code> (referred to as API_URL below).</li>
+</ul>
 <hr />
 <h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
 <p>Kudos Boards currently supports the following oauth providers for authentication and integration: IBM Connections (on premise), IBM Connections Cloud and Microsoft Office 365.</p>
-<p>You will need to setup an OAuth application with one of these providers for Kudos Boards to function. please refer to the following documentation:</p>
-<p>IBM Connections (on premise): <a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/admin/r_admin_common_oauth_manage_list.html">IBM Knowledge Centre</a></p>
-<p>IBM Connections Cloud: <a href="https://www.ibm.com/support/knowledgecenter/en/SSL3JX/admin/bss/topics/manage_custom_apps.html">IBM Knowledge Centre</a></p>
-<p>Microsoft Office 365: <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure app registrations</a></p>
+<p>You will need to setup an OAuth application with one (or more) of these providers for Kudos Boards to function. please refer to the following documentation:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Registration / Documentation</th>
+<th>Callback URL</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBM Connections (on premise)</td>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/admin/r_admin_common_oauth_manage_list.html">IBM Knowledge Centre</a></td>
+<td>[BOARDS_URL]/auth/connections</td>
+<td></td>
+</tr>
+<tr>
+<td>Microsoft Office 365</td>
+<td><a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure app registrations</a></td>
+<td>[BOARDS_URL]/auth/msgraph</td>
+<td></td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="https://console.developers.google.com/apis/credentials">Google Console</a></td>
+<td>[BOARDS_URL]/auth/google</td>
+<td></td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td><a href="https://www.linkedin.com/developers/apps">LinkedIn</a></td>
+<td>[BOARDS_URL]/auth/linkedin</td>
+<td></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><a href="https://developers.facebook.com/apps/2087069981334024/fb-login/settings/">Facebook developer centre</a></td>
+<td>[BOARDS_URL]/auth/facebook</td>
+<td></td>
+</tr>
+<tr>
+<td>Github</td>
+<td>Open your github organisation, go to settings, OAuth Apps</td>
+<td>[BOARDS_URL]/auth/github</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h3 id="configure-kubectl">Configure kubectl<a class="headerlink" href="#configure-kubectl" title="Permanent link">&para;</a></h3>
 <p><strong>Kubernetes</strong></p>
@@ -957,16 +1037,22 @@
 <pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "minio"
 </code></pre>
 <hr />
-<h3 id="setup-secret">Setup secret<a class="headerlink" href="#setup-secret" title="Permanent link">&para;</a></h3>
+<h3 id="setup-secrets">Setup secrets<a class="headerlink" href="#setup-secrets" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Dockerhub credentials<pre><code>kubectl create secret docker-registry dockerhub --docker-server=docker.io --docker-username=&lt;username&gt; --docker-password=&lt;password&gt; --docker-email=&lt;email&gt; --namespace=boards
+<li>
+<p>Dockerhub credentials</p>
+<pre><code>kubectl create secret docker-registry dockerhub --docker-server=docker.io --docker-username=&lt;username&gt; --docker-password=&lt;password&gt; --docker-email=&lt;email&gt; --namespace=boards
+</code></pre>
+</li>
+<li>
+<p>SSL certificate details</p>
+<blockquote>
+<p>Only perform this step if you need to resolve certificates in kubernetes</p>
+</blockquote>
+<pre><code>kubectl create secret tls kudosboards-domain-secret --key &lt;/path/to/keyfile&gt; --cert &lt;/path/to/certificate&gt; --namespace=boards
 </code></pre>
 </li>
 </ol>
-<!-- 1.  SSL certificate details -->
-
-<!-- kubectl create secret tls kudosboards-domain-secret --key </path/to/keyfile> --cert </path/to/certificate> --namespace=boards -->
-
 <hr />
 <h3 id="update-config-file">Update Config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
 <p>Open the file at ansible/roles/boards-docker/files/boards.yaml and upate the values as below.</p>
