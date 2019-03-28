@@ -758,7 +758,9 @@
 </li>
 <li>
 <p>Register OAuth</p>
-<pre><code>execfile('oauthAdmin.py')
+<pre><code>cd /opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/
+./wsadmin.sh -lang jython -username connectionsadmin -password passw0rd
+execfile('oauthAdmin.py')
 OAuthApplicationRegistrationService.addApplication('kudosboards', 'Kudos Boards', '&lt;BOARDS_URL&gt;/auth/connections/callback')
 OAuthApplicationRegistrationService.getApplicationById('kudosboards')
 </code></pre>
