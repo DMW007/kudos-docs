@@ -760,9 +760,13 @@
 <p>Register OAuth</p>
 <pre><code>execfile('oauthAdmin.py')
 OAuthApplicationRegistrationService.addApplication('kudosboards', 'Kudos Boards', '&lt;BOARDS_URL&gt;/auth/connections/callback')
+OAuthApplicationRegistrationService.getApplicationById('kudosboards')
 </code></pre>
 </li>
 </ol>
+<blockquote>
+<p>These commands will define a new OAuth application with <code>CONNECTIONS_CLIENT_ID=kudosboards</code>. It will also print the definition. Please take note of the <code>clientSecret</code>.  We will refer to this later as <code>CONNECTIONS_CLIENT_SECRET</code>.</p>
+</blockquote>
                 
                   
                 
