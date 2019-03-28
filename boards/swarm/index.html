@@ -457,6 +457,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-oauth" title="Setup OAuth" class="md-nav__link">
+    Setup OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update-config-file" title="Update Config file" class="md-nav__link">
     Update Config file
   </a>
@@ -756,6 +763,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-oauth" title="Setup OAuth" class="md-nav__link">
+    Setup OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update-config-file" title="Update Config file" class="md-nav__link">
     Update Config file
   </a>
@@ -819,6 +833,52 @@
 <li>SSL certificate - You will need to use a certificate that covers at least the 2 domains you plan to use, for example Kudos Boards cloud uses the domains <code>https://kudosboards.com</code> and <code>https://api.kudosboards.com</code>. The certificate should be pem encoded with a separate key file.</li>
 </ol>
 <hr />
+<h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
+<p>Kudos Boards currently supports the following oauth providers for authentication and integration: IBM Connections (on premise), IBM Connections Cloud and Microsoft Office 365.</p>
+<p>You will need to setup an OAuth application with one (or more) of these providers for Kudos Boards to function. please refer to the following documentation:</p>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Registration / Documentation</th>
+<th>Callback URL</th>
+<th>Scopes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IBM Connections (on premise)</td>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/admin/r_admin_common_oauth_manage_list.html">IBM Knowledge Centre</a></td>
+<td>[BOARDS_URL]/auth/connections/callback</td>
+<td></td>
+</tr>
+<tr>
+<td>Microsoft Office 365</td>
+<td><a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure app registrations</a></td>
+<td>[BOARDS_URL]/auth/msgraph/callback</td>
+<td></td>
+</tr>
+<tr>
+<td>Google</td>
+<td><a href="https://console.developers.google.com/apis/credentials">Google Console</a></td>
+<td>[BOARDS_URL]/auth/google/callback</td>
+<td></td>
+</tr>
+<tr>
+<td>LinkedIn</td>
+<td><a href="https://www.linkedin.com/developers/apps">LinkedIn</a></td>
+<td>[BOARDS_URL]/auth/linkedin/callback</td>
+<td></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><a href="https://developers.facebook.com/apps/2087069981334024/fb-login/settings/">Facebook developer centre</a></td>
+<td>[BOARDS_URL]/auth/facebook/callback</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h3 id="update-config-file">Update Config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
@@ -842,23 +902,85 @@
 </tr>
 <tr>
 <td>services.webfront.deploy.labels</td>
-<td>Update the <MAIN_URL> with your main URL</td>
+<td>Update the <code>traefik.frontend.rule</code> your main URL</td>
 </tr>
 <tr>
 <td>services.webfront.environment.API_GATEWAY</td>
 <td>Your api URL</td>
 </tr>
 <tr>
+<td>services.webfront.environment.DEFAULT_TEAM</td>
+<td>provide a unique simple (alphanumeric) name for the default login team, see ENSURE_TEAMS below</td>
+</tr>
+<tr>
 <td>services.core.deploy.labels</td>
-<td>Update the <API_URL> with your api URL</td>
+<td>Update the <code>traefik.frontend.rule</code> with your api URL</td>
 </tr>
 <tr>
 <td>services.user.environment.ENSURE_TEAMS</td>
-<td>update the example team as follows:<br><strong>name</strong> Your company name<br><strong>externalId</strong> your connections url base64 encoded<br><strong>clientSecret</strong> Your oAuth client secret as defined in connections<br><strong>clientID</strong> Your oAuth client id<br><strong>baseURL</strong> Your connections URL</td>
+<td>See the table below</td>
+</tr>
+<tr>
+<td>CONNECTIONS_NAME</td>
+<td>If you have customised the name of connections on premise in your environment you may adjust it here accordingly</td>
+</tr>
+<tr>
+<td>CONNECTIONS_CLIENT_ID</td>
+<td>Your oAuth client secret as defined in connections</td>
+</tr>
+<tr>
+<td>CONNECTIONS_CLIENT_SECRET</td>
+<td>Your oAuth client id</td>
+</tr>
+<tr>
+<td>CONNECTIONS_URL</td>
+<td>Your connections URL</td>
+</tr>
+<tr>
+<td>SMARTCLOUD_CLIENT_ID</td>
+<td>Your oAuth client id</td>
+</tr>
+<tr>
+<td>SMARTCLOUD_CLIENT_SECRET</td>
+<td>Your oAuth client secret as defined in connections</td>
 </tr>
 </tbody>
 </table>
-<hr />
+<p>Values for ENSURE_TEAMS</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>If defining multiple teams you may use this long description to help determine which is which</td>
+</tr>
+<tr>
+<td>teamName</td>
+<td>A Unique name to identify your team, this should be kept short and not contain any spaces, punctuation or special characters</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>Your oauth provider, available options are <br>'connections' - Connections on premise<br>'smartcloud' - Connections cloud<br>'msgraph' - Office 365 or Azure AD</td>
+</tr>
+<tr>
+<td>externalId</td>
+<td>based on the provider you chose above:<br>'connections' base64 string of your connections domain<br>'smartcloud' your organisation id<br>'msgraph' your tenant id</td>
+</tr>
+<tr>
+<td>oAuth.baseURL</td>
+<td>your connections url, only needed if you chose 'connections' as your provider.</td>
+</tr>
+<tr>
+<td>globalOAuth</td>
+<td>as you may only have one team defined for each provider, please always set this to true</td>
+</tr>
+</tbody>
+</table>
 <h3 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Open portainer and login</li>
