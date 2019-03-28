@@ -6,16 +6,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/analytics/websphere-faq/</loc>
-     <lastmod>2019-03-28</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://docs.kudosapps.com/badges/websphere-faq/</loc>
-     <lastmod>2019-03-28</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://docs.kudosapps.com/boards/</loc>
      <lastmod>2019-03-28</lastmod>
      <changefreq>daily</changefreq>
@@ -51,7 +41,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/ideas/</loc>
+     <loc>https://docs.kudosapps.com/boards/howto/</loc>
+     <lastmod>2019-03-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/ideas/howto/</loc>
      <lastmod>2019-03-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -81,7 +76,12 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/swarm/setup/</loc>
+     <loc>https://docs.kudosapps.com/swarm/</loc>
+     <lastmod>2019-03-28</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/swarm/troubleshooting/</loc>
      <lastmod>2019-03-28</lastmod>
      <changefreq>daily</changefreq>
     </url>
