@@ -13,7 +13,7 @@
         <meta name="description" content="Enterprise productivity solutions">
       
       
-        <link rel="canonical" href="https://docs.kudosapps.com/boards/connections/apps-menu/">
+        <link rel="canonical" href="https://docs.kudosapps.com/boards/connections/apps-menu-hybrid/">
       
       
         <meta name="author" content="Andrew Reynolds">
@@ -939,7 +939,7 @@
 <p>To add the Kudos Boards App Link add the following lines towards the bottom of the apps.jsp file before the </table> element, replacing <BOARDS_URL> with your URL</p>
 <pre><code>--%&gt;&lt;tr&gt;&lt;%--
   --%&gt;&lt;th scope="row" class="lotusNowrap"&gt;&lt;%--
-    --%&gt;&lt;img width="16" src="https:/&lt;BOARDS_URL&gt;/auth/connections" /&gt;&lt;strong&gt;&lt;fmt:message key="connections.component.name.kudos.boards" /&gt;&lt;/strong&gt;&lt;/a&gt;&lt;%--
+    --%&gt;&lt;img width="16" src="https:/&lt;BOARDS_URL&gt;/auth/connections/[BASE64_CONNECTIONS_URL]" /&gt;&lt;strong&gt;&lt;fmt:message key="connections.component.name.kudos.boards" /&gt;&lt;/strong&gt;&lt;/a&gt;&lt;%--
   --%&gt;&lt;/th&gt;&lt;%--
   --%&gt;&lt;td class="lotusNowrap lotusLastCell"&gt;&lt;%--
     --%&gt;&lt;a href="https://&lt;BOARDS_URL&gt;/todos/assigned"&gt;&lt;fmt:message key="label.menu.kudos.boards.todos" /&gt;&lt;/a&gt;&lt;%--
@@ -949,6 +949,12 @@
   --%&gt;&lt;/td&gt;&lt;%--
 --%&gt;&lt;/tr&gt;&lt;%--
 </code></pre>
+<p>Where <code>[BASE64_CONNECTIONS_URL]</code>is</p>
+<ul>
+<li>your Connections hostname base64 encoded.  E.g.</br>
+    <code>connections.example.com</code> =&gt; <code>Y29ubmVjdGlvbnMuZXhhbXBsZS5jb20=</code></br>
+    There are many free online services to do this, ie <a href="https://www.base64encode.net/">here</a></br></br></li>
+</ul>
 </li>
 <li>
 <p>Save and close the file</p>
