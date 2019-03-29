@@ -13,7 +13,7 @@
         <meta name="description" content="Enterprise productivity solutions">
       
       
-        <link rel="canonical" href="https://docs.kudosapps.com/boards/swarm-checklist/">
+        <link rel="canonical" href="https://docs.kudosapps.com/boards/kubernetes-prerequisites/">
       
       
         <meta name="author" content="Andrew Reynolds">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Swarm checklist - Kudos Docs</title>
+        <title>Kubernetes prerequisites - Kudos Docs</title>
       
     
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Swarm checklist
+                Kubernetes prerequisites
               </span>
             
           
@@ -709,8 +709,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssl-certificates-dns" title="SSL Certificates / DNS" class="md-nav__link">
-    SSL Certificates / DNS
+  <a href="#ssl-certificates-and-domain-names-for-hosting" title="SSL Certificates and domain names for hosting" class="md-nav__link">
+    SSL Certificates and domain names for hosting
   </a>
   
 </li>
@@ -760,13 +760,15 @@
               
                 
                 
-                  <h1>Swarm checklist</h1>
+                  <h1>Kubernetes prerequisites</h1>
                 
-                <p>Requirements and considerations before installation</p>
+                <p>Requirements and considerations before installation of Kubernetes and Kudos Boards</p>
 <h2 id="servers">Servers<a class="headerlink" href="#servers" title="Permanent link">&para;</a></h2>
-<p>This solution is designed to be a lightweight, cloud-like setup running locally in your data centre. You should expect to configure a minimum of 4 very small servers, see <a href="/swarm/#server-information">Swarm Installation</a> for a table showing the requirements.</p>
+<p>This solution is designed to run a cloud-like environment locally in your data centre. You should expect to configure a minimum of 3 servers, see <a href="/kubernetes/#server-setup">Kubernetes Installation</a> for more details.</p>
+<p>This solution is ideal if you already have kubernetes (or IBM Component Pack for connections) as it can run in your existin genvironment. If this is the case, please reach out to Team Kudos for support.</p>
+<hr />
 <h2 id="existing-infrastructure">Existing Infrastructure<a class="headerlink" href="#existing-infrastructure" title="Permanent link">&para;</a></h2>
-<p>Kudos Boards for Docker Swarm is able to take advantage of existing services in your network, if you have any of the following and would like to take advantage of them, please ensure you have all relevant access documented.</p>
+<p>In addition to the above, Kudos Boards for Kubernetes is able to take advantage of existing services in your network, if you have any of the following and would like to take advantage of them, please ensure you have all relevant access documented.</p>
 <table>
 <thead>
 <tr>
@@ -787,45 +789,42 @@
 <td>NFS Server</td>
 <td>IP address or hostname, must be accessible to all swarm servers</td>
 </tr>
-<tr>
-<td>SNI Capable reverse proxy</td>
-<td>admin access to proxy to configure all domains (see SSL Certificate below)</td>
-</tr>
 </tbody>
 </table>
-<h2 id="ssl-certificates-dns">SSL Certificates / DNS<a class="headerlink" href="#ssl-certificates-dns" title="Permanent link">&para;</a></h2>
-<p>You will need to have certificates and DNS entries that cover the following domains:</p>
+<hr />
+<h2 id="ssl-certificates-and-domain-names-for-hosting">SSL Certificates and domain names for hosting<a class="headerlink" href="#ssl-certificates-and-domain-names-for-hosting" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>Replace <code>example.com</code> with your actual company domain</p>
+<p>In the examples below, replace <code>example.com</code> with your actual company domain</p>
 </blockquote>
+<p>Kudos boards requires 2 domains (or redirects) in your network, one for the web application and one for the api. You can use a new domain or subdomain for this or you can use a path on an existing service.</p>
+<p>For example:</p>
 <table>
 <thead>
 <tr>
-<th>Service</th>
-<th>Example domain</th>
-<th>DNS</th>
+<th></th>
+<th>Domain</th>
+<th>Path</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Swarm</td>
-<td>swarm.example.com</td>
-<td>A record pointing to gateway server</td>
-</tr>
-<tr>
-<td>Boards</td>
+<td>Web</td>
 <td>boards.example.com</td>
-<td>CNAME swarm.example.com</td>
+<td>example.com/boards</td>
 </tr>
 <tr>
-<td>Boards API</td>
+<td>API</td>
 <td>api-boards.example.com</td>
-<td>CNAME swarm.example.com</td>
+<td>example.com/api-boards</td>
 </tr>
 </tbody>
 </table>
+<p>You will need a reverse proxy in place to forward network requests to the kubernetes master. </p>
+<p>You will need to have certificates that cover all domains used.</p>
+<hr />
 <h2 id="ssh-access">SSH Access<a class="headerlink" href="#ssh-access" title="Permanent link">&para;</a></h2>
 <p>To perform the installation, you need to setup some config files on a local machine that has ssh access to the servers. You should ssh to each server manually before proceeding to ensure they are trusted.</p>
+<hr />
 <h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
 <p>Kudos Boards is designed to be integrated into your current user management system. Before you are able to login you will need to configure OAuth for one (or more) of the following providers (detailed instructions <a href="/boards/swarm/#setup-oauth">here</a>):</p>
 <table>
@@ -862,10 +861,12 @@
 </tr>
 </tbody>
 </table>
+<hr />
 <h2 id="dockerhub">Dockerhub<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
 <p>Access to the images for kudos boards is provided through <a href="https://hub.docker.com">dockerhub</a>. Please provide us with your username to grant access and have the credentials at hand for the install.</p>
+<hr />
 <h2 id="ansible">Ansible<a class="headerlink" href="#ansible" title="Permanent link">&para;</a></h2>
-<p>We use <a href="https://www.ansible.com/">Red Hat Ansible</a> to script the installs. Please ensure this is installed as per <a href="/tools/ansible/">our guide</a> prior to the swarm / boards install </p>
+<p>We use <a href="https://www.ansible.com/">Red Hat Ansible</a> to script the installs. Please ensure this is installed as per <a href="/tools/ansible/">our guide</a> prior to the kubernetes / boards install</p>
                 
                   
                 
