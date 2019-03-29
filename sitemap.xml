@@ -11,7 +11,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.kudosapps.com/boards/kubernetes/</loc>
+     <lastmod>2019-03-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/connections/httpd/</loc>
      <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -21,17 +31,32 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/boards/wasconfig/</loc>
+     <loc>https://docs.kudosapps.com/boards/hybrid/</loc>
      <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/boards/widgets/</loc>
+     <loc>https://docs.kudosapps.com/boards/connections/auth-hybrid/</loc>
      <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/boards/websphere-faq/</loc>
+     <loc>https://docs.kudosapps.com/boards/connections/app-loader/</loc>
+     <lastmod>2019-03-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/connections/apps-menu/</loc>
+     <lastmod>2019-03-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/connections/widgets/</loc>
+     <lastmod>2019-03-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/troubleshooting/websphere/</loc>
      <lastmod>2019-03-29</lastmod>
      <changefreq>daily</changefreq>
     </url>
