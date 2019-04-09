@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#kudos-boards-for-kubernetes" tabindex="1" class="md-skip">
+      <a href="#kudos-boards-for-kubernetes-and-ibm-cloud-private" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -643,8 +643,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-storage" title="Setup storage" class="md-nav__link">
-    Setup storage
+  <a href="#setup-storage" title="Setup Storage" class="md-nav__link">
+    Setup Storage
   </a>
   
 </li>
@@ -657,8 +657,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-config-file" title="Update config file" class="md-nav__link">
-    Update config file
+  <a href="#update-config-file" title="Update Config file" class="md-nav__link">
+    Update Config file
   </a>
   
 </li>
@@ -675,32 +675,32 @@
     Add Proxy Config
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connections-on-premise-update-was-config" title="Connections On Premise - update WAS config" class="md-nav__link">
     Connections On Premise - update WAS config
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#connections-cloud-or-microsoft-office-365" title="Connections Cloud or Microsoft Office 365" class="md-nav__link">
     Connections Cloud or Microsoft Office 365
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-ibm-connections-widgets" title="Add IBM Connections widgets" class="md-nav__link">
+    Add IBM Connections widgets
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ibm-connections-integrations" title="IBM Connections integrations" class="md-nav__link">
-    IBM Connections integrations
-  </a>
   
 </li>
       
@@ -1045,8 +1045,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-storage" title="Setup storage" class="md-nav__link">
-    Setup storage
+  <a href="#setup-storage" title="Setup Storage" class="md-nav__link">
+    Setup Storage
   </a>
   
 </li>
@@ -1059,8 +1059,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#update-config-file" title="Update config file" class="md-nav__link">
-    Update config file
+  <a href="#update-config-file" title="Update Config file" class="md-nav__link">
+    Update Config file
   </a>
   
 </li>
@@ -1077,32 +1077,32 @@
     Add Proxy Config
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#connections-on-premise-update-was-config" title="Connections On Premise - update WAS config" class="md-nav__link">
     Connections On Premise - update WAS config
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#connections-cloud-or-microsoft-office-365" title="Connections Cloud or Microsoft Office 365" class="md-nav__link">
     Connections Cloud or Microsoft Office 365
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-ibm-connections-widgets" title="Add IBM Connections widgets" class="md-nav__link">
+    Add IBM Connections widgets
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ibm-connections-integrations" title="IBM Connections integrations" class="md-nav__link">
-    IBM Connections integrations
-  </a>
   
 </li>
       
@@ -1123,19 +1123,18 @@
               
                 
                 
-                <h1 id="kudos-boards-for-kubernetes">Kudos Boards for Kubernetes<a class="headerlink" href="#kudos-boards-for-kubernetes" title="Permanent link">&para;</a></h1>
-<p>Deploying Kudos Boards into Kubernetes or IBM Cloud Private for on-premise environments</p>
+                <h1 id="kudos-boards-for-kubernetes-and-ibm-cloud-private">Kudos Boards for Kubernetes and IBM Cloud Private<a class="headerlink" href="#kudos-boards-for-kubernetes-and-ibm-cloud-private" title="Permanent link">&para;</a></h1>
+<p>Deploying Kudos Boards into Kubernetes -or- IBM Cloud Private for on-premise environments</p>
 <hr />
 <h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Kubernetes or IBM Cloud Private is installed and running</li>
-<li>WebSphere environment with Web Server</li>
+<li>WebSphere environment with Web Server (or another reverse proxy)</li>
 <li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a> is installed</li>
 <li><a href="https://docs.helm.sh/using_helm/#installing-helm">helm</a> is installed</li>
 <li>SMTP gateway setup for email notifications if required</li>
 <li>Ansible is installed, see <a href="/tools/ansible/">Ansible</a></li>
-<li><a href="">Kudos Boards helm chart</a> downloaded (TBC)</li>
-<li><a href="">Kudos Boards ansible roles</a> downloaded and extracted (TBC)</li>
+<li><a href="/assets/boards-docker-ansible.zip">Kudos Boards ansible roles</a> downloaded and extracted</li>
 <li><a href="https://hub.docker.com">Dockerhub</a> account setup with access to Kudos Boards repository, send your account details to support@kudosboards.com if you don't already have this.</li>
 </ol>
 <hr />
@@ -1161,7 +1160,7 @@
 </ul>
 <hr />
 <h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
-<p>Kudos Boards currently supports the following OAuth providers for authentication and integration: IBM Connections (on premise), IBM Connections Cloud and Microsoft Office 365.</p>
+<p>Kudos Boards currently supports the following oauth providers for authentication and integration: IBM Connections (on premise), IBM Connections Cloud and Microsoft Office 365.</p>
 <p>You will need to setup an OAuth application with one (or more) of these providers for Kudos Boards to function. please refer to the following documentation:</p>
 <table>
 <thead>
@@ -1175,7 +1174,7 @@
 <tbody>
 <tr>
 <td>IBM Connections (on premise)</td>
-<td><a href="/boards/connections/auth-on-prem/">Our Instructions</a> &amp; <a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/admin/r_admin_common_oauth_manage_list.html">IBM Knowledge Centre</a></td>
+<td><a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/admin/r_admin_common_oauth_manage_list.html">IBM Knowledge Centre</a></td>
 <td>[BOARDS_URL]/auth/connections/callback</td>
 <td></td>
 </tr>
@@ -1225,7 +1224,7 @@
 <pre><code>kubectl create namespace boards
 </code></pre>
 <hr />
-<h3 id="setup-storage">Setup storage<a class="headerlink" href="#setup-storage" title="Permanent link">&para;</a></h3>
+<h3 id="setup-storage">Setup Storage<a class="headerlink" href="#setup-storage" title="Permanent link">&para;</a></h3>
 <p>Kudos Boards uses mongodb database and S3 file storage, If you have these services already then you can use your existing details in the config below, otherwise you may include one or both of these as follows:</p>
 <p>Deploy both storage services</p>
 <pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "storage"
@@ -1254,7 +1253,7 @@
 </li>
 </ol>
 <hr />
-<h3 id="update-config-file">Update config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
+<h3 id="update-config-file">Update Config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
 <p>Open the file at ansible/roles/boards-docker/files/boards.yaml and upate the values as below.</p>
 <table>
 <thead>
@@ -1374,32 +1373,25 @@
 <ul>
 <li>
 <p>deploy redis cache</p>
-<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "redis"
-</code></pre>
+<p>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "redis"</p>
 </li>
 <li>
 <p>deploy all boards services</p>
-<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "boards"
-</code></pre>
+<p>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "boards"</p>
 </li>
 </ul>
 <hr />
 <h3 id="add-proxy-config">Add Proxy Config<a class="headerlink" href="#add-proxy-config" title="Permanent link">&para;</a></h3>
-<h4 id="connections-on-premise-update-was-config">Connections On Premise - update WAS config<a class="headerlink" href="#connections-on-premise-update-was-config" title="Permanent link">&para;</a></h4>
+<h2 id="connections-on-premise-update-was-config">Connections On Premise - update WAS config<a class="headerlink" href="#connections-on-premise-update-was-config" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>in the linked document you should use the IP of your kubernetes manager and the http port for your ingress (32080 if you have component pack installed)</p>
 </blockquote>
-<p>Please follow <a href="/boards/connections/httpd/">these instructions</a></p>
-<h4 id="connections-cloud-or-microsoft-office-365">Connections Cloud or Microsoft Office 365<a class="headerlink" href="#connections-cloud-or-microsoft-office-365" title="Permanent link">&para;</a></h4>
+<p>Please follow <a href="/boards/wasconfig/">these instructions</a></p>
+<h2 id="connections-cloud-or-microsoft-office-365">Connections Cloud or Microsoft Office 365<a class="headerlink" href="#connections-cloud-or-microsoft-office-365" title="Permanent link">&para;</a></h2>
 <p>Add a reverse proxy entry in your network that resolves your certificates and forwards your 2 domains to the IP of the kubernetes manager and the http port for your ingress. If any assistance is required</p>
 <hr />
-<h3 id="ibm-connections-integrations">IBM Connections integrations<a class="headerlink" href="#ibm-connections-integrations" title="Permanent link">&para;</a></h3>
-<p>Please follow these instructions</p>
-<ul>
-<li><a href="/boards/connections/header/">Header</a></li>
-<li><a href="/boards/connections/widgets/">Widgets</a></li>
-<li><a href="/boards/connections/apps-menu-on-prem/">Apps Menu</a></li>
-</ul>
+<h3 id="add-ibm-connections-widgets">Add IBM Connections widgets<a class="headerlink" href="#add-ibm-connections-widgets" title="Permanent link">&para;</a></h3>
+<p>Please follow <a href="/boards/widgets/">these instructions</a></p>
 <hr />
                 
                   
