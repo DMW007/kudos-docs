@@ -26,7 +26,7 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/boards/connections/header/</loc>
+     <loc>https://docs.kudosapps.com/boards/connections/header-hybrid/</loc>
      <lastmod>2019-04-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -67,6 +67,31 @@
     </url>
     <url>
      <loc>https://docs.kudosapps.com/boards/swarm/</loc>
+     <lastmod>2019-04-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/connections/auth-on-prem/</loc>
+     <lastmod>2019-04-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/connections/header-on-prem/</loc>
+     <lastmod>2019-04-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/connections/apps-menu-on-prem/</loc>
+     <lastmod>2019-04-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/connections/widgets/</loc>
+     <lastmod>2019-04-09</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/connections/httpd/</loc>
      <lastmod>2019-04-09</lastmod>
      <changefreq>daily</changefreq>
     </url>
