@@ -42,7 +42,7 @@
     
     
       
-        <title>Installation - Kudos Docs</title>
+        <title>Kudos Docs</title>
       
     
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Installation
+                Home
               </span>
             
           
@@ -186,16 +186,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Welcome" class="md-tabs__link">
+      <a href=".." title="Welcome" class="md-tabs__link md-tabs__link--active">
         Welcome
       </a>
     
@@ -248,19 +246,6 @@
       
         <a href="../swarm/" title="Docker Swarm" class="md-tabs__link">
           Docker Swarm
-        </a>
-      
-    </li>
-  
-
-      
-        
-  
-  
-    <li class="md-tabs__item">
-      
-        <a href="./" title="Kubernetes" class="md-tabs__link md-tabs__link--active">
-          Kubernetes
         </a>
       
     </li>
@@ -870,147 +855,6 @@
   </li>
 
     
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
-    
-    <label class="md-nav__link" for="nav-6">
-      Kubernetes
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        Kubernetes
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Installation
-      </label>
-    
-    <a href="./" title="Installation" class="md-nav__link md-nav__link--active">
-      Installation
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#kubernetes-install" title="Kubernetes install" class="md-nav__link">
-    Kubernetes install
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#server-setup" title="Server setup" class="md-nav__link">
-    Server setup
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configuring-ansible-inventory" title="Configuring ansible inventory" class="md-nav__link">
-    Configuring ansible inventory
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#initialise-docker-and-thinpool-on-the-servers" title="Initialise Docker and thinpool on the servers" class="md-nav__link">
-    Initialise Docker and thinpool on the servers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disable-swap-on-all-servers" title="Disable swap on all servers" class="md-nav__link">
-    Disable swap on all servers
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-kubeadm-kubectl-kubelet-and-helm" title="Setup kubeadm, kubectl, kubelet and helm" class="md-nav__link">
-    Setup kubeadm, kubectl, kubelet and helm
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ibm-component-pack" title="IBM Component Pack" class="md-nav__link">
-    IBM Component Pack
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-ingress-install" title="Manual Ingress install" class="md-nav__link">
-    Manual Ingress install
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#install-kudos-boards" title="Install Kudos Boards" class="md-nav__link">
-    Install Kudos Boards
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -1122,7 +966,7 @@
               
                 
                 
-                  <h1>Installation</h1>
+                  <h1>Home</h1>
                 
                 <h2 id="kubernetes-install">Kubernetes install<a class="headerlink" href="#kubernetes-install" title="Permanent link">&para;</a></h2>
 <p>This guide will install kubernetes latest (1.13 at time of writing) and calico network plugin. It is designed to be used alongside IBM Component Pack for connections but can be used standalone by adding an ingress.</p>
@@ -1186,7 +1030,7 @@
 </tr>
 <tr>
 <td>vars.docker_device</td>
-<td>secondary drive as defined above<br>run <code>lsblk</code> on each server to confirm<br>warning: this device will be wiped</td>
+<td>secondary drive as defined above<br>run <code>lsblk</code> on each server to confirm<br><strong>warning</strong>: this device will be wiped</td>
 </tr>
 <tr>
 <td>hosts.manager.ansible_host</td>
@@ -1262,27 +1106,6 @@ kubectl -n ingress-nginx describe svc ingress-nginx
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../swarm/troubleshooting/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Troubleshooting
-              </span>
-            </div>
-          </a>
-        
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
