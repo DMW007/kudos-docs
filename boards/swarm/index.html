@@ -1050,6 +1050,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../swarm/storage/" title="Storage" class="md-nav__link">
+      Storage
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../swarm/troubleshooting/" title="Troubleshooting" class="md-nav__link">
       Troubleshooting
     </a>
@@ -1152,11 +1164,17 @@
 <hr />
 <h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Docker swarm with portainer is up and running <a href="/swarm/setup/">Guide here</a></li>
+<li>Docker Swarm with Portainer installed. <a href="/swarm/">Guide here</a></li>
+<li>Storage - an accessible MongoDB and S3 object store. <a href="/swarm/storage/">Guide here</a></li>
 <li>SMTP gateway setup for email notifications</li>
 <li><a href="/assets/config/boards-swarm.yml">Config File</a> downloaded</li>
-<li>Dockerhub account setup with access to Kudos Boards repository, send your account details to support@kudosboards.com if you don't already have this.</li>
-<li>SSL certificate - You will need to use a certificate that covers at least the 2 domains you plan to use, for example Kudos Boards cloud uses the domains <code>https://kudosboards.com</code> and <code>https://api.kudosboards.com</code>. The certificate should be pem encoded with a separate key file.</li>
+<li>
+<p>Dockerhub account with access to Kudos Boards repository.</p>
+<p>Send your account details to <a href="mailto:support@kudosboards.com">support@kudosboards.com</a> if you don't already have this.</p>
+</li>
+<li>
+<p>SSL certificate - You will need to use a certificate that covers at least the 2 domains you plan to use, for example Kudos Boards cloud uses the domains <code>https://kudosboards.com</code> and <code>https://api.kudosboards.com</code>. The certificate should be pem encoded with a separate key file.</p>
+</li>
 </ol>
 <hr />
 <h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
@@ -1228,7 +1246,7 @@
 </tr>
 <tr>
 <td>services.webfront.deploy.labels</td>
-<td>Update the <code>traefik.frontend.rule</code> your [BOARDS_URL]</td>
+<td>Update the <code>traefik.frontend.rule</code> your <code>[BOARDS_URL]</code></td>
 </tr>
 <tr>
 <td>services.webfront.environment.API_GATEWAY</td>
@@ -1236,11 +1254,11 @@
 </tr>
 <tr>
 <td>services.webfront.environment.DEFAULT_TEAM</td>
-<td>provide a unique simple (alphanumeric) name for the default login team, see ENSURE_TEAMS below</td>
+<td>provide a unique simple (alphanumeric) name for the default login team, see <code>ENSURE_TEAMS</code> below</td>
 </tr>
 <tr>
 <td>services.core.deploy.labels</td>
-<td>Update the <code>traefik.frontend.rule</code> with your [API_URL]</td>
+<td>Update the <code>traefik.frontend.rule</code> with your <code>[API_URL]</code></td>
 </tr>
 <tr>
 <td>services.user.environment.ENSURE_TEAMS</td>
@@ -1314,7 +1332,7 @@
 <li>Choose Stacks from the side menu</li>
 <li>Click Add Stack</li>
 <li>Name your stack kudos-boards</li>
-<li>paste your config from above into the web editor</li>
+<li>Browse to your customised config file</li>
 <li>Click "Deploy the stack"</li>
 </ol>
 <hr />

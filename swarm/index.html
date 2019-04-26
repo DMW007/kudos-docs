@@ -1046,6 +1046,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#storage-mongo-s3" title="Storage (Mongo &amp; S3)" class="md-nav__link">
+    Storage (Mongo &amp; S3)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-kudos-boards-and-other-apps-with-portainer" title="Run Kudos Boards (and other apps) with Portainer" class="md-nav__link">
     Run Kudos Boards (and other apps) with Portainer
   </a>
@@ -1101,6 +1108,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="storage/" title="Storage" class="md-nav__link">
+      Storage
+    </a>
   </li>
 
         
@@ -1205,6 +1224,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#storage-mongo-s3" title="Storage (Mongo &amp; S3)" class="md-nav__link">
+    Storage (Mongo &amp; S3)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#run-kudos-boards-and-other-apps-with-portainer" title="Run Kudos Boards (and other apps) with Portainer" class="md-nav__link">
     Run Kudos Boards (and other apps) with Portainer
   </a>
@@ -1275,9 +1301,9 @@
 <ul>
 <li>Shared storage with nfs</li>
 <li>http(s) proxy <em>traefik</em></li>
-<li>Database <em>mongo</em></li>
-<li>File storage <em>minio</em></li>
 <li>Management interface <em>portainer</em></li>
+<li>Database <em>mongo</em> (optional)</li>
+<li>S3 Object storage <em>minio</em> (optional)</li>
 <li>Logging <em>elk stack</em> - (optional)</li>
 <li>Monitoring <em>prometheus/grafana</em> - (optional)</li>
 </ul>
@@ -1451,7 +1477,7 @@ e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
 <p>Open Dashboard as defined in <code>{{dashboard_host}}</code> above</p>
 </li>
 <li>
-<p>Create admin user when prompted TODO: confirm this</p>
+<p>Create admin user when prompted</p>
 </li>
 <li>
 <p>Add Dockerhub auth</p>
@@ -1462,6 +1488,9 @@ e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
 </ul>
 </li>
 </ol>
+<hr />
+<h2 id="storage-mongo-s3">Storage (Mongo &amp; S3)<a class="headerlink" href="#storage-mongo-s3" title="Permanent link">&para;</a></h2>
+<p>Kudos Boards requires a Mongo database and an S3 object store.  If you do not already have your own externally hosted services for this, please follow <a href="/swarm/storage/">this documentation</a> to deploy MongoDB and Minio (S3) containers into your Swarm setup.</p>
 <hr />
 <h2 id="run-kudos-boards-and-other-apps-with-portainer">Run Kudos Boards (and other apps) with Portainer<a class="headerlink" href="#run-kudos-boards-and-other-apps-with-portainer" title="Permanent link">&para;</a></h2>
 <p>See <a href="/boards/swarm/">Kudos Boards for Docker Swarm</a> for a step by step guide to running Kudos Boards on your new environment.</p>
@@ -1532,13 +1561,13 @@ docker node rm &lt;node_id&gt;
           </a>
         
         
-          <a href="troubleshooting/" title="Troubleshooting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="storage/" title="Storage" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Troubleshooting
+                Storage
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
