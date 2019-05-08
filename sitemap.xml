@@ -116,7 +116,17 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/boards/howto/</loc>
+     <loc>https://docs.kudosapps.com/boards/howto/knowledgebase/</loc>
+     <lastmod>2019-05-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/howto/getting-started-with-kudos-boards/</loc>
+     <lastmod>2019-05-08</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/howto/adding-boards-to-teams/</loc>
      <lastmod>2019-05-08</lastmod>
      <changefreq>daily</changefreq>
     </url>
