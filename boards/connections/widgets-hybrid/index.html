@@ -1165,13 +1165,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#register-widget" title="Register Widget" class="md-nav__link">
-    Register Widget
-  </a>
-  
-</li>
-      
       
       
       
@@ -1199,9 +1192,12 @@ ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell
 </code></pre>
 <p>Edit the widgets-config.xml file. Find the resource element with the type of community, e.g. <code>&lt;resource ... type="community" ... &gt;</code>, then under <code>&lt;widgets&gt;</code>, then within <code>&lt;definitions&gt;</code> add the following:</p>
 <pre><code>&lt;!-- Kudos Boards --&gt;
-&lt;widgetDef defId="KudosBoards" modes="view fullpage" url="https://kudosboards.com/boards/community/connections" themes="wpthemeNarrow wpthemeWide wpthemeBanner" uniqueInstance="true"&gt;
+&lt;widgetDef defId="Kudos Boards" modes="view fullpage" url="{webresourcesSvcRef}/web/com.ibm.social.urliWidget.web.resources/widget/urlWidget.xml" themes="wpthemeNarrow wpthemeWide wpthemeBanner" uniqueInstance="true"&gt;
   &lt;itemSet&gt;
-    &lt;item name="resourceId" value="{resourceId}"/&gt;
+  &lt;item name="resourceId" value="{resourceId}"/&gt;
+    &lt;item name="width" value="100%"/&gt;
+    &lt;item name="height" value="500px"/&gt;
+    &lt;item name="url" value="https://kudosboards.com/boards/community/connections"/&gt;
   &lt;/itemSet&gt;
 &lt;/widgetDef&gt;
 &lt;!-- END Kudos Boards --&gt;
@@ -1267,13 +1263,16 @@ Click the Ok button</p>
 </ul>
 <p>Scroll down and Click Save</p>
 <hr />
-<h3 id="register-widget">Register Widget<a class="headerlink" href="#register-widget" title="Permanent link">&para;</a></h3>
-<p>Required for IBM Connections 6.0 CR1 onwards:</p>
-<pre><code>execfile("newsAdmin.py")
-NewsWidgetCatalogService.addWidget(title="Kudos Boards", url="http://kudosboards.com/boards/community/connections" ,secureUrl="https://kudosboards.com/boards/community/connections", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
-NewsWidgetCatalogService.enableWidget("&lt;ID_RETURNED&gt;")
-NewsWidgetCatalogService.clearWidgetCaches()
-</code></pre>
+<!-- This is not needed for the iframe widget
+### Register Widget
+
+Required for IBM Connections 6.0 CR1 onwards:
+
+    execfile("newsAdmin.py")
+    NewsWidgetCatalogService.addWidget(title="Kudos Boards", url="http://kudosboards.com/boards/community/connections" ,secureUrl="https://kudosboards.com/boards/community/connections", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
+    NewsWidgetCatalogService.enableWidget("<ID_RETURNED>")
+    NewsWidgetCatalogService.clearWidgetCaches()
+-->
                 
                   
                 
