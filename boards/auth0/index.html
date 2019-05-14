@@ -1226,7 +1226,7 @@
 <li>Provide the rest of the details as below:</li>
 </ul>
 <blockquote>
-<p>In the table below, copy your auth0 domain (listed at the top of the page) into the relevant fields, replacing [domain] where applicable</p>
+<p>In the table below, copy your auth0 domain (listed at the top of the page) into the relevant fields, replacing &lt;domain&gt; where applicable</p>
 </blockquote>
 <table>
 <thead>
@@ -1246,7 +1246,7 @@
 </tr>
 <tr>
 <td>Allowed Callback URLs</td>
-<td>https://kudosboards.com/auth/auth0/[domain]/callback</td>
+<td>https://kudosboards.com/auth/auth0/&lt;domain&gt;/callback</td>
 </tr>
 <tr>
 <td>Allowed Web Origins</td>
@@ -1274,8 +1274,9 @@
 <p>If you aren't redirected to the users page, click them to open it</p>
 </blockquote>
 <ul>
-<li>Scroll down to metadata and add the users full name in the space provided, then click Save.<pre><code>{
-  "name": "User Name"
+<li>Scroll down to metadata and add the users full name in the space provided, then click Save.
+    e.g.<pre><code>{
+  "name": "John Smith"
 }
 </code></pre>
 </li>
