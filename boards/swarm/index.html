@@ -1429,36 +1429,36 @@
 <td>Your SMTP gateway password</td>
 </tr>
 <tr>
-<td>services.user.environment.ENSURE_TEAMS</td>
-<td>See the table below</td>
-</tr>
-<tr>
-<td>CONNECTIONS_NAME</td>
+<td>services.user.environment.CONNECTIONS_NAME</td>
 <td>If you have customised the name of connections on premise in your environment you may adjust it here accordingly</td>
 </tr>
 <tr>
-<td>CONNECTIONS_CLIENT_ID</td>
+<td>services.user.environment.CONNECTIONS_CLIENT_ID</td>
 <td>Your oAuth client secret as defined in connections</td>
 </tr>
 <tr>
-<td>CONNECTIONS_CLIENT_SECRET</td>
+<td>services.user.environment.CONNECTIONS_CLIENT_SECRET</td>
 <td>Your oAuth client id</td>
 </tr>
 <tr>
-<td>CONNECTIONS_URL</td>
+<td>services.user.environment.CONNECTIONS_URL</td>
 <td>Your connections URL</td>
 </tr>
 <tr>
-<td>SMARTCLOUD_CLIENT_ID</td>
+<td>services.user.environment.SMARTCLOUD_CLIENT_ID</td>
 <td>Your oAuth client id</td>
 </tr>
 <tr>
-<td>SMARTCLOUD_CLIENT_SECRET</td>
+<td>services.user.environment.SMARTCLOUD_CLIENT_SECRET</td>
 <td>Your oAuth client secret as defined in connections</td>
+</tr>
+<tr>
+<td>services.user.environment.ENSURE_TEAMS</td>
+<td>See the table below</td>
 </tr>
 </tbody>
 </table>
-<p>Values for ENSURE_TEAMS</p>
+<p>Options for ENSURE_TEAMS:</p>
 <table>
 <thead>
 <tr>
@@ -1481,7 +1481,11 @@
 </tr>
 <tr>
 <td>externalId</td>
-<td>Based on the provider you chose above:<br>'connections' base64 string of your connections domain<br>'smartcloud' your organisation id<br>'msgraph' your tenant id</td>
+<td>Based on the provider you chose above:<br><em>connections</em>: the base64 string of your connections domain (optional - default is calculated from oAuth.baseURL)<br><em>smartcloud</em>: your organisation id<br><em>msgraph</em>: your tenant id</td>
+</tr>
+<tr>
+<td>frameUrl</td>
+<td>The URL of the Connections Header frame configured in  <a href="/boards/connections/header-on-prem/">this step</a>.<br><em>OPTIONAL</em>: Only required if you are running the Connections App Loader WAS application and desire the Boards experience to always include the IBM Connections header</td>
 </tr>
 <tr>
 <td>oAuth.baseURL</td>

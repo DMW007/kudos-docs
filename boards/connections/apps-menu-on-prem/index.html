@@ -1250,26 +1250,27 @@
 </ul>
 </li>
 <li>
-<p>To add the Kudos Boards App Link add the following lines towards the bottom of the apps.jsp file before the <code>&lt;/table&gt;</code> element, replacing <code>&lt;BOARDS_URL&gt;</code> with your URL</p>
+<p>To add the Kudos Boards app links add the following lines towards the bottom of the apps.jsp file before the <code>&lt;/table&gt;</code> element, replacing <code>&lt;BOARDS_URL&gt;</code> with your URL</p>
 <pre><code>--%&gt;&lt;tr&gt;&lt;%--
   --%&gt;&lt;th scope="row" class="lotusNowrap"&gt;&lt;%--
     --%&gt;&lt;img width="16" src="https://&lt;BOARDS_URL&gt;/img/logo-small.png" /&gt;&lt;%--
-    --%&gt;&lt;a href="https://&lt;BOARDS_URL&gt;/auth/connections"&gt;&lt;%--
+    --%&gt;&lt;a href="https://[CONNECTIONS_URL]/boards/auth/connections"&gt;&lt;%--
       --%&gt;&lt;strong&gt;&lt;fmt:message key="connections.component.name.kudos.boards" /&gt;&lt;/strong&gt;&lt;%--
     --%&gt;&lt;/a&gt;&lt;%--
   --%&gt;&lt;/th&gt;&lt;%--
   --%&gt;&lt;td class="lotusNowrap lotusLastCell"&gt;&lt;%--
-    --%&gt;&lt;a href="https://&lt;BOARDS_URL&gt;/auth/connections?redirect_to=/todos/assigned"&gt;&lt;%--
+    --%&gt;&lt;a href="https://[CONNECTIONS_URL]/boards/auth/connections?redirect_to=/todos/assigned"&gt;&lt;%--
       --%&gt;&lt;fmt:message key="label.menu.kudos.boards.todos" /&gt;&lt;%--
     --%&gt;&lt;/a&gt;&lt;%--
   --%&gt;&lt;/td&gt;&lt;%--
   --%&gt;&lt;td class="lotusNowrap lotusLastCell"&gt;&lt;%--
-    --%&gt;&lt;a href="https://&lt;BOARDS_URL&gt;/auth/connections?redirect_to=/boards/templates/public"&gt;&lt;%--
+    --%&gt;&lt;a href="https://[CONNECTIONS_URL]/boards/auth/connections?redirect_to=/boards/templates/public"&gt;&lt;%--
       --%&gt;&lt;fmt:message key="label.menu.kudos.boards.templates" /&gt;&lt;%--
     --%&gt;&lt;/a&gt;&lt;%--
   --%&gt;&lt;/td&gt;&lt;%--
 --%&gt;&lt;/tr&gt;&lt;%--
 </code></pre>
+<p>NOTE: <code>https://[CONNECTIONS_URL]/boards</code> is the same as that configured in the <a href="/boards/connections/header-on-prem/#open-boards">Connections Header setup</a>.</p>
 </li>
 <li>
 <p>Save and close the file</p>
