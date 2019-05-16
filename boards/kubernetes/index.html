@@ -42,7 +42,7 @@
     
     
       
-        <title>In Kubernetes - Kudos Docs</title>
+        <title>For Kubernetes - Kudos Docs</title>
       
     
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                In Kubernetes
+                For Kubernetes
               </span>
             
           
@@ -602,11 +602,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        In Kubernetes
+        For Kubernetes
       </label>
     
-    <a href="./" title="In Kubernetes" class="md-nav__link md-nav__link--active">
-      In Kubernetes
+    <a href="./" title="For Kubernetes" class="md-nav__link md-nav__link--active">
+      For Kubernetes
     </a>
     
       
@@ -733,8 +733,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../swarm/" title="In Docker Swarm" class="md-nav__link">
-      In Docker Swarm
+    <a href="../swarm/" title="For Swarm" class="md-nav__link">
+      For Swarm
     </a>
   </li>
 
@@ -749,10 +749,58 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-3" type="checkbox" id="nav-2-3-3">
     
     <label class="md-nav__link" for="nav-2-3-3">
-      Integrations
+      Common Config
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
       <label class="md-nav__title" for="nav-2-3-3">
+        Common Config
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../env/common/" title="Environment" class="md-nav__link">
+      Environment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../env/teams/" title="Team Logins" class="md-nav__link">
+      Team Logins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-4" type="checkbox" id="nav-2-3-4">
+    
+    <label class="md-nav__link" for="nav-2-3-4">
+      Integrations
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-2-3-4">
         Integrations
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -765,13 +813,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-3-1" type="checkbox" id="nav-2-3-3-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-4-1" type="checkbox" id="nav-2-3-4-1">
     
-    <label class="md-nav__link" for="nav-2-3-3-1">
+    <label class="md-nav__link" for="nav-2-3-4-1">
       IBM Connections On-Prem
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
-      <label class="md-nav__title" for="nav-2-3-3-1">
+      <label class="md-nav__title" for="nav-2-3-4-1">
         IBM Connections On-Prem
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -1422,7 +1470,7 @@
 <li><a href="https://docs.helm.sh/using_helm/#installing-helm">helm</a> is installed</li>
 <li>SMTP gateway setup for email notifications if required</li>
 <li>Ansible is installed, see <a href="/tools/ansible/">Ansible</a></li>
-<li><a href="/assets/boards-docker-ansible.zip">Kudos Boards ansible roles</a> downloaded and extracted</li>
+<li><a href="/assets/config/boards-docker-ansible.zip">Kudos Boards ansible roles</a> downloaded and extracted</li>
 <li><a href="https://hub.docker.com">Dockerhub</a> account setup with access to Kudos Boards repository, send your account details to support@kudosboards.com if you don't already have this.</li>
 </ol>
 <hr />
@@ -1543,6 +1591,7 @@
 <hr />
 <h3 id="update-config-file">Update Config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
 <p>Open the file at boards_docker_ansible/roles/docker-boards/files/boards.yaml and update the values as below.</p>
+<p><strong>Kubernetes Variables</strong>:</p>
 <table>
 <thead>
 <tr>
@@ -1588,94 +1637,13 @@
 <td>Your API_URL without the protocol e.g. api.kudosboards.com</td>
 </tr>
 <tr>
-<td>boards.webfront.webfront.env.API_GATEWAY</td>
-<td>Your BOARDS_URL</td>
-</tr>
-<tr>
-<td>boards.webfront.webfront.env.DEFAULT_TEAM</td>
-<td>OPTIONAL: A unique name for the team you will login with ( see ENSURE_TEAMS below )</td>
-</tr>
-<tr>
-<td>boards.webfront.ingress.hosts</td>
+<td>webfront.ingress.hosts</td>
 <td>Your BOARDS_URL url as above without http</td>
 </tr>
-<tr>
-<td>boards.core.env.NOTIFIER_EMAIL_HOST</td>
-<td>Your SMTP gateway URL</td>
-</tr>
-<tr>
-<td>boards.core.env.NOTIFIER_EMAIL_USERNAME</td>
-<td>Your SMTP gateway username</td>
-</tr>
-<tr>
-<td>boards.core.env.NOTIFIER_EMAIL_PASSWORD</td>
-<td>Your SMTP gateway password</td>
-</tr>
-<tr>
-<td>boards.user.env.CONNECTIONS_NAME</td>
-<td>If you have customised the name of connections on premise in your environment you may adjust it here accordingly</td>
-</tr>
-<tr>
-<td>boards.user.env.CONNECTIONS_CLIENT_ID</td>
-<td>Your oAuth client secret as defined in connections</td>
-</tr>
-<tr>
-<td>boards.user.env.CONNECTIONS_CLIENT_SECRET</td>
-<td>Your oAuth client id</td>
-</tr>
-<tr>
-<td>boards.user.env.CONNECTIONS_URL</td>
-<td>Your connections URL</td>
-</tr>
-<tr>
-<td>boards.user.env.SMARTCLOUD_CLIENT_ID</td>
-<td>Your oAuth client id</td>
-</tr>
-<tr>
-<td>boards.user.env.SMARTCLOUD_CLIENT_SECRET</td>
-<td>Your oAuth client secret as defined in connections</td>
-</tr>
-<tr>
-<td>boards.user.env.ENSURE_TEAMS</td>
-<td>See below for details on the values available here</td>
-</tr>
 </tbody>
 </table>
-<p>Options for ENSURE_TEAMS:</p>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>If defining multiple teams you may use this long description to help determine which is which</td>
-</tr>
-<tr>
-<td>teamName</td>
-<td>A Unique name to identify your team, this should be kept short and not contain any spaces, punctuation or special characters</td>
-</tr>
-<tr>
-<td>provider</td>
-<td>Your oauth provider, available options are <br>'connections' - Connections on premise<br>'smartcloud' - Connections cloud<br>'msgraph' - Office 365 or Azure AD</td>
-</tr>
-<tr>
-<td>externalId</td>
-<td>Based on the provider you chose above:<br><em>connections</em>: the base64 string of your connections domain (optional - default is calculated from oAuth.baseURL)<br><em>smartcloud</em>: your organisation id<br><em>msgraph</em>: your tenant id</td>
-</tr>
-<tr>
-<td>frameUrl</td>
-<td>The URL of the Connections Header frame configured in  <a href="/boards/connections/header-on-prem/">this step</a>.<br><em>OPTIONAL</em>: Only required if you are running the Connections App Loader WAS application and desire the Boards experience to always include the IBM Connections header</td>
-</tr>
-<tr>
-<td>oAuth.baseURL</td>
-<td>Your connections url, only needed if you chose 'connections' as your provider.</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Boards Variables</strong>:</p>
+<p>Follow instructions on <a href="/boards/env/common/">this page</a></p>
 <hr />
 <h3 id="deploy-boards">Deploy Boards<a class="headerlink" href="#deploy-boards" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1740,13 +1708,13 @@
           </a>
         
         
-          <a href="../swarm/" title="In Docker Swarm" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../swarm/" title="For Swarm" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                In Docker Swarm
+                For Swarm
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
