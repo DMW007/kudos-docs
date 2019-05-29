@@ -71,6 +71,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://docs.kudosapps.com/boards/auth0/</loc>
+     <lastmod>2019-05-29</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.kudosapps.com/boards/kubernetes/</loc>
      <lastmod>2019-05-29</lastmod>
      <changefreq>daily</changefreq>
