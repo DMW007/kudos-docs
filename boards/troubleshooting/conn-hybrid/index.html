@@ -13,7 +13,7 @@
         <meta name="description" content="Enterprise productivity solutions">
       
       
-        <link rel="canonical" href="https://docs.kudosapps.com/boards/howto/permissions/">
+        <link rel="canonical" href="https://docs.kudosapps.com/boards/troubleshooting/conn-hybrid/">
       
       
         <meta name="author" content="Andrew Reynolds">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Permissions in Kudos Boards - Kudos Docs</title>
+        <title>Boards Hybrid - Kudos Docs</title>
       
     
     
@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#permissions-in-kudos-boards" tabindex="1" class="md-skip">
+      <a href="#kudos-boards-hybrid" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Permissions in Kudos Boards
+                Boards Hybrid
               </span>
             
           
@@ -810,10 +810,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5" checked>
     
     <label class="md-nav__link" for="nav-2-5">
       Troubleshooting
@@ -829,11 +831,62 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../troubleshooting/conn-hybrid/" title="Boards Hybrid" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Boards Hybrid
+      </label>
+    
+    <a href="./" title="Boards Hybrid" class="md-nav__link md-nav__link--active">
       Boards Hybrid
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" title="Authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging-in-doesnt-work" title="Logging-in doesn't work" class="md-nav__link">
+    Logging-in doesn't work
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -843,7 +896,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../troubleshooting/conn-on-prem/" title="Boards Docker" class="md-nav__link">
+    <a href="../conn-on-prem/" title="Boards Docker" class="md-nav__link">
       Boards Docker
     </a>
   </li>
@@ -855,7 +908,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../troubleshooting/websphere/" title="Boards WebSphere" class="md-nav__link">
+    <a href="../websphere/" title="Boards WebSphere" class="md-nav__link">
       Boards WebSphere
     </a>
   </li>
@@ -867,7 +920,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../troubleshooting/office365/" title="Office 365 for Business" class="md-nav__link">
+    <a href="../office365/" title="Office 365 for Business" class="md-nav__link">
       Office 365 for Business
     </a>
   </li>
@@ -882,12 +935,10 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
     
     <label class="md-nav__link" for="nav-2-6">
       How To Guide
@@ -905,7 +956,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../knowledgebase/" title="Knowledge Base & Support" class="md-nav__link">
+    <a href="../../howto/knowledgebase/" title="Knowledge Base & Support" class="md-nav__link">
       Knowledge Base & Support
     </a>
   </li>
@@ -917,7 +968,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../getting-started-with-kudos-boards/" title="Getting Started with Kudos Boards" class="md-nav__link">
+    <a href="../../howto/getting-started-with-kudos-boards/" title="Getting Started with Kudos Boards" class="md-nav__link">
       Getting Started with Kudos Boards
     </a>
   </li>
@@ -929,7 +980,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../adding-boards-to-teams/" title="Adding Boards to Microsoft Teams" class="md-nav__link">
+    <a href="../../howto/adding-boards-to-teams/" title="Adding Boards to Microsoft Teams" class="md-nav__link">
       Adding Boards to Microsoft Teams
     </a>
   </li>
@@ -941,7 +992,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../use-verse/" title="Using IBM Verse with Kudos Boards" class="md-nav__link">
+    <a href="../../howto/use-verse/" title="Using IBM Verse with Kudos Boards" class="md-nav__link">
       Using IBM Verse with Kudos Boards
     </a>
   </li>
@@ -953,7 +1004,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../quick-tips-for-boards/" title="Quick Tips for Boards" class="md-nav__link">
+    <a href="../../howto/quick-tips-for-boards/" title="Quick Tips for Boards" class="md-nav__link">
       Quick Tips for Boards
     </a>
   </li>
@@ -965,7 +1016,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../accessing-global-templates/" title="Accessing Global Templates" class="md-nav__link">
+    <a href="../../howto/accessing-global-templates/" title="Accessing Global Templates" class="md-nav__link">
       Accessing Global Templates
     </a>
   </li>
@@ -977,7 +1028,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../adding-members-to-a-board/" title="Adding Members to a Board" class="md-nav__link">
+    <a href="../../howto/adding-members-to-a-board/" title="Adding Members to a Board" class="md-nav__link">
       Adding Members to a Board
     </a>
   </li>
@@ -989,7 +1040,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../timeline-view-in-boards/" title="Timeline View in Boards" class="md-nav__link">
+    <a href="../../howto/timeline-view-in-boards/" title="Timeline View in Boards" class="md-nav__link">
       Timeline View in Boards
     </a>
   </li>
@@ -1001,7 +1052,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../mind-map-view/" title="Mind Map View" class="md-nav__link">
+    <a href="../../howto/mind-map-view/" title="Mind Map View" class="md-nav__link">
       Mind Map View
     </a>
   </li>
@@ -1013,7 +1064,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../creating-templates/" title="Creating Templates" class="md-nav__link">
+    <a href="../../howto/creating-templates/" title="Creating Templates" class="md-nav__link">
       Creating Templates
     </a>
   </li>
@@ -1025,7 +1076,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../archiving-and-restoring/" title="Archiving and Restoring" class="md-nav__link">
+    <a href="../../howto/archiving-and-restoring/" title="Archiving and Restoring" class="md-nav__link">
       Archiving and Restoring
     </a>
   </li>
@@ -1035,77 +1086,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Permissions in Kudos Boards
-      </label>
-    
-    <a href="./" title="Permissions in Kudos Boards" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../howto/permissions/" title="Permissions in Kudos Boards" class="md-nav__link">
       Permissions in Kudos Boards
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#reader" title="Reader" class="md-nav__link">
-    Reader
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#author" title="Author" class="md-nav__link">
-    Author
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#editor" title="Editor" class="md-nav__link">
-    Editor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#owner" title="Owner" class="md-nav__link">
-    Owner
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#making-your-board-public" title="Making Your Board Public" class="md-nav__link">
-    Making Your Board Public
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1344,37 +1329,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reader" title="Reader" class="md-nav__link">
-    Reader
+  <a href="#authentication" title="Authentication" class="md-nav__link">
+    Authentication
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging-in-doesnt-work" title="Logging-in doesn't work" class="md-nav__link">
+    Logging-in doesn't work
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#author" title="Author" class="md-nav__link">
-    Author
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#editor" title="Editor" class="md-nav__link">
-    Editor
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#owner" title="Owner" class="md-nav__link">
-    Owner
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#making-your-board-public" title="Making Your Board Public" class="md-nav__link">
-    Making Your Board Public
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1395,22 +1365,12 @@
               
                 
                 
-                <p><img style="float: right" src="/assets/images/boards-logo.jpg" height="100" alt="My Boards" /></p>
-<h1 id="permissions-in-kudos-boards">Permissions in Kudos Boards<a class="headerlink" href="#permissions-in-kudos-boards" title="Permanent link">&para;</a></h1>
-<p>When you invite colleagues, teams, or external parties to collaborate in your board, you can decide what level of permission to allocate to them. Below, permissions are listed from the lowest access to the highest.</p>
-<p><img alt="" src="/assets/boards/permissions.PNG" /></p>
-<h3 id="reader">Reader<a class="headerlink" href="#reader" title="Permanent link">&para;</a></h3>
-<p>A person allocated a Reader permission, has read-only access.</p>
-<h3 id="author">Author<a class="headerlink" href="#author" title="Permanent link">&para;</a></h3>
-<p>A member with Author permissions, has the ability to create new cards, edit their cards, and any cards assigned to them. They cannot edit existing cards.</p>
-<h3 id="editor">Editor<a class="headerlink" href="#editor" title="Permanent link">&para;</a></h3>
-<p>An Editor has the ability to edit existing content, and create new content.</p>
-<h3 id="owner">Owner<a class="headerlink" href="#owner" title="Permanent link">&para;</a></h3>
-<p>The Owner of a board has the ability to invite members to the board,  and edit all cards and lists in the board.</p>
-<p><a href="/boards/howto/adding-members-to-a-board">Find out more about how to add members to a board.</a></p>
-<h3 id="making-your-board-public">Making Your Board Public<a class="headerlink" href="#making-your-board-public" title="Permanent link">&para;</a></h3>
-<p>When you activate <code>Public Access,</code> your board will be discoverable by anyone in your organisation. You'll be asked to select Reader, Author, or Editor to decide what level of access your organisation can have to the board. Additionally, updates that you make on your board may be included in linked activity streams such as IBM Connections, or Microsoft Teams.</p>
-<p>To give your board public access, navigate to your desired board. Select <code>Members</code> and then select <code>Public Access.</code> Decide what level of access, Reader, Author or Editor, your organisation will have.  </p>
+                <h1 id="kudos-boards-hybrid">Kudos Boards Hybrid<a class="headerlink" href="#kudos-boards-hybrid" title="Permanent link">&para;</a></h1>
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<h3 id="logging-in-doesnt-work">Logging-in doesn't work<a class="headerlink" href="#logging-in-doesnt-work" title="Permanent link">&para;</a></h3>
+<p>Please revoke your OAuth access to Kudos Boards Cloud within IBM Connections.
+Go to <code>https://&lt;YOUR_CONNECTIONS_URL&gt;/connections/oauth/apps</code> (replacing <code>&lt;YOUR_CONNECTIONS_URL&gt;</code>) and press 'Revoke'</p>
+<p><img alt="Application Access" src="/assets/connections/application-access.png" /></p>
                 
                   
                 
@@ -1431,7 +1391,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../archiving-and-restoring/" title="Archiving and Restoring" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../hybrid/" title="Boards Hybrid" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1440,19 +1400,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Archiving and Restoring
+                Boards Hybrid
               </span>
             </div>
           </a>
         
         
-          <a href="../../../ideas/howto/" title="How To Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../conn-on-prem/" title="Boards Docker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                How To Guide
+                Boards Docker
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
