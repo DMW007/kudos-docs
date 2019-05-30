@@ -608,6 +608,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable-user-searching" title="Enable user searching" class="md-nav__link">
+    Enable user searching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-users-to-your-auth0-tenant" title="Adding Users to your Auth0 tenant" class="md-nav__link">
     Adding Users to your Auth0 tenant
   </a>
@@ -1357,6 +1364,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable-user-searching" title="Enable user searching" class="md-nav__link">
+    Enable user searching
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#adding-users-to-your-auth0-tenant" title="Adding Users to your Auth0 tenant" class="md-nav__link">
     Adding Users to your Auth0 tenant
   </a>
@@ -1453,6 +1467,23 @@
 <li>Click Save Changes</li>
 <li>Send An email to <a href="mailto:support@kudosboards.com?subject=Kudos Boards Auth0 activation">support@kudosboards.com</a> with your domain, Client ID and Client Secret.</li>
 </ul>
+<hr />
+<h3 id="enable-user-searching">Enable user searching<a class="headerlink" href="#enable-user-searching" title="Permanent link">&para;</a></h3>
+<p>In order to allow your users to find each other, we need to enable one of Auth0's api features.</p>
+<ul>
+<li>Click <code>APIs</code> and next to the Auth0 Management API Click the settings button.</li>
+</ul>
+<p><img alt="Auth0" src="/assets/auth0/apis.png" /></p>
+<ul>
+<li>Click <code>Machine to Machine Applications</code> and next to Kudos Boards click the <code>AUTHORIZED</code> slider so it is enabled as below.</li>
+</ul>
+<p><img alt="Auth0" src="/assets/auth0/machine.png" /></p>
+<ul>
+<li>The Scopes should automatically open as below, if they do not click the <code>&gt;</code> next to the slider above</li>
+<li>Find and tick the <code>read:users</code> scope then click <code>UPDATE</code></li>
+</ul>
+<p><img alt="Auth0" src="/assets/auth0/api-scopes.png" /></p>
+<hr />
 <h3 id="adding-users-to-your-auth0-tenant">Adding Users to your Auth0 tenant<a class="headerlink" href="#adding-users-to-your-auth0-tenant" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Login or Sign up to <a href="https://auth0.com/">Auth0</a></li>
