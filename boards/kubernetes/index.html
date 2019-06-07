@@ -663,8 +663,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssl-network-setup" title="SSL / network setup" class="md-nav__link">
-    SSL / network setup
+  <a href="#ssl-network-setup" title="SSL / Network setup" class="md-nav__link">
+    SSL / Network setup
   </a>
   
 </li>
@@ -1449,8 +1449,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ssl-network-setup" title="SSL / network setup" class="md-nav__link">
-    SSL / network setup
+  <a href="#ssl-network-setup" title="SSL / Network setup" class="md-nav__link">
+    SSL / Network setup
   </a>
   
 </li>
@@ -1570,26 +1570,46 @@
 <li><a href="https://hub.docker.com">Dockerhub</a> account setup with access to Kudos Boards repository, send your account details to support@kudosboards.com if you don't already have this.</li>
 </ol>
 <hr />
-<h3 id="ssl-network-setup">SSL / network setup<a class="headerlink" href="#ssl-network-setup" title="Permanent link">&para;</a></h3>
-<p>Kubernetes for on premise environments requires a reverse proxy in place to properly route traffic, there are a number of different ways this reverse proxy can be configured and Kudos Boards aim to match whatever you already have in place. Some examples of network routing:</p>
-<p><strong>Separate domain(s) for Kudos Boards</strong></p>
-<blockquote>
-<p>e.g. https://boards.example.com</p>
-</blockquote>
-<ul>
-<li>This option requires your reverse proxy to be able to match any current domains as well as the new one for Kudos Boards (either by using SNI or a compatible certificate for all domains)</li>
-<li>You will require certificate coverage for 2 domains, e.g. <code>https://example.com</code> (referred to as BOARDS_URL below) and <code>https://api.example.com</code> (referred to as API_URL below).</li>
-<li>You may resolve the certificate in your proxy and forward the traffic unencrypted to kubernetes -OR- forward the encrypted traffic and perform the certificate resolution in kubernetes (described in config below).</li>
-</ul>
-<p><strong>Kudos Boards as a path on your existing domain</strong></p>
-<blockquote>
-<p>e.g. https://example.com/boards</p>
-</blockquote>
-<ul>
-<li>All certificate resolution needs to happen on the proxy server</li>
-<li>additional config required to make Boards webfront handle redirects, details below</li>
-<li>You will need to proxy 2 paths <code>https://example.com/boards</code> (referred to as BOARDS_URL below) and <code>https://example.com/api-boards</code> (referred to as API_URL below).</li>
-</ul>
+<h3 id="ssl-network-setup">SSL / Network setup<a class="headerlink" href="#ssl-network-setup" title="Permanent link">&para;</a></h3>
+<p>Kubernetes for on-premise environments requires a reverse proxy to route traffic. There are a number of different ways this reverse proxy can be configured and Kudos Boards aims to match whatever you already have in place. Some examples of network routing:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>New domain</th>
+<th>Path on existing domain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Example of <code>BOARDS_URL</code></td>
+<td><code>https://boards.example.com</code></td>
+<td><code>https://example.com/boards</code></td>
+</tr>
+<tr>
+<td>Example of <code>API_URL</code></td>
+<td><code>https://api.example.com</code></td>
+<td><code>https://example.com/api-boards</code></td>
+</tr>
+<tr>
+<td>Requirement</td>
+<td>1. Reverse proxy able to match any current domains as well as the new one for Kudos Boards (either by using SNI or a compatible certificate for all domains).</br>2. Certificate coverage for the 2 domains</td>
+<td>Ability to proxy the 2 paths</td>
+</tr>
+<tr>
+<td>Certificate Resolution</td>
+<td>a) in your proxy and forward the unencrypted traffic to kubernetes</br><strong>-OR-</strong></br>b) forward the encrypted traffic and perform the certificate resolution in kubernetes (described in config below).</td>
+<td>All certificate resolution on the proxy server</td>
+</tr>
+<tr>
+<td>Notes</td>
+<td>IBM HTTP WebServer supports only one certificate. You must have a Wildcard certificate to cover all of your domains including the new Boards domains (ie *.example.com).</td>
+<td>Additional config required to make Boards webfront handle redirects, details below</td>
+</tr>
+</tbody>
+</table>
+<p>Please decide on which configuration will suit your environment best and the corresponding <code>BOARDS_URL</code> &amp; <code>API_URL</code>. These values will then be used in the following documentation.</p>
+<p>For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href="/boards/connections/httpd/">please see here</a></p>
 <hr />
 <h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
 <p>Kudos Boards currently supports the following oauth providers for authentication and integration: IBM Connections (on premise), IBM Connections Cloud and Microsoft Office 365.</p>
@@ -1658,13 +1678,13 @@
 <hr />
 <h3 id="setup-storage">Setup Storage<a class="headerlink" href="#setup-storage" title="Permanent link">&para;</a></h3>
 <p>Kudos Boards uses mongodb database and S3 file storage, If you have these services already then you can use your existing details in the config below, otherwise you may include one or both of these as follows:</p>
-<p>Deploy both storage services</p>
+<p>a) Deploy both storage services</p>
 <pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "storage"
 </code></pre>
-<p>Deploy mongodb only</p>
+<p>b) Deploy mongodb only</p>
 <pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "mongo"
 </code></pre>
-<p>Deploy S3 (using minio) only</p>
+<p>c) Deploy S3 (using minio) only</p>
 <pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "minio"
 </code></pre>
 <hr />
@@ -1742,16 +1762,18 @@
 <p>Follow instructions on <a href="/boards/env/common/">this page</a></p>
 <hr />
 <h3 id="deploy-boards">Deploy Boards<a class="headerlink" href="#deploy-boards" title="Permanent link">&para;</a></h3>
-<ul>
+<ol>
 <li>
 <p>deploy redis cache</p>
-<p>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "redis"</p>
+<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "redis"
+</code></pre>
 </li>
 <li>
 <p>deploy all boards services</p>
-<p>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "boards"</p>
+<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "boards"
+</code></pre>
 </li>
-</ul>
+</ol>
 <hr />
 <h3 id="add-proxy-config">Add Proxy Config<a class="headerlink" href="#add-proxy-config" title="Permanent link">&para;</a></h3>
 <h2 id="connections-on-premise-update-was-config">Connections On Premise - update WAS config<a class="headerlink" href="#connections-on-premise-update-was-config" title="Permanent link">&para;</a></h2>

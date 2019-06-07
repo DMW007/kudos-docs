@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#adding-reverse-proxy" tabindex="1" class="md-skip">
+      <a href="#configure-reverse-proxy" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -814,8 +814,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-reverse-proxy" title="Adding Reverse Proxy" class="md-nav__link">
-    Adding Reverse Proxy
+  <a href="#configure-reverse-proxy" title="Configure Reverse Proxy" class="md-nav__link">
+    Configure Reverse Proxy
   </a>
   
 </li>
@@ -1350,8 +1350,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#adding-reverse-proxy" title="Adding Reverse Proxy" class="md-nav__link">
-    Adding Reverse Proxy
+  <a href="#configure-reverse-proxy" title="Configure Reverse Proxy" class="md-nav__link">
+    Configure Reverse Proxy
   </a>
   
 </li>
@@ -1375,7 +1375,7 @@
                 
                   <h1>Web Server Config</h1>
                 
-                <h2 id="adding-reverse-proxy">Adding Reverse Proxy<a class="headerlink" href="#adding-reverse-proxy" title="Permanent link">&para;</a></h2>
+                <h2 id="configure-reverse-proxy">Configure Reverse Proxy<a class="headerlink" href="#configure-reverse-proxy" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Open WebSphere ISC</p>
@@ -1394,28 +1394,42 @@
 <p><img alt="example" src="/assets/connections/httpd2.png" /></p>
 </li>
 <li>
-<p>Add another VirtualHost after existing, with definition:</p>
+<p>Define the Virtual Host Reverse Proxy</p>
+<p>For details on these config options <a href="/boards/kubernetes/#ssl-network-setup-options">please see here</a></p>
+<p><strong>a) Boards as a Domain</strong></p>
 <pre><code>&lt;VirtualHost *:443&gt;
   ServerName [BOARDS-URL]
-
-  #Kudos Boards
   ProxyPreserveHost On
-  ProxyPass / http://[SERVER-IP]/
-  ProxyPassReverse / http://[SERVER-IP]/
-  #End Kudos Boards
+  ProxyPass / http://[KUBERNETES_NAME]/
+  ProxyPassReverse / http://[KUBERNETES_NAME]/
 
   SSLEnable
-    # Disable SSLv2
-    SSLProtocolDisable SSLv2
-    # Set strong ciphers
-    SSLCipherSpec TLS_RSA_WITH_AES_128_CBC_SHA
-    SSLCipherSpec TLS_RSA_WITH_AES_256_CBC_SHA
-    SSLCipherSpec SSL_RSA_WITH_3DES_EDE_CBC_SHA
+  # Disable SSLv2
+  SSLProtocolDisable SSLv2
+  # Set strong ciphers
+  SSLCipherSpec TLS_RSA_WITH_AES_128_CBC_SHA
+  SSLCipherSpec TLS_RSA_WITH_AES_256_CBC_SHA
+  SSLCipherSpec SSL_RSA_WITH_3DES_EDE_CBC_SHA
+&lt;/VirtualHost&gt;
+</code></pre>
+<p><strong>b) Boards as a path under Connections domain</strong></p>
+<p>Note: combine this with the existing VirtualHost entry</p>
+<pre><code>&lt;VirtualHost *:443&gt;
+  ServerName [CONNECTIONS_URL]
+
+  #Kudos Boards
+  ProxyPass "/boards" "http://[KUBERNETES_NAME]:[KUBERNETES_PORT]/boards"
+  ProxyPassReverse "/boards" "http://[KUBERNETES_NAME]:[KUBERNETES_PORT]/boards"
+  ProxyPass "/api-boards" "http://[KUBERNETES_NAME]:[KUBERNETES_PORT]/api-boards"
+  ProxyPassReverse "/api-boards" "http://[KUBERNETES_NAME]:[KUBERNETES_PORT]/api-boards"
+  #End Kudos Boards
 &lt;/VirtualHost&gt;
 </code></pre>
 <p>Where:</p>
-<p><code>[BOARDS-URL]</code> is the URL of your boards Deployment</br>
-  <code>[SERVER-IP]</code> is the IP of the master in your cluster</p>
+<p><code>[BOARDS-URL]</code> is the URL of your Boards deployment (as a domain)</br>
+  <code>[CONNECTIONS-URL]</code> is the URL of your IBM Connections deployment</br>
+  <code>[KUBERNETES_NAME]</code> is the hostname/IP of the master in your cluster</br>
+  <code>[KUBERNETES_PORT]</code> is the port of your Ingress Controller (ie 32080)</br></p>
 </li>
 </ol>
                 
