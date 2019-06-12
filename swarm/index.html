@@ -1359,47 +1359,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#advanced-logging-and-monitoring" title="Advanced (logging and monitoring)" class="md-nav__link">
-    Advanced (logging and monitoring)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recover-from-cluster-crash" title="Recover from Cluster crash" class="md-nav__link">
-    Recover from Cluster crash
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recover-from-service-crash" title="Recover from Service crash" class="md-nav__link">
-    Recover from Service crash
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rebalance-containers-on-nodes" title="Rebalance containers on Nodes" class="md-nav__link">
-    Rebalance containers on Nodes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
       
       
       
@@ -1534,47 +1493,6 @@
   <a href="#run-kudos-boards-and-other-apps-with-portainer" title="Run Kudos Boards (and other apps) with Portainer" class="md-nav__link">
     Run Kudos Boards (and other apps) with Portainer
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advanced-logging-and-monitoring" title="Advanced (logging and monitoring)" class="md-nav__link">
-    Advanced (logging and monitoring)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
-    Troubleshooting
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#recover-from-cluster-crash" title="Recover from Cluster crash" class="md-nav__link">
-    Recover from Cluster crash
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#recover-from-service-crash" title="Recover from Service crash" class="md-nav__link">
-    Recover from Service crash
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rebalance-containers-on-nodes" title="Rebalance containers on Nodes" class="md-nav__link">
-    Rebalance containers on Nodes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1794,38 +1712,6 @@ e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
 <hr />
 <h2 id="run-kudos-boards-and-other-apps-with-portainer">Run Kudos Boards (and other apps) with Portainer<a class="headerlink" href="#run-kudos-boards-and-other-apps-with-portainer" title="Permanent link">&para;</a></h2>
 <p>See <a href="/boards/swarm/">Kudos Boards for Docker Swarm</a> for a step by step guide to running Kudos Boards on your new environment.</p>
-<hr />
-<h2 id="advanced-logging-and-monitoring">Advanced (logging and monitoring)<a class="headerlink" href="#advanced-logging-and-monitoring" title="Permanent link">&para;</a></h2>
-<p>TODO</p>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h4 id="recover-from-cluster-crash">Recover from Cluster crash<a class="headerlink" href="#recover-from-cluster-crash" title="Permanent link">&para;</a></h4>
-<p>Start new cluster</p>
-<pre><code>docker swarm init --force-new-cluster --advertise-addr 10.142.0.12:2377
-</code></pre>
-<p>Check other Nodes automatically join new cluster</p>
-<pre><code>docker node ls
-</code></pre>
-<p>If they don't, use the join command provided, ie:</p>
-<pre><code>docker swarm join --token SWMTKN-1-1korweqob1x2530nc34uex84j03pa1e3x7qg5z2pt4bvt2fo5i-0aoijiczvso7socyzlrucbu8y 10.142.0.12:2377
-</code></pre>
-<p>List 'Down' nodes</p>
-<pre><code>docker node ls
-</code></pre>
-<p>Remove 'Down' nodes</p>
-<pre><code>docker node demote &lt;node_id&gt;
-docker node rm &lt;node_id&gt;
-</code></pre>
-<h4 id="recover-from-service-crash">Recover from Service crash<a class="headerlink" href="#recover-from-service-crash" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Run deploy stacks again</li>
-<li>Update each stack/service through Portainer</li>
-</ul>
-<h4 id="rebalance-containers-on-nodes">Rebalance containers on Nodes<a class="headerlink" href="#rebalance-containers-on-nodes" title="Permanent link">&para;</a></h4>
-<pre><code>docker service update --force &lt;stack&gt;_&lt;service&gt;
-</code></pre>
-<p>ie:</p>
-<pre><code>docker service update --force portainer_portainer proxy_proxy portainer_agent
-</code></pre>
                 
                   
                 
