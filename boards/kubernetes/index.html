@@ -684,8 +684,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-kudos-boards-namespace" title="Setup Kudos Boards namespace" class="md-nav__link">
-    Setup Kudos Boards namespace
+  <a href="#create-kudos-boards-namespace" title="Create Kudos Boards namespace" class="md-nav__link">
+    Create Kudos Boards namespace
   </a>
   
 </li>
@@ -712,8 +712,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-boards" title="Deploy Boards" class="md-nav__link">
-    Deploy Boards
+  <a href="#deploy-boards-services" title="Deploy Boards services" class="md-nav__link">
+    Deploy Boards services
   </a>
   
 </li>
@@ -1470,8 +1470,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-kudos-boards-namespace" title="Setup Kudos Boards namespace" class="md-nav__link">
-    Setup Kudos Boards namespace
+  <a href="#create-kudos-boards-namespace" title="Create Kudos Boards namespace" class="md-nav__link">
+    Create Kudos Boards namespace
   </a>
   
 </li>
@@ -1498,8 +1498,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-boards" title="Deploy Boards" class="md-nav__link">
-    Deploy Boards
+  <a href="#deploy-boards-services" title="Deploy Boards services" class="md-nav__link">
+    Deploy Boards services
   </a>
   
 </li>
@@ -1565,9 +1565,7 @@
 <li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a> is installed</li>
 <li><a href="https://docs.helm.sh/using_helm/#installing-helm">helm</a> is installed</li>
 <li>SMTP gateway setup for email notifications if required</li>
-<li>Ansible is installed, see <a href="/tools/ansible/">Ansible</a></li>
-<li><a href="/assets/config/boards-docker-ansible.zip">Kudos Boards ansible roles</a> downloaded and extracted</li>
-<li><a href="https://hub.docker.com">Dockerhub</a> account setup with access to Kudos Boards repository, send your account details to support@kudosboards.com if you don't already have this.</li>
+<li><a href="https://hub.docker.com">Dockerhub</a> account setup with access to Kudos Boards repository.<br>Please send your account details to <a href="mailto:support@kudosboards.com">support@kudosboards.com</a> if you don't already have this.</li>
 </ol>
 <hr />
 <h3 id="ssl-network-setup">SSL / Network setup<a class="headerlink" href="#ssl-network-setup" title="Permanent link">&para;</a></h3>
@@ -1620,73 +1618,68 @@
 <th>Provider</th>
 <th>Registration / Documentation</th>
 <th>Callback URL</th>
-<th>Scopes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>IBM Connections (on premise)</td>
+<td>IBM Connections<br>(on premise)</td>
 <td><a href="/boards/connections/auth-on-prem/">Kudos instructions</a></td>
-<td>[BOARDS_URL]/auth/connections/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/connections/callback</code></td>
 </tr>
 <tr>
 <td>Microsoft Office 365</td>
 <td><a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure app registrations</a></td>
-<td>[BOARDS_URL]/auth/msgraph/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/msgraph/callback</code></td>
 </tr>
 <tr>
 <td>Google</td>
 <td><a href="https://console.developers.google.com/apis/credentials">Google Console</a></td>
-<td>[BOARDS_URL]/auth/google/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/google/callback</code></td>
 </tr>
 <tr>
 <td>LinkedIn</td>
 <td><a href="https://www.linkedin.com/developers/apps">LinkedIn</a></td>
-<td>[BOARDS_URL]/auth/linkedin/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/linkedin/callback</code></td>
 </tr>
 <tr>
 <td>Facebook</td>
 <td><a href="https://developers.facebook.com/apps/2087069981334024/fb-login/settings/">Facebook developer centre</a></td>
-<td>[BOARDS_URL]/auth/facebook/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/facebook/callback</code></td>
 </tr>
 </tbody>
 </table>
 <hr />
 <h3 id="configure-kubectl">Configure kubectl<a class="headerlink" href="#configure-kubectl" title="Permanent link">&para;</a></h3>
-<p><strong>Kubernetes</strong></p>
-<ul>
-<li>copy \$HOME/kube/.config from the primary server to the same location locally (backup any existing local config)</li>
-</ul>
-<p><strong>IBM Cloud Private</strong></p>
-<ul>
-<li>Open ICP Console</li>
-<li>Go to <code>Admin</code> (top right)</li>
-<li>Click <code>Config Client</code></li>
-<li>Copy the contents shown</li>
-<li>Open your command line / terminal</li>
-<li>Paste the commands copied earlier and press enter</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kubernetes</strong></td>
+<td>copy <code>~/kube/.config</code> from the Kubernetes master server to the same location locally</br>(backup any existing local config)</td>
+</tr>
+<tr>
+<td><strong>IBM Cloud Private</strong></td>
+<td>- Open ICP Console</br>- Go to <code>Admin</code> (top right)</br>- Click <code>Config Client</code></br>- Copy the contents shown</br>- Open your command line / terminal</br>- Paste the commands copied earlier and press enter</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h3 id="setup-kudos-boards-namespace">Setup Kudos Boards namespace<a class="headerlink" href="#setup-kudos-boards-namespace" title="Permanent link">&para;</a></h3>
+<h3 id="create-kudos-boards-namespace">Create Kudos Boards namespace<a class="headerlink" href="#create-kudos-boards-namespace" title="Permanent link">&para;</a></h3>
 <pre><code>kubectl create namespace boards
 </code></pre>
 <hr />
 <h3 id="setup-storage">Setup Storage<a class="headerlink" href="#setup-storage" title="Permanent link">&para;</a></h3>
-<p>Kudos Boards uses mongodb database and S3 file storage, If you have these services already then you can use your existing details in the config below, otherwise you may include one or both of these as follows:</p>
-<p>a) Deploy both storage services</p>
-<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "storage"
-</code></pre>
-<p>b) Deploy mongodb only</p>
-<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "mongo"
-</code></pre>
-<p>c) Deploy S3 (using minio) only</p>
-<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "minio"
-</code></pre>
+<p>Kudos Boards requires a Mongo database and an S3 file storage. If you already have equivalent services already then you can use your existing details in the config below, otherwise you may follow our instructions to deploy one or both of these services as follows:</p>
+<ol>
+<li><a href="/boards/kubernetes/mongo">Mongo database</a></li>
+<li><a href="/boards/kubernetes/minio">S3 storage</a></li>
+</ol>
+<p><strong>Note:</strong> these tasks are very similar to each other and can be performed simultaneously</p>
 <hr />
 <h3 id="setup-secrets">Setup secrets<a class="headerlink" href="#setup-secrets" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1706,7 +1699,7 @@
 </ol>
 <hr />
 <h3 id="update-config-file">Update Config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
-<p>Open the file at boards_docker_ansible/roles/docker-boards/files/boards.yaml and update the values as below.</p>
+<p>Download our <a href="/assets/config/kubernetes/boards.yaml">config file</a> and update the values as below.</p>
 <p><strong>Kubernetes Variables</strong>:</p>
 <table>
 <thead>
@@ -1717,60 +1710,58 @@
 </thead>
 <tbody>
 <tr>
-<td>global.env.APP_URI</td>
-<td>Your BOARDS_URL</td>
+<td><code>global.env.APP_URI</code></td>
+<td>Your <code>BOARDS_URL</code></td>
 </tr>
 <tr>
-<td>global.env.MONGO_USER</td>
-<td>Your mongodb user, if using our storage above you may leave this commented out</td>
+<td><code>global.env.MONGO_USER</code></td>
+<td>MongoDB user</br>If using our storage above you may leave this commented out</td>
 </tr>
 <tr>
-<td>global.env.MONGO_PASSWORD</td>
-<td>Your mongodb password, if using our storage above you may leave this commented out</td>
+<td><code>global.env.MONGO_PASSWORD</code></td>
+<td>MongoDB password</br>If using our storage above you may leave this commented out</td>
 </tr>
 <tr>
-<td>global.env.MONGO_HOST</td>
-<td>Your mongodb host, if using our storage above you may leave the default</td>
+<td><code>global.env.MONGO_HOST</code></td>
+<td>MongoDB host</br>If using our storage above you may leave the default</td>
 </tr>
 <tr>
-<td>global.env.MONGO_PARAMS</td>
-<td>Your mongodb request parameters, if using our storage above you may leave the default</td>
+<td><code>global.env.MONGO_PARAMS</code></td>
+<td>MongoDB request parameters</br>If using our storage above you may leave the default</td>
 </tr>
 <tr>
-<td>global.env.S3_ENDPOINT</td>
-<td>Enter your S3 URL, if using our storage above you may leave the default</td>
+<td><code>global.env.S3_ENDPOINT</code></td>
+<td>S3 URL</br>If using our storage above you may leave the default</td>
 </tr>
 <tr>
-<td>global.env.S3_ACCESS_KEY</td>
-<td>Enter your S3 Access Key, if using our storage above you may leave the default</td>
+<td><code>global.env.S3_ACCESS_KEY</code></td>
+<td>S3 Access Key</br>If using our storage above you may leave the default</td>
 </tr>
 <tr>
-<td>global.env.S3_SECRET_KEY</td>
-<td>Enter your S3 Secret Key, if using our storage above you may leave the default</td>
+<td><code>global.env.S3_SECRET_KEY</code></td>
+<td>S3 Secret Key</br>If using our storage above you may leave the default</td>
 </tr>
 <tr>
-<td>boards.ingress.hosts</td>
-<td>Your API_URL without the protocol e.g. api.kudosboards.com</td>
+<td><code>boards.ingress.hosts</code></td>
+<td>Your <code>API_URL</code> without the protocol e.g. api.kudosboards.com</td>
 </tr>
 <tr>
-<td>webfront.ingress.hosts</td>
-<td>Your BOARDS_URL url as above without http</td>
+<td><code>webfront.ingress.hosts</code></td>
+<td>Your <code>BOARDS_URL</code> url as above without http</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Boards Variables</strong>:</p>
 <p>Follow instructions on <a href="/boards/env/common/">this page</a></p>
 <hr />
-<h3 id="deploy-boards">Deploy Boards<a class="headerlink" href="#deploy-boards" title="Permanent link">&para;</a></h3>
+<h3 id="deploy-boards-services">Deploy Boards services<a class="headerlink" href="#deploy-boards-services" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>deploy redis cache</p>
-<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "redis"
-</code></pre>
+<p>Download the <a href="/assets/config/kubernetes/kudos-boards-1.0.1.tgz">Boards helm chart</a></p>
 </li>
 <li>
-<p>deploy all boards services</p>
-<pre><code>ansible-playbook -i hosts/kubernetes.yml boards-docker.yml -v --tags "boards"
+<p>Install the Helm chart to deploy the Boards services</p>
+<pre><code>helm upgrade boards ./kudos-boards-1.0.1.tgz -i -f ./boards.yaml --namespace boards
 </code></pre>
 </li>
 </ol>

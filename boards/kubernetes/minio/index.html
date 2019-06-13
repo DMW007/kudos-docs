@@ -13,7 +13,7 @@
         <meta name="description" content="Enterprise productivity solutions">
       
       
-        <link rel="canonical" href="https://docs.kudosapps.com/swarm/">
+        <link rel="canonical" href="https://docs.kudosapps.com/boards/kubernetes/minio/">
       
       
         <meta name="author" content="Andrew Reynolds">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.ico">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
     
     
       
-        <title>Installation - Kudos Docs</title>
+        <title>Deploy S3 Storage - Kudos Docs</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../../../assets/javascripts/modernizr.962652e9.js"></script>
     
     
       
@@ -66,7 +66,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
       <link rel="stylesheet" href="/assets/css/custom.css">
@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#docker-swarm" tabindex="1" class="md-skip">
+      <a href="#deploy-s3-storage" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Installation
+                Deploy S3 Storage
               </span>
             
           
@@ -186,16 +186,14 @@
       
         
 
-  
-
-<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+<nav class="md-tabs" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href=".." title="Welcome" class="md-tabs__link">
+      <a href="../../.." title="Welcome" class="md-tabs__link md-tabs__link--active">
         Welcome
       </a>
     
@@ -207,7 +205,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../boards/" title="Kudos Boards" class="md-tabs__link">
+        <a href="../../" title="Kudos Boards" class="md-tabs__link">
           Kudos Boards
         </a>
       
@@ -220,7 +218,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../ideas/howto/" title="Kudos Ideas" class="md-tabs__link">
+        <a href="../../../ideas/howto/" title="Kudos Ideas" class="md-tabs__link">
           Kudos Ideas
         </a>
       
@@ -233,7 +231,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../buzzy/" title="Buzzy" class="md-tabs__link">
+        <a href="../../../buzzy/" title="Buzzy" class="md-tabs__link">
           Buzzy
         </a>
       
@@ -246,7 +244,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Docker Swarm" class="md-tabs__link md-tabs__link--active">
+        <a href="../../../swarm/" title="Docker Swarm" class="md-tabs__link">
           Docker Swarm
         </a>
       
@@ -299,7 +297,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Welcome" class="md-nav__link">
+    <a href="../../.." title="Welcome" class="md-nav__link">
       Welcome
     </a>
   </li>
@@ -330,7 +328,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/" title="Versions" class="md-nav__link">
+    <a href="../../" title="Versions" class="md-nav__link">
       Versions
     </a>
   </li>
@@ -361,7 +359,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/cloud/" title="Overview" class="md-nav__link">
+    <a href="../../cloud/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -392,7 +390,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/cloud/" title="IBM Connections Cloud" class="md-nav__link">
+    <a href="../../connections/cloud/" title="IBM Connections Cloud" class="md-nav__link">
       IBM Connections Cloud
     </a>
   </li>
@@ -423,7 +421,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/auth-hybrid/" title="Authentication" class="md-nav__link">
+    <a href="../../connections/auth-hybrid/" title="Authentication" class="md-nav__link">
       Authentication
     </a>
   </li>
@@ -435,7 +433,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/header-hybrid/" title="Connections Header" class="md-nav__link">
+    <a href="../../connections/header-hybrid/" title="Connections Header" class="md-nav__link">
       Connections Header
     </a>
   </li>
@@ -447,7 +445,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/apps-menu-hybrid/" title="Connections Apps Menu" class="md-nav__link">
+    <a href="../../connections/apps-menu-hybrid/" title="Connections Apps Menu" class="md-nav__link">
       Connections Apps Menu
     </a>
   </li>
@@ -459,7 +457,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/widgets-hybrid/" title="Connections Widgets" class="md-nav__link">
+    <a href="../../connections/widgets-hybrid/" title="Connections Widgets" class="md-nav__link">
       Connections Widgets
     </a>
   </li>
@@ -476,7 +474,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/verse/addin-hybrid/" title="IBM Verse" class="md-nav__link">
+    <a href="../../verse/addin-hybrid/" title="IBM Verse" class="md-nav__link">
       IBM Verse
     </a>
   </li>
@@ -507,7 +505,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/msgraph/overview/" title="Overview" class="md-nav__link">
+    <a href="../../msgraph/overview/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -519,7 +517,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/msgraph/getting-started/" title="Getting Started" class="md-nav__link">
+    <a href="../../msgraph/getting-started/" title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
   </li>
@@ -531,7 +529,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/msgraph/custom-tiles/" title="App Tile" class="md-nav__link">
+    <a href="../../msgraph/custom-tiles/" title="App Tile" class="md-nav__link">
       App Tile
     </a>
   </li>
@@ -543,7 +541,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/msgraph/teams/" title="Teams Integration" class="md-nav__link">
+    <a href="../../msgraph/teams/" title="Teams Integration" class="md-nav__link">
       Teams Integration
     </a>
   </li>
@@ -555,7 +553,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/msgraph/outlook/" title="Outlook Plugin" class="md-nav__link">
+    <a href="../../msgraph/outlook/" title="Outlook Plugin" class="md-nav__link">
       Outlook Plugin
     </a>
   </li>
@@ -567,7 +565,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/msgraph/sharepoint/" title="Sharepoint Pages" class="md-nav__link">
+    <a href="../../msgraph/sharepoint/" title="Sharepoint Pages" class="md-nav__link">
       Sharepoint Pages
     </a>
   </li>
@@ -584,7 +582,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/auth0/" title="Auth0" class="md-nav__link">
+    <a href="../../auth0/" title="Auth0" class="md-nav__link">
       Auth0
     </a>
   </li>
@@ -625,7 +623,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/kubernetes/" title="For Kubernetes" class="md-nav__link">
+    <a href="../" title="For Kubernetes" class="md-nav__link">
       For Kubernetes
     </a>
   </li>
@@ -637,7 +635,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/swarm/" title="For Swarm" class="md-nav__link">
+    <a href="../../swarm/" title="For Swarm" class="md-nav__link">
       For Swarm
     </a>
   </li>
@@ -668,7 +666,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/env/common/" title="Environment" class="md-nav__link">
+    <a href="../../env/common/" title="Environment" class="md-nav__link">
       Environment
     </a>
   </li>
@@ -680,7 +678,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/env/teams/" title="Team Logins" class="md-nav__link">
+    <a href="../../env/teams/" title="Team Logins" class="md-nav__link">
       Team Logins
     </a>
   </li>
@@ -735,7 +733,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/auth-on-prem/" title="Authentication" class="md-nav__link">
+    <a href="../../connections/auth-on-prem/" title="Authentication" class="md-nav__link">
       Authentication
     </a>
   </li>
@@ -747,7 +745,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/header-on-prem/" title="Connections Header" class="md-nav__link">
+    <a href="../../connections/header-on-prem/" title="Connections Header" class="md-nav__link">
       Connections Header
     </a>
   </li>
@@ -759,7 +757,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/apps-menu-on-prem/" title="Connections Apps Menu" class="md-nav__link">
+    <a href="../../connections/apps-menu-on-prem/" title="Connections Apps Menu" class="md-nav__link">
       Connections Apps Menu
     </a>
   </li>
@@ -771,7 +769,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/widgets-on-prem/" title="Connections Widgets" class="md-nav__link">
+    <a href="../../connections/widgets-on-prem/" title="Connections Widgets" class="md-nav__link">
       Connections Widgets
     </a>
   </li>
@@ -783,7 +781,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/connections/httpd/" title="Web Server Config" class="md-nav__link">
+    <a href="../../connections/httpd/" title="Web Server Config" class="md-nav__link">
       Web Server Config
     </a>
   </li>
@@ -800,7 +798,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/verse/addin-on-prem/" title="IBM Verse" class="md-nav__link">
+    <a href="../../verse/addin-on-prem/" title="IBM Verse" class="md-nav__link">
       IBM Verse
     </a>
   </li>
@@ -822,7 +820,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/hybrid/" title="Boards Hybrid" class="md-nav__link">
+    <a href="../../hybrid/" title="Boards Hybrid" class="md-nav__link">
       Boards Hybrid
     </a>
   </li>
@@ -853,7 +851,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/troubleshooting/conn-hybrid/" title="Boards Hybrid" class="md-nav__link">
+    <a href="../../troubleshooting/conn-hybrid/" title="Boards Hybrid" class="md-nav__link">
       Boards Hybrid
     </a>
   </li>
@@ -865,7 +863,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/troubleshooting/conn-on-prem/" title="Boards Docker" class="md-nav__link">
+    <a href="../../troubleshooting/conn-on-prem/" title="Boards Docker" class="md-nav__link">
       Boards Docker
     </a>
   </li>
@@ -877,7 +875,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/troubleshooting/websphere/" title="Boards WebSphere" class="md-nav__link">
+    <a href="../../troubleshooting/websphere/" title="Boards WebSphere" class="md-nav__link">
       Boards WebSphere
     </a>
   </li>
@@ -889,7 +887,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/troubleshooting/office365/" title="Office 365 for Business" class="md-nav__link">
+    <a href="../../troubleshooting/office365/" title="Office 365 for Business" class="md-nav__link">
       Office 365 for Business
     </a>
   </li>
@@ -925,7 +923,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/knowledgebase/" title="Knowledge Base & Support" class="md-nav__link">
+    <a href="../../howto/knowledgebase/" title="Knowledge Base & Support" class="md-nav__link">
       Knowledge Base & Support
     </a>
   </li>
@@ -937,7 +935,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/getting-started-with-kudos-boards/" title="Getting Started with Kudos Boards" class="md-nav__link">
+    <a href="../../howto/getting-started-with-kudos-boards/" title="Getting Started with Kudos Boards" class="md-nav__link">
       Getting Started with Kudos Boards
     </a>
   </li>
@@ -949,7 +947,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/adding-boards-to-teams/" title="Adding Boards to Microsoft Teams" class="md-nav__link">
+    <a href="../../howto/adding-boards-to-teams/" title="Adding Boards to Microsoft Teams" class="md-nav__link">
       Adding Boards to Microsoft Teams
     </a>
   </li>
@@ -961,7 +959,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/use-verse/" title="Using IBM Verse with Kudos Boards" class="md-nav__link">
+    <a href="../../howto/use-verse/" title="Using IBM Verse with Kudos Boards" class="md-nav__link">
       Using IBM Verse with Kudos Boards
     </a>
   </li>
@@ -973,7 +971,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/use-auth0/" title="Using Auth0 with Kudos Boards" class="md-nav__link">
+    <a href="../../howto/use-auth0/" title="Using Auth0 with Kudos Boards" class="md-nav__link">
       Using Auth0 with Kudos Boards
     </a>
   </li>
@@ -985,7 +983,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/quick-tips-for-boards/" title="Quick Tips for Boards" class="md-nav__link">
+    <a href="../../howto/quick-tips-for-boards/" title="Quick Tips for Boards" class="md-nav__link">
       Quick Tips for Boards
     </a>
   </li>
@@ -997,7 +995,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/accessing-global-templates/" title="Accessing Global Templates" class="md-nav__link">
+    <a href="../../howto/accessing-global-templates/" title="Accessing Global Templates" class="md-nav__link">
       Accessing Global Templates
     </a>
   </li>
@@ -1009,7 +1007,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/adding-members-to-a-board/" title="Adding Members to a Board" class="md-nav__link">
+    <a href="../../howto/adding-members-to-a-board/" title="Adding Members to a Board" class="md-nav__link">
       Adding Members to a Board
     </a>
   </li>
@@ -1021,7 +1019,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/timeline-view-in-boards/" title="Timeline View in Boards" class="md-nav__link">
+    <a href="../../howto/timeline-view-in-boards/" title="Timeline View in Boards" class="md-nav__link">
       Timeline View in Boards
     </a>
   </li>
@@ -1033,7 +1031,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/mind-map-view/" title="Mind Map View" class="md-nav__link">
+    <a href="../../howto/mind-map-view/" title="Mind Map View" class="md-nav__link">
       Mind Map View
     </a>
   </li>
@@ -1045,7 +1043,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/creating-templates/" title="Creating Templates" class="md-nav__link">
+    <a href="../../howto/creating-templates/" title="Creating Templates" class="md-nav__link">
       Creating Templates
     </a>
   </li>
@@ -1057,7 +1055,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/archiving-and-restoring/" title="Archiving and Restoring" class="md-nav__link">
+    <a href="../../howto/archiving-and-restoring/" title="Archiving and Restoring" class="md-nav__link">
       Archiving and Restoring
     </a>
   </li>
@@ -1069,7 +1067,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../boards/howto/permissions/" title="Permissions in Kudos Boards" class="md-nav__link">
+    <a href="../../howto/permissions/" title="Permissions in Kudos Boards" class="md-nav__link">
       Permissions in Kudos Boards
     </a>
   </li>
@@ -1110,7 +1108,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ideas/howto/" title="How To Guide" class="md-nav__link">
+    <a href="../../../ideas/howto/" title="How To Guide" class="md-nav__link">
       How To Guide
     </a>
   </li>
@@ -1122,7 +1120,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../ideas/cloud-setup/" title="Connections Cloud" class="md-nav__link">
+    <a href="../../../ideas/cloud-setup/" title="Connections Cloud" class="md-nav__link">
       Connections Cloud
     </a>
   </li>
@@ -1158,7 +1156,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../buzzy/" title="Overview" class="md-nav__link">
+    <a href="../../../buzzy/" title="Overview" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -1189,7 +1187,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../buzzy/buzzy-icp/" title="IBM ICP (Kubernetes)" class="md-nav__link">
+    <a href="../../../buzzy/buzzy-icp/" title="IBM ICP (Kubernetes)" class="md-nav__link">
       IBM ICP (Kubernetes)
     </a>
   </li>
@@ -1201,7 +1199,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../buzzy/buzzy-wasconfig/" title="WAS Config" class="md-nav__link">
+    <a href="../../../buzzy/buzzy-wasconfig/" title="WAS Config" class="md-nav__link">
       WAS Config
     </a>
   </li>
@@ -1213,7 +1211,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../buzzy/buzzy-widgets/" title="Connections Widgets" class="md-nav__link">
+    <a href="../../../buzzy/buzzy-widgets/" title="Connections Widgets" class="md-nav__link">
       Connections Widgets
     </a>
   </li>
@@ -1233,12 +1231,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       Docker Swarm
@@ -1254,119 +1250,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Installation
-      </label>
-    
-    <a href="./" title="Installation" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../swarm/" title="Installation" class="md-nav__link">
       Installation
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview-introduction" title="Overview / Introduction" class="md-nav__link">
-    Overview / Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#server-information" title="Server information" class="md-nav__link">
-    Server information
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#network-setup" title="Network setup" class="md-nav__link">
-    Network setup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-ansible" title="Setup Ansible" class="md-nav__link">
-    Setup Ansible
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#server-access" title="Server access" class="md-nav__link">
-    Server access
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#config" title="Config" class="md-nav__link">
-    Config
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy" title="Deploy" class="md-nav__link">
-    Deploy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-dns-records" title="Update DNS records" class="md-nav__link">
-    Update DNS records
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#portainer-setup" title="Portainer Setup" class="md-nav__link">
-    Portainer Setup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#storage-mongo-s3" title="Storage (Mongo &amp; S3)" class="md-nav__link">
-    Storage (Mongo &amp; S3)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-kudos-boards-and-other-apps-with-portainer" title="Run Kudos Boards (and other apps) with Portainer" class="md-nav__link">
-    Run Kudos Boards (and other apps) with Portainer
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -1376,7 +1264,7 @@
 
 
   <li class="md-nav__item">
-    <a href="storage/" title="Storage" class="md-nav__link">
+    <a href="../../../swarm/storage/" title="Storage" class="md-nav__link">
       Storage
     </a>
   </li>
@@ -1388,7 +1276,7 @@
 
 
   <li class="md-nav__item">
-    <a href="troubleshooting/" title="Troubleshooting" class="md-nav__link">
+    <a href="../../../swarm/troubleshooting/" title="Troubleshooting" class="md-nav__link">
       Troubleshooting
     </a>
   </li>
@@ -1420,78 +1308,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview-introduction" title="Overview / Introduction" class="md-nav__link">
-    Overview / Introduction
+  <a href="#pre-requisites" title="Pre-Requisites" class="md-nav__link">
+    Pre-Requisites
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#server-information" title="Server information" class="md-nav__link">
-    Server information
+  <a href="#update-config-file" title="Update config file" class="md-nav__link">
+    Update config file
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#network-setup" title="Network setup" class="md-nav__link">
-    Network setup
+  <a href="#deploy-instructions" title="Deploy instructions" class="md-nav__link">
+    Deploy instructions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#setup-ansible" title="Setup Ansible" class="md-nav__link">
-    Setup Ansible
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#server-access" title="Server access" class="md-nav__link">
-    Server access
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#config" title="Config" class="md-nav__link">
-    Config
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy" title="Deploy" class="md-nav__link">
-    Deploy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#update-dns-records" title="Update DNS records" class="md-nav__link">
-    Update DNS records
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#portainer-setup" title="Portainer Setup" class="md-nav__link">
-    Portainer Setup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#storage-mongo-s3" title="Storage (Mongo &amp; S3)" class="md-nav__link">
-    Storage (Mongo &amp; S3)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-kudos-boards-and-other-apps-with-portainer" title="Run Kudos Boards (and other apps) with Portainer" class="md-nav__link">
-    Run Kudos Boards (and other apps) with Portainer
+  <a href="#outcomes" title="Outcomes" class="md-nav__link">
+    Outcomes
   </a>
   
 </li>
@@ -1513,206 +1352,111 @@
               
                 
                 
-                <h1 id="docker-swarm">Docker Swarm<a class="headerlink" href="#docker-swarm" title="Permanent link">&para;</a></h1>
-<h2 id="overview-introduction">Overview / Introduction<a class="headerlink" href="#overview-introduction" title="Permanent link">&para;</a></h2>
-<p>This document will step through setting up a functional docker swarm environment that includes:</p>
-<ul>
-<li>Shared storage with nfs</li>
-<li>http(s) proxy <em>traefik</em></li>
-<li>Management interface <em>portainer</em></li>
-<li>Database <em>mongo</em> (optional)</li>
-<li>S3 Object storage <em>minio</em> (optional)</li>
-<li>Logging <em>elk stack</em> - (optional)</li>
-<li>Monitoring <em>prometheus/grafana</em> - (optional)</li>
-</ul>
+                <h1 id="deploy-s3-storage">Deploy S3 Storage<a class="headerlink" href="#deploy-s3-storage" title="Permanent link">&para;</a></h1>
+<p>Kudos Boards requires an S3 object store. This documentation will deploy a Minio S3 storage container into the Kubernetes setup.</p>
+<p>If you already have externally hosted S3 storage please skip to the <a href="/boards/kubernetes/minio/#outcomes">Outcomes section</a> to determine your equivalent connection parameters.</p>
+<p>You can also email us for support at <a href="mailto:support@kudosboards.com">support@kudosboards.com</a></p>
+<h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
+<ol>
+<li><a href="/assets/config/kubernetes/minio.yaml">Config file</a> downloaded</li>
+</ol>
 <hr />
-<h2 id="server-information">Server information<a class="headerlink" href="#server-information" title="Permanent link">&para;</a></h2>
-<p>As the name swarm suggests, this setup is designed to run across a number of servers (referred to as nodes). ISW recommends that the minimum number of servers you should start with is 4, being one for the NFS server and http gateway and 3 swarm managers. You may start with small VMs to set this up and expand them as your need increases (either by extending cores and ram on the existing servers or by adding more manager/worker nodes to your swarm).</p>
-<p>This document will assume the following setup:</p>
-<ul>
-<li>Gateway server (CentOS)</li>
-<li>3 Swarm managers (CoreOS)</li>
-</ul>
-<p>If you have more managers or workers just extend the config where indicated below.</p>
-<p>If you are testing this setup, you can get away with quite small servers (we have had success with 2 cores and 1.7gb ram) however if you plan to include the logging and/or monitoring services then you should expect to dedicate an additional 1gb ram minimum for each of these sevices.</p>
-<p>The Gateway Server will be used for storing all persistent data in nfs shares, if you are setting this environment up for a production system then you should ensure that you have a suitably performant disk for the path <code>/data</code> on this server, you should also ensure that this folder is backed up appropriately.</p>
+<h3 id="update-config-file">Update config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th></th>
-<th>Test</th>
-<th>Small (&lt;1000 users)</th>
-<th>Large (&gt;1000 users)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Gateway</strong></td>
-<td>1</td>
-<td>1</td>
-<td>1</td>
-</tr>
-<tr>
-<td><strong>Managers</strong></td>
-<td>3</td>
-<td>3</td>
-<td>3</td>
-</tr>
-<tr>
-<td><strong>Workers</strong></td>
-<td>0</td>
-<td>0</td>
-<td>1 per extra 5000 users</td>
-</tr>
-<tr>
-<td><strong>Memory</strong></td>
-<td>2GB</td>
-<td>4GB</td>
-<td>8GB</td>
-</tr>
-<tr>
-<td><strong>CPU</strong></td>
-<td>2</td>
-<td>2</td>
-<td>4</td>
-</tr>
-<tr>
-<td><strong>Disk (Nodes)</strong></td>
-<td>20GB</td>
-<td>40GB</td>
-<td>100GB min</td>
-</tr>
-<tr>
-<td><strong>Disk (Gateway)</strong></td>
-<td>40GB</td>
-<td>200GB</td>
-<td>1000GB min</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="network-setup">Network setup<a class="headerlink" href="#network-setup" title="Permanent link">&para;</a></h2>
-<p>The setup below will establish some internal networking rules to help protect your environment.<br />
-When configuring the servers, you will need to enable the following network rules:</p>
-<ul>
-<li>http(s) traffic should be allowed to the Gateway only</li>
-<li>ssh traffic should be allowed to all servers</li>
-<li>Where possible all servers should be on an additional (internal only) subnet, this allows us to further lock down access to NFS shares</li>
-</ul>
-<p><img alt="Network Diagram" src="/assets/swarm-net.png" /></p>
-<hr />
-<h2 id="setup-ansible">Setup Ansible<a class="headerlink" href="#setup-ansible" title="Permanent link">&para;</a></h2>
-<p>See <a href="/tools/ansible/">Ansible setup guide</a>.</p>
-<p>Download and extract <a href="/assets/docker-swarm-blank.zip">This zip file</a></p>
-<hr />
-<h2 id="server-access">Server access<a class="headerlink" href="#server-access" title="Permanent link">&para;</a></h2>
-<p>Ansible uses ssh to communicate with the servers so you'll need to be able to access them from your shell directly.</p>
-<p>The ideal way to achieve this is to setup key based authentication, however there are workarounds that can be done if you have to use password based authentication.</p>
-<p>For more info on setting up an ssh private key, see <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2">this tutorial</a></p>
-<p>As mentioned in the linked article, we will need to add each of our servers to our local list of known hosts, this is done by manually connecting to each of them for our shell.</p>
-<pre><code>ssh -i path/to/keyfile &lt;username&gt;@&lt;server_ip&gt;
-e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
-</code></pre>
-<hr />
-<h2 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h2>
-<p>Download <a href="/assets/config/swarm/servers.yml">this hosts file</a> and update the values as follows:</p>
-<table>
-<thead>
-<tr>
+<th>Line</th>
 <th>Key</th>
+<th>Default Value</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>all.hosts.gateway.ansible_host</td>
-<td>IP For Gateway server accessible from your machine</td>
+<td>21</td>
+<td><code>nfs.path</code></td>
+<td><code>/pv-kudos/minio</code></td>
+<td>Path to storage location</td>
 </tr>
 <tr>
-<td>all.hosts.nfs_server.ansible_host</td>
-<td>IP For Gateway server accessible from your machine</td>
+<td>22</td>
+<td><code>nfs.server</code></td>
+<td><code>STORAGE_SERVER_IP</code></td>
+<td>IP of NFS server</br>ie <code>192.168.10.50</code></td>
 </tr>
 <tr>
-<td>all.hosts.nfs_server.internal_ip</td>
-<td>internal IP For Gateway server, if you do not have an internal subnet, use the same IP as above</td>
+<td>69</td>
+<td><code>MINIO_ACCESS_KEY</code></td>
+<td><code>ioueygr4t589</code></td>
+<td>Access credential</td>
 </tr>
 <tr>
-<td>all.hosts.manager(1,2,3).ansible_host</td>
-<td>IP For Manager node accessible from your machine</td>
-</tr>
-<tr>
-<td>all.hosts.manager(1,2,3).internal_ip</td>
-<td>internal IP For Manager node, if you do not have an internal subnet, use the same IP as above</td>
-</tr>
-<tr>
-<td>all.vars.ansible_user</td>
-<td>Your username on all servers</td>
-</tr>
-<tr>
-<td>all.vars.ansible_ssh_private_key_file</td>
-<td>Full path to your keyfile (leave blank if using password auth)</td>
-</tr>
-<tr>
-<td>all.vars.swarm_ip_mask</td>
-<td>ip mask that matches your internal subnet e.g. 10.10.10.10/24, or that matches all swarm nodes if you do not have an internal subnet</td>
-</tr>
-<tr>
-<td>all.vars.ssl_certs</td>
-<td>For ssl to work on your environment, you need to have a pem encoded certificate and keyfile for each domain you plan to serve on. You should name these files name.crt and name.key and then add all of the names in this field</td>
-</tr>
-<tr>
-<td>all.vars.dashboard_host</td>
-<td>The domain name for your portainer dashboard</td>
-</tr>
-<tr>
-<td>all.vars.proxy_dashboard_host</td>
-<td>The domain name for your traefik proxy dashboard</td>
-</tr>
-<tr>
-<td>all.vars.monitoring</td>
-<td>This section will be covered in Advanced below, you should get the swarm up and running first before adding monitoring</td>
-</tr>
-<tr>
-<td>all.children</td>
-<td>This section of the config file is for defining where your nodes will sit, please follow the instructions provided in the file itself, adding all nodes to the coreos group, and managers and workers to their respective groups</td>
+<td>71</td>
+<td><code>MINIO_SECRET_KEY</code></td>
+<td><code>7a863d41-2d8f-4143-bc8a-02501edbea6f</code></td>
+<td>Access credential</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="deploy">Deploy<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h2>
+<h3 id="deploy-instructions">Deploy instructions<a class="headerlink" href="#deploy-instructions" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Save your config file in the hosts directory</li>
-<li>run the deploy playbook:<pre><code>ansible-playbook -i hosts/servers.yml deploy.yml -v
+<li>
+<p>Create the folder at <code>nfs.path</code> location on the <code>nfs.server</code> with access <code>777</code></p>
+<p><strong>Note:</strong> please ensure sufficient storage is available (ie 100GB)</p>
+</li>
+<li>
+<p>Ensure each Node in your Kubernetes cluster can mount this location.</p>
+<p>Please modify the file <code>/etc/exports</code> on your NFS Server to include this line</p>
+<pre><code>&lt;NFS_PATH_FOR_MINIO&gt; &lt;IP_RANGE_OF_YOUR_SERVERS&gt;/&lt;SUBNET_MASK&gt;(rw,no_root_squash)
+</code></pre>
+<p>For example:</p>
+<pre><code>/pv-kudos/minio 192.168.0.0/255.255.0.0(rw,no_root_squash)
+</code></pre>
+<p>Apply new NFS storage to exports</p>
+<pre><code>exportfs -ra
+</code></pre>
+</li>
+<li>
+<p>Install Minio</p>
+<pre><code>kubectl apply -f ./minio.yaml
 </code></pre>
 </li>
 </ol>
 <hr />
-<h2 id="update-dns-records">Update DNS records<a class="headerlink" href="#update-dns-records" title="Permanent link">&para;</a></h2>
-<p>Ensure that DNS records for your portainer dashbaord and traefik dashboard as defined in your config file are pointing to your Gateway server</p>
-<hr />
-<h2 id="portainer-setup">Portainer Setup<a class="headerlink" href="#portainer-setup" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>Open Dashboard as defined in <code>{{dashboard_host}}</code> above</p>
-</li>
-<li>
-<p>Create admin user when prompted</p>
-</li>
-<li>
-<p>Add Dockerhub auth</p>
-<ul>
-<li>Open Registries</li>
-<li>Tick Authentication</li>
-<li>add Username, Password</li>
-</ul>
-</li>
-</ol>
-<hr />
-<h2 id="storage-mongo-s3">Storage (Mongo &amp; S3)<a class="headerlink" href="#storage-mongo-s3" title="Permanent link">&para;</a></h2>
-<p>Kudos Boards requires a Mongo database and an S3 object store.  If you do not already have your own externally hosted services for this, please follow <a href="/swarm/storage/">this documentation</a> to deploy MongoDB and Minio (S3) containers into your Swarm setup.</p>
-<hr />
-<h2 id="run-kudos-boards-and-other-apps-with-portainer">Run Kudos Boards (and other apps) with Portainer<a class="headerlink" href="#run-kudos-boards-and-other-apps-with-portainer" title="Permanent link">&para;</a></h2>
-<p>See <a href="/boards/swarm/">Kudos Boards for Docker Swarm</a> for a step by step guide to running Kudos Boards on your new environment.</p>
+<h3 id="outcomes">Outcomes<a class="headerlink" href="#outcomes" title="Permanent link">&para;</a></h3>
+<p>The following are the parameters required to connect to this S3 storage. You will need these later in the application setup. If you have your own S3 storage, please substitute your values.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>S3_ENDPOINT</code></td>
+<td><code>minio-service</code></td>
+<td>Hostname of this service</br>(as per line 84 of config)</td>
+</tr>
+<tr>
+<td><code>S3_ACCESS_KEY</code></td>
+<td><code>ioueygr4t589</code></td>
+<td>Credential configured above</td>
+</tr>
+<tr>
+<td><code>S3_SECRET_KEY</code></td>
+<td><code>7a863d41-2d8f-4143-bc8a-02501edbea6f</code></td>
+<td>Credential configured above</td>
+</tr>
+<tr>
+<td><code>S3_BUCKET</code></td>
+<td><code>kudos-boards</code></td>
+<td>Default storage bucket</td>
+</tr>
+</tbody>
+</table>
                 
                   
                 
@@ -1730,41 +1474,6 @@ e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
         
 <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../buzzy/buzzy-widgets/" title="Connections Widgets" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Connections Widgets
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="storage/" title="Storage" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Storage
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
@@ -1778,7 +1487,7 @@ e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
       
         
   <div class="md-footer-social">
-    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    <link rel="stylesheet" href="../../../assets/fonts/font-awesome.css">
     
       <a href="https://github.com/isw-kudos" class="md-footer-social__link fa fa-github"></a>
     
@@ -1797,9 +1506,9 @@ e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../../../assets/javascripts/application.a353778b.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
       
     
   </body>

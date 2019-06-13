@@ -1467,7 +1467,7 @@
 <li>Docker Swarm with Portainer installed. <a href="/swarm/">Guide here</a></li>
 <li>Storage - an accessible MongoDB and S3 object store. <a href="/swarm/storage/">Guide here</a></li>
 <li>SMTP gateway setup for email notifications</li>
-<li><a href="/assets/config/boards-swarm.yml">Config File</a> downloaded</li>
+<li><a href="/assets/config/swarm/boards.yml">Config File</a> downloaded</li>
 <li>Dockerhub account with access to Kudos Boards repository.</li>
 </ol>
 <p>Send your account details to <a href="mailto:support@kudosboards.com">support@kudosboards.com</a> if you don't already have this.</p>
@@ -1484,39 +1484,33 @@
 <th>Provider</th>
 <th>Registration / Documentation</th>
 <th>Callback URL</th>
-<th>Scopes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>IBM Connections (on premise)</td>
 <td><a href="/boards/connections/auth-on-prem/">Kudos instructions</a></td>
-<td>[BOARDS_URL]/auth/connections/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/connections/callback</code></td>
 </tr>
 <tr>
 <td>Microsoft Office 365</td>
 <td><a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure app registrations</a></td>
-<td>[BOARDS_URL]/auth/msgraph/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/msgraph/callback</code></td>
 </tr>
 <tr>
 <td>Google</td>
 <td><a href="https://console.developers.google.com/apis/credentials">Google Console</a></td>
-<td>[BOARDS_URL]/auth/google/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/google/callback</code></td>
 </tr>
 <tr>
 <td>LinkedIn</td>
 <td><a href="https://www.linkedin.com/developers/apps">LinkedIn</a></td>
-<td>[BOARDS_URL]/auth/linkedin/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/linkedin/callback</code></td>
 </tr>
 <tr>
 <td>Facebook</td>
 <td><a href="https://developers.facebook.com/apps/2087069981334024/fb-login/settings/">Facebook developer centre</a></td>
-<td>[BOARDS_URL]/auth/facebook/callback</td>
-<td></td>
+<td><code>[BOARDS_URL]/auth/facebook/callback</code></td>
 </tr>
 </tbody>
 </table>
@@ -1532,23 +1526,23 @@
 </thead>
 <tbody>
 <tr>
-<td>x-minio-access</td>
-<td>Your minio ACCESS KEY as defined in your docker swarm config</td>
+<td><code>x-minio-access</code></td>
+<td>Your minio <code>ACCESS_KEY</code> as defined in your docker swarm config</td>
 </tr>
 <tr>
-<td>x-minio-secret</td>
-<td>Your minio SECRET KEY as defined in your docker swarm config</td>
+<td><code>x-minio-secret</code></td>
+<td>Your minio <code>SECRET_KEY</code> as defined in your docker swarm config</td>
 </tr>
 <tr>
-<td>x-app-env.APP_URI</td>
+<td><code>x-app-env.APP_URI</code></td>
 <td>Your <code>[BOARDS_URL]</code></td>
 </tr>
 <tr>
-<td>services.webfront.deploy.labels</td>
+<td><code>services.webfront.deploy.labels</code></td>
 <td>Update the <code>traefik.frontend.rule</code> your <code>[BOARDS_URL]</code></td>
 </tr>
 <tr>
-<td>services.core.deploy.labels</td>
+<td><code>services.core.deploy.labels</code></td>
 <td>Update the <code>traefik.frontend.rule</code> with your <code>[API_URL]</code></td>
 </tr>
 </tbody>
