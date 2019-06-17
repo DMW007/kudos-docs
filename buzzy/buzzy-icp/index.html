@@ -1251,8 +1251,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#login-to-kubectl" title="Login to kubectl" class="md-nav__link">
-    Login to kubectl
+  <a href="#configure-kubectl" title="Configure kubectl" class="md-nav__link">
+    Configure kubectl
   </a>
   
 </li>
@@ -1432,8 +1432,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#login-to-kubectl" title="Login to kubectl" class="md-nav__link">
-    Login to kubectl
+  <a href="#configure-kubectl" title="Configure kubectl" class="md-nav__link">
+    Configure kubectl
   </a>
   
 </li>
@@ -1498,10 +1498,10 @@
                 
                 
                 <h1 id="buzzy-for-connections-on-prem-help-guide">Buzzy for Connections On-Prem Help Guide<a class="headerlink" href="#buzzy-for-connections-on-prem-help-guide" title="Permanent link">&para;</a></h1>
-<p>Basic instructions for deploying buzzy into IBM Spectrum for on-premise IBM Connections environments</p>
+<p>Basic instructions for deploying buzzy into Kubernetes -or- IBM Cloud Private for on-premise IBM Connections environments</p>
 <h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
 <ol>
-<li>IBM Cloud Private is installed and running</li>
+<li>Kubernetes -or- IBM Cloud Private is installed and running</li>
 <li>WebSphere environment with Web Server</li>
 <li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a> is installed</li>
 <li>mongodb setup and running</li>
@@ -1509,15 +1509,20 @@
 <li><a href="/assets/config/buzzy.yml">Config file</a> downloaded</li>
 <li>Dockerhub account setup with access to Buzzy repository</li>
 </ol>
-<h3 id="login-to-kubectl">Login to kubectl<a class="headerlink" href="#login-to-kubectl" title="Permanent link">&para;</a></h3>
-<ol>
+<h3 id="configure-kubectl">Configure kubectl<a class="headerlink" href="#configure-kubectl" title="Permanent link">&para;</a></h3>
+<p><strong>Kubernetes</strong></p>
+<ul>
+<li>copy \$HOME/kube/.config from the primary server to the same location locally (backup any existing local config)</li>
+</ul>
+<p><strong>IBM Cloud Private</strong></p>
+<ul>
 <li>Open ICP Console</li>
 <li>Go to <code>Admin</code> (top right)</li>
 <li>Click <code>Config Client</code></li>
 <li>Copy the contents shown</li>
-<li>Open your command line (cmd)</li>
+<li>Open your command line / terminal</li>
 <li>Paste the commands copied earlier and press enter</li>
-</ol>
+</ul>
 <h3 id="setup-buzzy-namespace">Setup Buzzy namespace<a class="headerlink" href="#setup-buzzy-namespace" title="Permanent link">&para;</a></h3>
 <pre><code>kubectl create namespace buzzy
 </code></pre>
@@ -1543,7 +1548,7 @@
 <tr>
 <td>spec.containers.env.value</td>
 <td>50</td>
-<td>URL you are deploying Buzzy to</td>
+<td>URL you are deploying Buzzy to, including https://</td>
 </tr>
 <tr>
 <td>spec.containers.env.value</td>
@@ -1562,47 +1567,52 @@
 </tr>
 <tr>
 <td>spec.containers.env.AWS_BUZZY_FILES</td>
-<td>68-74</td>
+<td>71-77</td>
 <td>Your individual AWS details for file storage</td>
 </tr>
 <tr>
-<td>spec.containers.env.BUZZY_ADMIN_IDS</td>
+<td>spec.containers.env.MAIL_URL</td>
 <td>126</td>
+<td>Enter your SMTP details as above</td>
+</tr>
+<tr>
+<td>spec.containers.env.BUZZY_ADMIN_IDS</td>
+<td>128</td>
 <td>Enter Admin user ids</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.AWS_BUZZY_FILES</td>
-<td>228</td>
+<td>230</td>
 <td>More AWS details for files</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.NAME</td>
-<td>364</td>
+<td>366</td>
 <td>Company Name</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIN</td>
-<td>367</td>
+<td>369</td>
 <td>URL of your main logo</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIL</td>
-<td>368</td>
+<td>370</td>
 <td>URL of us in Email</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.EMAIL_FOOTER</td>
-<td>371</td>
+<td>373</td>
 <td>Email Footer</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.PROMO_URL</td>
-<td>374</td>
+<td>376</td>
 <td>Splash image</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.WELCOME_IMAGE</td>
-<td>375</td>
+<td>377</td>
 <td>Welcome Image</td>
 </tr>
 </tbody>
