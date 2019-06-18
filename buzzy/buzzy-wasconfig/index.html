@@ -1270,6 +1270,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#register-oauth" title="Register OAuth" class="md-nav__link">
+    Register OAuth
+  </a>
+  
+</li>
+      
       
       
       
@@ -1388,6 +1395,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#register-oauth" title="Register OAuth" class="md-nav__link">
+    Register OAuth
+  </a>
+  
+</li>
+      
       
       
       
@@ -1409,9 +1423,7 @@
                 
                 <h3 id="websphere-config-for-buzzy">WebSphere config for Buzzy<a class="headerlink" href="#websphere-config-for-buzzy" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p>Open WebSphere ISC -&gt; open web server -&gt; edit <code>http.conf</code> -&gt; add another VirtualHost</p>
-<pre><code>&lt;VirtualHost *:443&gt;
+<li>Open WebSphere ISC -&gt; open web server -&gt; edit <code>http.conf</code> -&gt; add another VirtualHost<pre><code>&lt;VirtualHost *:443&gt;
   ServerName buzzy.isw.net.au
 
   #Buzzy On-prem
@@ -1430,12 +1442,34 @@
 &lt;/VirtualHost&gt;
 </code></pre>
 </li>
+</ol>
+<h3 id="register-oauth">Register OAuth<a class="headerlink" href="#register-oauth" title="Permanent link">&para;</a></h3>
+<p>In order for Buzzy to authenticate with your Connections environment, you must define a new OAuth widget.</p>
+<hr />
+<ol>
 <li>
-<p>Register OAuth</p>
-<pre><code>execfile('oauthAdmin.py')
-OAuthApplicationRegistrationService.addApplication('buzzyop', 'buzzyop', '&lt;BUZZY_URL&gt;/pre-oauth-connections/buzzyop')
+<p>SSH to the IBM Connections Deployment Manager (substitute the alias)</p>
+<pre><code>  ssh root@[DEPLOY_MANAGER_ALIAS]
 </code></pre>
-<p>This will return with both a clientsecret and clientid that you need to input in the provider settings. </p>
+</li>
+<li>
+<p>Start <code>wsadmin</code> (substiture your credentials)</p>
+<pre><code>  cd /opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/
+  ./wsadmin.sh -lang jython -username connectionsadmin -password passw0rd
+</code></pre>
+</li>
+<li>
+<p>Register the new application definition</p>
+<pre><code>  execfile('oauthAdmin.py')
+  OAuthApplicationRegistrationService.addApplication('buzzy', 'buzzy', '&lt;BUZZY_URL&gt;/pre-oauth-connections/buzzy')
+</code></pre>
+<p>Where <code>[BUZZY_URL]</code> is the URL of the Buzzy installation specified previously</p>
+</li>
+<li>
+<p>To view the uniquely created client clientSecret</p>
+<pre><code>  OAuthApplicationRegistrationService.getApplicationById('buzzy')
+</code></pre>
+<p>These commands will print the definition. Please take note of the <code>clientSecret</code>.  We will use this later on as</p>
 </li>
 </ol>
                 
