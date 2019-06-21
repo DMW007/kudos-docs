@@ -1591,12 +1591,17 @@
 <tr>
 <td>spec.containers.env.BUZZY_ADMIN_EMAIL</td>
 <td>128</td>
-<td>Enter Admin user email</td>
+<td>OPTIONAL: Enter Admin user email, used as the primary owner of the default buzzes and resources that appear on the palette</td>
 </tr>
 <tr>
 <td>spec.containers.env.BUZZY_ADMIN_IDS</td>
 <td>129</td>
 <td>Enter Admin user ids</td>
+</tr>
+<tr>
+<td>spec.containers.env.BUZZY_CREATE_DEFAULT_ACCOUNTS</td>
+<td>146</td>
+<td>OPTIONAL: Default accounts created. Set isAdmin for these accounts to be considered the same as BUZZY_ADMIN_EMAIL</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.AWS_BUZZY_FILES</td>
