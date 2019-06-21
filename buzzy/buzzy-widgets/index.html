@@ -1521,7 +1521,7 @@ Click the Ok button</p>
 <p>Required for IBM Connections 6.0 CR1 onwards</p>
 <pre><code>execfile("newsAdmin.py")
 
-NewsWidgetCatalogService.addWidget(title="Buzzy", url="http://&lt;BUZZY_URL&gt;/assets/connections/communityWidget.xml" ,secureUrl="https://&lt;BUZZY_URL&gt;/assets/connections/communityWidget.xml", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
+NewsWidgetCatalogService.addWidget(title="Buzzy", url="http://&lt;BUZZY_URL&gt;/widget/widget.xml" ,secureUrl="https://&lt;BUZZY_URL&gt;/widget/widget.xml", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
 
 NewsWidgetCatalogService.enableWidget("&lt;ID_RETURNED&gt;")
 
