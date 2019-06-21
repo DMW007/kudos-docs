@@ -42,7 +42,7 @@
     
     
       
-        <title>IBM ICP (Kubernetes) - Kudos Docs</title>
+        <title>For Kubernetes - Kudos Docs</title>
       
     
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                IBM ICP (Kubernetes)
+                For Kubernetes
               </span>
             
           
@@ -1238,11 +1238,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        IBM ICP (Kubernetes)
+        For Kubernetes
       </label>
     
-    <a href="./" title="IBM ICP (Kubernetes)" class="md-nav__link md-nav__link--active">
-      IBM ICP (Kubernetes)
+    <a href="./" title="For Kubernetes" class="md-nav__link md-nav__link--active">
+      For Kubernetes
     </a>
     
       
@@ -1517,6 +1517,7 @@
 <li>WebSphere environment with Web Server</li>
 <li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a> is installed</li>
 <li>mongodb setup and running</li>
+<li>minio setup and running</li>
 <li>SMTP gateway setup for email notifications</li>
 <li><a href="/assets/config/buzzy.yml">Config file</a> downloaded</li>
 <li>Dockerhub account setup with access to Buzzy repository</li>
@@ -1588,43 +1589,48 @@
 <td>Enter your SMTP details as above</td>
 </tr>
 <tr>
-<td>spec.containers.env.BUZZY_ADMIN_IDS</td>
+<td>spec.containers.env.BUZZY_ADMIN_EMAIL</td>
 <td>128</td>
+<td>Enter Admin user email</td>
+</tr>
+<tr>
+<td>spec.containers.env.BUZZY_ADMIN_IDS</td>
+<td>129</td>
 <td>Enter Admin user ids</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.AWS_BUZZY_FILES</td>
-<td>230</td>
+<td>233</td>
 <td>More AWS details for files</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.NAME</td>
-<td>366</td>
+<td>368</td>
 <td>Company Name</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIN</td>
-<td>369</td>
+<td>371</td>
 <td>URL of your main logo</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIL</td>
-<td>370</td>
+<td>372</td>
 <td>URL of us in Email</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.EMAIL_FOOTER</td>
-<td>373</td>
+<td>375</td>
 <td>Email Footer</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.PROMO_URL</td>
-<td>376</td>
+<td>378</td>
 <td>Splash image</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.WELCOME_IMAGE</td>
-<td>377</td>
+<td>379</td>
 <td>Welcome Image</td>
 </tr>
 </tbody>
@@ -1644,9 +1650,9 @@ ie <code>buzzy.isw.net.au</code></li>
 <h3 id="setup-sso">Setup SSO<a class="headerlink" href="#setup-sso" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Login with email address - eg as Admin  </li>
-<li>Create a new team - eg Org Name (Hamburger -&gt; Billing &amp; Teams -&gt; New Team) - choose a really short team name as users will need to type this in and it's case sensitive.  </li>
-<li>Go to Team -&gt; Settings -&gt; Add Provider -&gt; IBM Connections On Premise  </li>
-<li>Fill out provider settings for the On Premise server  </li>
+<li>Create a new Organization, under Organizations</li>
+<li>Go to Organization -&gt; Settings -&gt; Add Provider -&gt; IBM Connections On Premise. Use the OAuth ID &amp; Secret setup previously.</li>
+<li>Create a new team - choose a really short team name as users will need to type this in and it's case sensitive.  </li>
 <li>Restart the Buzzy server  </li>
 <li>Login with Connections On Prem button and type the team name in.  </li>
 </ul>

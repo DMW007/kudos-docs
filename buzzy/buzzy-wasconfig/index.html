@@ -1229,8 +1229,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../buzzy-icp/" title="IBM ICP (Kubernetes)" class="md-nav__link">
-      IBM ICP (Kubernetes)
+    <a href="../buzzy-icp/" title="For Kubernetes" class="md-nav__link">
+      For Kubernetes
     </a>
   </li>
 
@@ -1273,6 +1273,13 @@
         <li class="md-nav__item">
   <a href="#register-oauth" title="Register OAuth" class="md-nav__link">
     Register OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-proxy" title="Configure Proxy" class="md-nav__link">
+    Configure Proxy
   </a>
   
 </li>
@@ -1402,6 +1409,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configure-proxy" title="Configure Proxy" class="md-nav__link">
+    Configure Proxy
+  </a>
+  
+</li>
+      
       
       
       
@@ -1423,13 +1437,15 @@
                 
                 <h3 id="websphere-config-for-buzzy">WebSphere config for Buzzy<a class="headerlink" href="#websphere-config-for-buzzy" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Open WebSphere ISC -&gt; open web server -&gt; edit <code>http.conf</code> -&gt; add another VirtualHost<pre><code>&lt;VirtualHost *:443&gt;
-  ServerName buzzy.isw.net.au
+<li>
+<p>Open WebSphere ISC -&gt; open web server -&gt; edit <code>http.conf</code> -&gt; add another VirtualHost</p>
+<pre><code>&lt;VirtualHost *:443&gt;
+  ServerName &lt;BUZZY_URL&gt;
 
   #Buzzy On-prem
   ProxyPreserveHost On
-  ProxyPass / http://&lt;server-ip&gt;:30289/
-  ProxyPassReverse / http://&lt;server-ip&gt;:30289/
+  ProxyPass / http://&lt;KUBERNETES_NAME&gt;:&lt;KUBERNETES_PORT&gt;/
+  ProxyPassReverse / http://&lt;KUBERNETES_NAME&gt;:&lt;KUBERNETES_PORT&gt;/
   #End Buzzy On-prem
 
   SSLEnable
@@ -1441,6 +1457,10 @@
     SSLCipherSpec SSL_RSA_WITH_3DES_EDE_CBC_SHA
 &lt;/VirtualHost&gt;
 </code></pre>
+<p>Where:</p>
+<p><BUZZY_URL> is the URL of your Boards deployment (as a domain)</p>
+<p><KUBERNETES_NAME> is the hostname/IP of the master in your cluster</p>
+<p><KUBERNETES_PORT> is the port of your Ingress Controller (ie 32080)</p>
 </li>
 </ol>
 <h3 id="register-oauth">Register OAuth<a class="headerlink" href="#register-oauth" title="Permanent link">&para;</a></h3>
@@ -1469,7 +1489,76 @@
 <p>To view the uniquely created client clientSecret</p>
 <pre><code>  OAuthApplicationRegistrationService.getApplicationById('buzzy')
 </code></pre>
-<p>These commands will print the definition. Please take note of the <code>clientSecret</code>.  We will use this later on as</p>
+<p>These commands will print the definition. Please take note of the <code>clientSecret</code>.  We will use this later on.</p>
+</li>
+</ol>
+<h3 id="configure-proxy">Configure Proxy<a class="headerlink" href="#configure-proxy" title="Permanent link">&para;</a></h3>
+<p>In order for IBM Connections to load the buzzy widgets, you must configure the IBM Connections proxy.</p>
+<hr />
+<ol>
+<li>
+<p>SSH to the IBM Connections Deployment Manager (substitute the alias)</p>
+<pre><code>  ssh root@[DEPLOY_MANAGER_ALIAS]
+</code></pre>
+</li>
+<li>
+<p>Start <code>wsadmin</code> (substiture your credentials)</p>
+<pre><code>  cd /opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/
+  ./wsadmin.sh -lang jython -username connectionsadmin -password passw0rd
+</code></pre>
+</li>
+<li>
+<p>Check out the proxy-config file</p>
+<pre><code>  execfile("connectionsConfig.py")
+  LCConfigService.checkOutProxyConfig("/LCCheckedOut", AdminControl.getCell())
+</code></pre>
+</li>
+<li>
+<p>Edit the proxy-config.tpl file and add the following proxy policy, replacing <code>&lt;BUZZY_URL&gt;</code></p>
+<pre><code>  &lt;proxy:policy url="https://&lt;BUZZY_URL&gt;/*" acf="none" basic-auth-support="true" auth-support="true"&gt;
+    &lt;proxy:actions&gt;
+      &lt;proxy:method&gt;GET&lt;/proxy:method&gt;
+      &lt;proxy:method&gt;POST&lt;/proxy:method&gt;
+      &lt;proxy:method&gt;PUT&lt;/proxy:method&gt;
+      &lt;proxy:method&gt;DELETE&lt;/proxy:method&gt;
+    &lt;/proxy:actions&gt;
+    &lt;proxy:headers&gt;
+      &lt;proxy:header&gt;content-type&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;accept-encoding&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;uit&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;pst&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;User-Agent&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;Accept.*&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;Content.*&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;Authorization.*&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;X-Method-Override&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;If-.*&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;Pragma&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;Cache-Control&lt;/proxy:header&gt;
+      &lt;proxy:header&gt;X-Update-Nonce&lt;/proxy:header&gt;
+    &lt;/proxy:headers&gt;
+    &lt;proxy:cookies&gt;
+      &lt;proxy:cookie&gt;DomAuthSessId&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;LtpaToken&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;LtpaToken2&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;Shimmer&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;ShimmerS&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;iwaSSL&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;iwaSSL2&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;JSESSIONID&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;has&lt;/proxy:cookie&gt;
+      &lt;proxy:cookie&gt;PD-H-SESSION-ID&lt;/proxy:cookie&gt;&lt;!-- TAM --&gt;
+      &lt;proxy:cookie&gt;PD-S-SESSION-ID&lt;/proxy:cookie&gt;&lt;!-- TAM --&gt;
+      &lt;proxy:cookie&gt;SMIDENTITY&lt;/proxy:cookie&gt;&lt;!-- SiteMinder --&gt;
+      &lt;proxy:cookie&gt;SMSESSION&lt;/proxy:cookie&gt;&lt;!-- SiteMinder --&gt;
+    &lt;/proxy:cookies&gt;
+  &lt;/proxy:policy&gt;
+</code></pre>
+</li>
+<li>
+<p>Check in the proxy-config file</p>
+<pre><code>  LCConfigService.checkInProxyConfig("/LCCheckedOut", AdminControl.getCell())
+</code></pre>
 </li>
 </ol>
                 
@@ -1492,7 +1581,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../buzzy-icp/" title="IBM ICP (Kubernetes)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../buzzy-icp/" title="For Kubernetes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1501,7 +1590,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                IBM ICP (Kubernetes)
+                For Kubernetes
               </span>
             </div>
           </a>
