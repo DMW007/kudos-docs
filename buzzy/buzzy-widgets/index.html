@@ -1472,9 +1472,8 @@ ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell
 <pre><code>ProfilesConfigService.checkInWidgetConfig()
 </code></pre>
 <h3 id="register-widget">Register Widget<a class="headerlink" href="#register-widget" title="Permanent link">&para;</a></h3>
-<pre><code>Required for IBM Connections 6.0 CR1 onwards
-
-    execfile("newsAdmin.py")
+<p>Required for IBM Connections 6.0 CR1 onwards</p>
+<pre><code>    execfile("newsAdmin.py")
 
     NewsWidgetCatalogService.addWidget(title="Buzzy", url="http://&lt;BUZZY_URL&gt;/widget/widget.xml" ,secureUrl="https://&lt;BUZZY_URL&gt;/widget/widget.xml", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
 
