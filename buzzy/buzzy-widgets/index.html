@@ -1241,6 +1241,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../buzzy-oauth/" title="Connections OAuth Config" class="md-nav__link">
+      Connections OAuth Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../buzzy-wasconfig/" title="WAS Config" class="md-nav__link">
       WAS Config
     </a>
@@ -1287,15 +1299,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#activity-stream-widget" title="Activity Stream widget" class="md-nav__link">
-    Activity Stream widget
+  <a href="#register-widget" title="Register Widget" class="md-nav__link">
+    Register Widget
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#register-widget" title="Register Widget" class="md-nav__link">
-    Register Widget
+  <a href="#activity-stream-widget" title="Activity Stream widget" class="md-nav__link">
+    Activity Stream widget
   </a>
   
 </li>
@@ -1409,15 +1421,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#activity-stream-widget" title="Activity Stream widget" class="md-nav__link">
-    Activity Stream widget
+  <a href="#register-widget" title="Register Widget" class="md-nav__link">
+    Register Widget
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#register-widget" title="Register Widget" class="md-nav__link">
-    Register Widget
+  <a href="#activity-stream-widget" title="Activity Stream widget" class="md-nav__link">
+    Activity Stream widget
   </a>
   
 </li>
@@ -1458,6 +1470,17 @@ ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell
 </code></pre>
 <p>Check in the widgets-config.xml file.</p>
 <pre><code>ProfilesConfigService.checkInWidgetConfig()
+</code></pre>
+<h3 id="register-widget">Register Widget<a class="headerlink" href="#register-widget" title="Permanent link">&para;</a></h3>
+<pre><code>Required for IBM Connections 6.0 CR1 onwards
+
+    execfile("newsAdmin.py")
+
+    NewsWidgetCatalogService.addWidget(title="Buzzy", url="http://&lt;BUZZY_URL&gt;/widget/widget.xml" ,secureUrl="https://&lt;BUZZY_URL&gt;/widget/widget.xml", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
+
+    NewsWidgetCatalogService.enableWidget("&lt;ID_RETURNED&gt;")
+
+    NewsWidgetCatalogService.clearWidgetCaches()
 </code></pre>
 <hr />
 <h3 id="activity-stream-widget">Activity Stream widget<a class="headerlink" href="#activity-stream-widget" title="Permanent link">&para;</a></h3>
@@ -1507,6 +1530,7 @@ Click the Ok button</p>
 <ul>
 <li>Use IBM Connections specific tags</li>
 <li>Opened by default</li>
+<li>Display on Updates pages</li>
 </ul>
 <p>Select the following Prerequisites:</p>
 <ul>
@@ -1516,17 +1540,6 @@ Click the Ok button</p>
 <li>opensocial</li>
 </ul>
 <p>Scroll down and Click Save</p>
-<hr />
-<h3 id="register-widget">Register Widget<a class="headerlink" href="#register-widget" title="Permanent link">&para;</a></h3>
-<p>Required for IBM Connections 6.0 CR1 onwards</p>
-<pre><code>execfile("newsAdmin.py")
-
-NewsWidgetCatalogService.addWidget(title="Buzzy", url="http://&lt;BUZZY_URL&gt;/widget/widget.xml" ,secureUrl="https://&lt;BUZZY_URL&gt;/widget/widget.xml", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
-
-NewsWidgetCatalogService.enableWidget("&lt;ID_RETURNED&gt;")
-
-NewsWidgetCatalogService.clearWidgetCaches()
-</code></pre>
                 
                   
                 

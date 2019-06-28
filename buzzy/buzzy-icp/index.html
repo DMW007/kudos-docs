@@ -1284,6 +1284,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-oauth" title="Setup OAuth" class="md-nav__link">
+    Setup OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-buzzy" title="Deploy Buzzy" class="md-nav__link">
     Deploy Buzzy
   </a>
@@ -1319,6 +1326,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../buzzy-oauth/" title="Connections OAuth Config" class="md-nav__link">
+      Connections OAuth Config
+    </a>
   </li>
 
         
@@ -1465,6 +1484,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-oauth" title="Setup OAuth" class="md-nav__link">
+    Setup OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-buzzy" title="Deploy Buzzy" class="md-nav__link">
     Deploy Buzzy
   </a>
@@ -1545,6 +1571,8 @@
 </code></pre>
 </li>
 </ol>
+<h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
+<p>Please follow <a href="/buzzy/buzzy-oauth/">these instructions</a></p>
 <h3 id="deploy-buzzy">Deploy Buzzy<a class="headerlink" href="#deploy-buzzy" title="Permanent link">&para;</a></h3>
 <ol>
 <li>edit buzzy.yml and enter details at the following lines:  </li>
@@ -1594,59 +1622,72 @@
 <td>OPTIONAL: Enter Admin user email, used as the primary owner of the default buzzes and resources that appear on the palette</td>
 </tr>
 <tr>
+<td>spec.containers.env.DEFAULT_OAUTH_PROVIDERS</td>
+<td>129-142</td>
+<td>Details for the OAuth provider(s) to be setup. ClientID and ClientSecret are from the OAuth setup in the previous step.</td>
+</tr>
+<tr>
 <td>spec.containers.env.BUZZY_ADMIN_IDS</td>
-<td>129</td>
+<td>143</td>
 <td>Enter Admin user ids</td>
 </tr>
 <tr>
 <td>spec.containers.env.BUZZY_CREATE_DEFAULT_ACCOUNTS</td>
-<td>146</td>
-<td>OPTIONAL: Default accounts created. Set isAdmin for these accounts to be considered the same as BUZZY_ADMIN_EMAIL</td>
+<td>160</td>
+<td>Default accounts created. Set isAdmin for these accounts to be considered the same as BUZZY_ADMIN_EMAIL. Make the email the same as one from the OAuth provider to be able to view and edit the provider settings</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.AWS_BUZZY_FILES</td>
-<td>233</td>
+<td>246</td>
 <td>More AWS details for files</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.NAME</td>
-<td>368</td>
+<td>382</td>
 <td>Company Name</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIN</td>
-<td>371</td>
+<td>385</td>
 <td>URL of your main logo</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIL</td>
-<td>372</td>
+<td>386</td>
 <td>URL of us in Email</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.EMAIL_FOOTER</td>
-<td>375</td>
+<td>389</td>
 <td>Email Footer</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.PROMO_URL</td>
-<td>378</td>
+<td>391</td>
 <td>Splash image</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.WELCOME_IMAGE</td>
-<td>379</td>
+<td>393</td>
 <td>Welcome Image</td>
 </tr>
 </tbody>
 </table>
 <ol>
-<li>create your services <br />
+<li>Create your services <br />
 <code>kubectl apply -f buzzy.yml</code> <br />
 service has NodePort (ie 30289 which maps to 30buz on keypads) <br />
 accessible on <code>&lt;server-ip&gt;:30289</code></li>
-<li>add new DNS record for Buzzy URL <br />
-ie <code>buzzy.isw.net.au</code></li>
+<li>
+<p>Add new DNS record for Buzzy URL <br />
+ie <code>buzzy.isw.net.au</code></p>
+</li>
+<li>
+<p>Login to Buzzy with the account set up in BUZZY_CREATE_DEFAULT_ACCOUNTS above and confirm the org and provider details are correct</p>
+</li>
+<li>
+<p>Restart the Buzzy Application</p>
+</li>
 </ol>
 <h3 id="add-websphere-config">Add Websphere Config<a class="headerlink" href="#add-websphere-config" title="Permanent link">&para;</a></h3>
 <p>Please follow <a href="/buzzy/buzzy-wasconfig/">these instructions</a></p>
@@ -1696,13 +1737,13 @@ ie <code>buzzy.isw.net.au</code></li>
           </a>
         
         
-          <a href="../buzzy-wasconfig/" title="WAS Config" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../buzzy-oauth/" title="Connections OAuth Config" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                WAS Config
+                Connections OAuth Config
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

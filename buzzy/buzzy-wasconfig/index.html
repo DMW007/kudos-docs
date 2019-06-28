@@ -1239,6 +1239,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../buzzy-oauth/" title="Connections OAuth Config" class="md-nav__link">
+      Connections OAuth Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -1266,13 +1278,6 @@
         <li class="md-nav__item">
   <a href="#websphere-config-for-buzzy" title="WebSphere config for Buzzy" class="md-nav__link">
     WebSphere config for Buzzy
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#register-oauth" title="Register OAuth" class="md-nav__link">
-    Register OAuth
   </a>
   
 </li>
@@ -1403,13 +1408,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#register-oauth" title="Register OAuth" class="md-nav__link">
-    Register OAuth
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#configure-proxy" title="Configure Proxy" class="md-nav__link">
     Configure Proxy
   </a>
@@ -1461,35 +1459,6 @@
 <p><BUZZY_URL> is the URL of your Boards deployment (as a domain)</p>
 <p><KUBERNETES_NAME> is the hostname/IP of the master in your cluster</p>
 <p><KUBERNETES_PORT> is the port of your Ingress Controller (ie 32080)</p>
-</li>
-</ol>
-<h3 id="register-oauth">Register OAuth<a class="headerlink" href="#register-oauth" title="Permanent link">&para;</a></h3>
-<p>In order for Buzzy to authenticate with your Connections environment, you must define a new OAuth widget.</p>
-<hr />
-<ol>
-<li>
-<p>SSH to the IBM Connections Deployment Manager (substitute the alias)</p>
-<pre><code>  ssh root@[DEPLOY_MANAGER_ALIAS]
-</code></pre>
-</li>
-<li>
-<p>Start <code>wsadmin</code> (substiture your credentials)</p>
-<pre><code>  cd /opt/IBM/WebSphere/AppServer/profiles/Dmgr01/bin/
-  ./wsadmin.sh -lang jython -username connectionsadmin -password passw0rd
-</code></pre>
-</li>
-<li>
-<p>Register the new application definition</p>
-<pre><code>  execfile('oauthAdmin.py')
-  OAuthApplicationRegistrationService.addApplication('buzzy', 'buzzy', '&lt;BUZZY_URL&gt;/pre-oauth-connections/buzzy')
-</code></pre>
-<p>Where <code>[BUZZY_URL]</code> is the URL of the Buzzy installation specified previously</p>
-</li>
-<li>
-<p>To view the uniquely created client clientSecret</p>
-<pre><code>  OAuthApplicationRegistrationService.getApplicationById('buzzy')
-</code></pre>
-<p>These commands will print the definition. Please take note of the <code>clientSecret</code>.  We will use this later on.</p>
 </li>
 </ol>
 <h3 id="configure-proxy">Configure Proxy<a class="headerlink" href="#configure-proxy" title="Permanent link">&para;</a></h3>
@@ -1581,7 +1550,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../buzzy-icp/" title="For Kubernetes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../buzzy-oauth/" title="Connections OAuth Config" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1590,7 +1559,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                For Kubernetes
+                Connections OAuth Config
               </span>
             </div>
           </a>
