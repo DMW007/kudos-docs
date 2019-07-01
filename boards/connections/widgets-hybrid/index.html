@@ -1466,17 +1466,22 @@ ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell
 </code></pre>
 <hr />
 <h3 id="activity-stream-widget">Activity Stream widget<a class="headerlink" href="#activity-stream-widget" title="Permanent link">&para;</a></h3>
-<p>Access <code>Homepage</code>-&gt;<code>Administrator</code></p>
-<p>Select the following:</p>
-<ul>
-<li>Open Social Gadget</li>
-<li>Trusted and Use SSO</li>
-<li>Show for Activity Stream events</li>
-<li>All servers</li>
-</ul>
+<p>Access <code>Homepage</code>-&gt;<code>Administrator</code> or https://connections.example.com/homepage/admin/openAdminPage.action</p>
+<p>Click <code>Add another app</code></p>
+<p>Select the following:
+- App Type: <br>
+    🔘Open Social Gadget
+  - Gadget settings with Activity stream or Share dialog
+    - Security: <br>
+      🔘Trusted <br>
+      &emsp;✅Use SSO
+    - UI Integration Points:<br>
+      ✅Show for Activity Stream events
+    - Server access via Proxy: <br>
+      🔘All servers</p>
 <p>Click the <code>Add Mapping</code> button.</p>
 <p>Add a Mapping for the Kudos Boards service to the Kudos client. Ensure OAuth Client is set to conn-ee and the Service name is Kudos Boards.
-Click the Ok button</p>
+Click the <code>Ok</code> button. You should see <code>Kudos Boards-&gt;conn-ee</code> listed in <code>Service Mappings</code></p>
 <p>Enter the following:</p>
 <table>
 <thead>
@@ -1508,19 +1513,17 @@ Click the Ok button</p>
 </tr>
 </tbody>
 </table>
-<p>Select:</p>
-<ul>
-<li>Use IBM Connections specific tags</li>
-<li>Opened by default</li>
-</ul>
+<p>Select:
+  - ✅Use IBM Connections specific tags
+  - ✅Opened by default</p>
 <p>Select the following Prerequisites:</p>
 <ul>
-<li>oauthprovider</li>
-<li>webresources</li>
-<li>oauth</li>
-<li>opensocial</li>
+<li>✅oauthprovider</li>
+<li>✅webresources</li>
+<li>✅oauth</li>
+<li>✅opensocial</li>
 </ul>
-<p>Scroll down and Click Save</p>
+<p>Scroll down and Click <code>Save</code></p>
 <hr />
 <!-- This is not needed for the iframe widget
 ### Register Widget
