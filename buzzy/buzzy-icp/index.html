@@ -1636,7 +1636,7 @@
 <tr>
 <td>spec.containers.env.BUZZY_LOGGING_TOKEN</td>
 <td>156</td>
-<td>Token used for access to the Buzzy logging server</td>
+<td>Token used for access to the Buzzy logging server. Must be the same in the buzzy-logging.yml</td>
 </tr>
 <tr>
 <td>spec.containers.env.BUZZY_CREATE_DEFAULT_ACCOUNTS</td>
@@ -1739,6 +1739,11 @@ ie <code>buzzy.net.au</code></p>
 <td>spec.containers.env.value</td>
 <td>59</td>
 <td>Enter your SMTP details</td>
+</tr>
+<tr>
+<td>spec.containers.env.value.BUZZY_LOGGING_TOKEN</td>
+<td>62</td>
+<td>Token used for access to the Buzzy logging server. Must be the same in the buzzy.yml</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_LOGGING_SERVER</td>
