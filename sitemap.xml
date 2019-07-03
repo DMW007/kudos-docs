@@ -246,11 +246,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://docs.kudosapps.com/buzzy/</loc>
-     <lastmod>2019-07-03</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://docs.kudosapps.com/buzzy/buzzy-icp/</loc>
      <lastmod>2019-07-03</lastmod>
      <changefreq>daily</changefreq>
@@ -267,6 +262,16 @@
     </url>
     <url>
      <loc>https://docs.kudosapps.com/buzzy/buzzy-widgets/</loc>
+     <lastmod>2019-07-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/buzzy/mongo/</loc>
+     <lastmod>2019-07-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/buzzy/minio/</loc>
      <lastmod>2019-07-03</lastmod>
      <changefreq>daily</changefreq>
     </url>

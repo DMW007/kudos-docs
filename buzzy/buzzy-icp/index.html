@@ -42,7 +42,7 @@
     
     
       
-        <title>For Kubernetes - Kudos Docs</title>
+        <title>Overview - Kudos Docs</title>
       
     
     
@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#buzzy-for-connections-on-prem-help-guide" tabindex="1" class="md-skip">
+      <a href="#buzzy-installation-guide-for-connections-on-premise-60-and-above" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                For Kubernetes
+                Overview
               </span>
             
           
@@ -231,13 +231,25 @@
         
   
   
+    
+    
+  
+  
+    
+    
+  
+  
     <li class="md-tabs__item">
       
-        <a href="../" title="Buzzy" class="md-tabs__link md-tabs__link--active">
+        <a href="./" title="Buzzy" class="md-tabs__link md-tabs__link--active">
           Buzzy
         </a>
       
     </li>
+  
+
+  
+
   
 
       
@@ -1194,13 +1206,22 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../" title="Overview" class="md-nav__link">
-      Overview
-    </a>
-  </li>
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1" type="checkbox" id="nav-4-1" checked>
+    
+    <label class="md-nav__link" for="nav-4-1">
+      Installation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-4-1">
+        Installation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -1211,14 +1232,14 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4-1-1" type="checkbox" id="nav-4-1-1" checked>
     
-    <label class="md-nav__link" for="nav-4-2">
-      Installation
+    <label class="md-nav__link" for="nav-4-1-1">
+      For Connections On-premise
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
-      <label class="md-nav__title" for="nav-4-2">
-        Installation
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-4-1-1">
+        For Connections On-premise
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -1238,11 +1259,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        For Kubernetes
+        Overview
       </label>
     
-    <a href="./" title="For Kubernetes" class="md-nav__link md-nav__link--active">
-      For Kubernetes
+    <a href="./" title="Overview" class="md-nav__link md-nav__link--active">
+      Overview
     </a>
     
       
@@ -1286,6 +1307,13 @@
         <li class="md-nav__item">
   <a href="#setup-oauth" title="Setup OAuth" class="md-nav__link">
     Setup OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-storage" title="Setup Storage" class="md-nav__link">
+    Setup Storage
   </a>
   
 </li>
@@ -1362,6 +1390,35 @@
     <a href="../buzzy-widgets/" title="Connections Widgets" class="md-nav__link">
       Connections Widgets
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mongo/" title="Mongo" class="md-nav__link">
+      Mongo
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../minio/" title="Minio" class="md-nav__link">
+      Minio
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1491,6 +1548,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#setup-storage" title="Setup Storage" class="md-nav__link">
+    Setup Storage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-buzzy" title="Deploy Buzzy" class="md-nav__link">
     Deploy Buzzy
   </a>
@@ -1535,17 +1599,15 @@
               
                 
                 
-                <h1 id="buzzy-for-connections-on-prem-help-guide">Buzzy for Connections On-Prem Help Guide<a class="headerlink" href="#buzzy-for-connections-on-prem-help-guide" title="Permanent link">&para;</a></h1>
+                <h1 id="buzzy-installation-guide-for-connections-on-premise-60-and-above">Buzzy Installation Guide for Connections On-Premise 6.0 and above<a class="headerlink" href="#buzzy-installation-guide-for-connections-on-premise-60-and-above" title="Permanent link">&para;</a></h1>
 <p>Basic instructions for deploying buzzy into Kubernetes -or- IBM Cloud Private for on-premise IBM Connections environments</p>
 <h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Kubernetes -or- IBM Cloud Private is installed and running</li>
 <li>WebSphere environment with Web Server</li>
 <li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a> is installed</li>
-<li>mongodb setup and running</li>
-<li>minio setup and running</li>
 <li>SMTP gateway setup for email notifications</li>
-<li><a href="/assets/config/buzzy.yml">Config file</a> downloaded</li>
+<li><a href="/assets/config/buzzy.yml">Buzzy Config file</a> downloaded</li>
 <li><a href="/assets/config/buzzy-logging.yml">Logging Config file</a> downloaded</li>
 <li>Dockerhub account setup with access to Buzzy repository</li>
 </ol>
@@ -1574,10 +1636,17 @@
 </ol>
 <h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
 <p>Please follow <a href="/buzzy/buzzy-oauth/">these instructions</a></p>
-<h3 id="deploy-buzzy">Deploy Buzzy<a class="headerlink" href="#deploy-buzzy" title="Permanent link">&para;</a></h3>
-<p>NOTE: Is using self-signed certificates you will need to uncomment NODE_TLS_REJECT_UNAUTHORIZED at lines 55 &amp; 56</p>
+<h3 id="setup-storage">Setup Storage<a class="headerlink" href="#setup-storage" title="Permanent link">&para;</a></h3>
+<p>Buzzy requires a Mongo database and an externally accessible AWS S3 compatible file storage. If you already have equivalent services that can be accessed from within the <code>buzzy</code> namespace in kubernetes (either externally accessible or a cross-namespace service in Kubernetes) then you can use your existing details in the config below, otherwise you may follow our instructions to deploy one or both of these services as follows:</p>
 <ol>
-<li>Edit buzzy.yml and enter details at the following lines:  </li>
+<li><a href="/buzzy/mongo">Mongo database</a></li>
+<li><a href="/buzzy/minio">S3 storage</a></li>
+</ol>
+<p><strong>Note:</strong> these tasks are very similar to each other and can be performed simultaneously</p>
+<h3 id="deploy-buzzy">Deploy Buzzy<a class="headerlink" href="#deploy-buzzy" title="Permanent link">&para;</a></h3>
+<p>NOTE: If using self-signed certificates you will need to uncomment NODE_TLS_REJECT_UNAUTHORIZED at lines 38 &amp; 39</p>
+<ol>
+<li>Edit <a href="/assets/config/buzzy.yml">buzzy.yml</a> and enter details at the following lines:  </li>
 </ol>
 <table>
 <thead>
@@ -1589,104 +1658,104 @@
 </thead>
 <tbody>
 <tr>
-<td>spec.containers.env.value</td>
-<td>58</td>
+<td>ROOT_URL</td>
+<td>41</td>
 <td>URL you are deploying Buzzy to, including https://</td>
 </tr>
 <tr>
-<td>spec.containers.env.value</td>
-<td>62</td>
-<td>Enter your mongoDB credentials</td>
+<td>MONGO_URL</td>
+<td>45</td>
+<td>Enter your mongoDB credentials and URL</td>
 </tr>
 <tr>
-<td>spec.containers.env.value</td>
-<td>64</td>
-<td>Enter your mongoDB debug credentials</td>
+<td>MONGO_OPLOG_URL</td>
+<td>47</td>
+<td>Enter your mongoDB credentials and URL</td>
 </tr>
 <tr>
-<td>spec.containers.env.value</td>
-<td>66</td>
+<td>MAIL_URL</td>
+<td>49</td>
 <td>Enter your SMTP details</td>
 </tr>
 <tr>
-<td>spec.containers.env.AWS_BUZZY_FILES</td>
-<td>79-88</td>
-<td>Your individual AWS details for file storage</td>
+<td>METEOR_SETTINGS.AWS_BUZZY_FILES</td>
+<td>62-72</td>
+<td>Your s3 file storage config</td>
 </tr>
 <tr>
-<td>spec.containers.env.MAIL_URL</td>
-<td>137</td>
-<td>Enter your SMTP details as above</td>
+<td>METEOR_SETTINGS.MAIL_URL</td>
+<td>120</td>
+<td>Enter your SMTP details (same as above)</td>
 </tr>
 <tr>
-<td>spec.containers.env.BUZZY_ADMIN_EMAIL</td>
-<td>139</td>
+<td>METEOR_SETTINGS.BUZZY_ADMIN_EMAIL</td>
+<td>122</td>
 <td>OPTIONAL: Enter Admin user email, used as the primary owner of the default buzzes and resources that appear on the palette</td>
 </tr>
 <tr>
-<td>spec.containers.env.DEFAULT_OAUTH_PROVIDERS</td>
-<td>140-153</td>
-<td>Details for the OAuth provider(s) to be setup. ClientID and ClientSecret are from the OAuth setup in the previous step</td>
+<td>METEOR_SETTINGS.DEFAULT_OAUTH_PROVIDERS</td>
+<td>123-135</td>
+<td>Details for the OAuth provider to be set up (e.g. IBM Connections). ClientID and ClientSecret are from the OAuth setup in the previous step</td>
 </tr>
 <tr>
-<td>spec.containers.env.BUZZY_ADMIN_IDS</td>
-<td>154</td>
-<td>Enter Admin user ids</td>
-</tr>
-<tr>
-<td>spec.containers.env.BUZZY_LOGGING_TOKEN</td>
-<td>156</td>
+<td>METEOR_SETTINGS.BUZZY_LOGGING_TOKEN</td>
+<td>138</td>
 <td>Token used for access to the Buzzy logging server. Must be the same in the buzzy-logging.yml</td>
 </tr>
 <tr>
-<td>spec.containers.env.BUZZY_CREATE_DEFAULT_ACCOUNTS</td>
-<td>171</td>
+<td>METEOR_SETTINGS.BUZZY_CREATE_DEFAULT_ACCOUNTS</td>
+<td>153</td>
 <td>Default accounts created. Set isAdmin for these accounts to be considered the same as BUZZY_ADMIN_EMAIL. Make the email the same as one from the OAuth provider to be able to view and edit the provider settings</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.AWS_BUZZY_FILES</td>
-<td>257</td>
-<td>More AWS details for files</td>
+<td>METEOR_SETTINGS.public.AWS_BUZZY_FILES</td>
+<td>231</td>
+<td>public AWS details for files</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.IBMConnectionsOnPrem.signInDomains</td>
-<td>280</td>
+<td>METEOR_SETTINGS.public.IBMConnectionsOnPrem.signInDomains</td>
+<td>255</td>
 <td>IBM Connections URLs you are connecting to this Buzzy instance</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_CUSTOM.NAME</td>
-<td>389</td>
+<td>METEOR_SETTINGS.public.BUZZY_CUSTOM.NAME</td>
+<td>368</td>
 <td>Company Name</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIN</td>
-<td>401</td>
+<td>METEOR_SETTINGS.public.BUZZY_CUSTOM.LOGO_MAIN</td>
+<td>371</td>
 <td>URL of your main logo</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIL</td>
-<td>402</td>
+<td>METEOR_SETTINGS.public.BUZZY_CUSTOM.LOGO_MAIL</td>
+<td>372</td>
 <td>URL of us in Email</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_CUSTOM.EMAIL_FOOTER</td>
-<td>405</td>
+<td>METEOR_SETTINGS.public.BUZZY_CUSTOM.EMAIL_FOOTER</td>
+<td>375</td>
 <td>Email Footer</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_CUSTOM.PROMO_URL</td>
-<td>408</td>
+<td>METEOR_SETTINGS.public.BUZZY_CUSTOM.PROMO_URL</td>
+<td>377</td>
 <td>Splash image</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_CUSTOM.WELCOME_IMAGE</td>
-<td>409</td>
+<td>METEOR_SETTINGS.public.BUZZY_CUSTOM.WELCOME_IMAGE</td>
+<td>379</td>
 <td>Welcome Image</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_CUSTOM.BUZZY_LOGGING_SERVER</td>
-<td>445</td>
+<td>METEOR_SETTINGS.public.BUZZY_LOGGING_SERVER</td>
+<td>406</td>
 <td>URL of the Buzzy logging server</td>
+</tr>
+<tr>
+<td>Ingress.spec.rules.host</td>
+<td>487</td>
+<td>host name for the buzzy app</td>
 </tr>
 </tbody>
 </table>
@@ -1707,9 +1776,10 @@ ie <code>buzzy.net.au</code></p>
 </li>
 </ol>
 <h3 id="deploy-buzzy-logging">Deploy Buzzy Logging<a class="headerlink" href="#deploy-buzzy-logging" title="Permanent link">&para;</a></h3>
-<p>NOTE: This is optional and will not work if you are using IHS</p>
+<p>Buzzy logging server is required for Analytics inside the Buzzy app.
+NOTE: Buzzy logging server srequires Websocket support and as such it will not work if you are using IHS as the gateway to your Kubernetes environment.</p>
 <ol>
-<li>Edit buzzy-logging.yml and enter details at the following lines:  </li>
+<li>Edit <a href="/assets/config/buzzy-logging.yml">buzzy-logging.yml</a> and enter details at the following lines:  </li>
 </ol>
 <table>
 <thead>
@@ -1721,44 +1791,44 @@ ie <code>buzzy.net.au</code></p>
 </thead>
 <tbody>
 <tr>
-<td>spec.containers.env.value</td>
-<td>51</td>
+<td>ROOT_URL</td>
+<td>41</td>
 <td>URL you are deploying Buzzy logging to, including https://</td>
 </tr>
 <tr>
-<td>spec.containers.env.value</td>
-<td>55</td>
-<td>Enter your mongoDB credentials</td>
+<td>MONGO_URL</td>
+<td>45</td>
+<td>Enter your mongoDB credentials and URL</td>
 </tr>
 <tr>
-<td>spec.containers.env.value</td>
-<td>57</td>
-<td>Enter your mongoDB debug credentials</td>
+<td>MONGO_OPLOG_URL</td>
+<td>47</td>
+<td>Enter your mongoDB credentials and URL</td>
 </tr>
 <tr>
-<td>spec.containers.env.value</td>
-<td>59</td>
+<td>MAIL_URL</td>
+<td>49</td>
 <td>Enter your SMTP details</td>
 </tr>
 <tr>
-<td>spec.containers.env.value.BUZZY_LOGGING_TOKEN</td>
-<td>62</td>
+<td>METEOR_SETTINGS.BUZZY_LOGGING_TOKEN</td>
+<td>52</td>
 <td>Token used for access to the Buzzy logging server. Must be the same in the buzzy.yml</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_LOGGING_SERVER</td>
-<td>64</td>
+<td>METEOR_SETTINGS.public.BUZZY_LOGGING_SERVER</td>
+<td>54</td>
 <td>URL you are deploying Buzzy logging to, including https://</td>
 </tr>
 <tr>
-<td>spec.containers.env.public.BUZZY_APP_SERVER</td>
-<td>65</td>
+<td>METEOR_SETTINGS.public.BUZZY_APP_SERVER</td>
+<td>55</td>
 <td>Buzzy URL</td>
 </tr>
 <tr>
-<td>spec.rules.host</td>
-<td>105</td>
-<td>URL you are deploying Buzzy logging to, excluding https://</td>
+<td>Ingress.spec.rules.host</td>
+<td>95</td>
+<td>hostname for Buzzy logging, excluding https://</td>
 </tr>
 </tbody>
 </table>
@@ -1792,7 +1862,7 @@ ie <code>logging.buzzy.net.au</code></li>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../ideas/cloud-setup/" title="Connections Cloud" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1801,7 +1871,7 @@ ie <code>logging.buzzy.net.au</code></li>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Overview
+                Connections Cloud
               </span>
             </div>
           </a>
