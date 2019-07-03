@@ -1298,6 +1298,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deploy-buzzy-logging" title="Deploy Buzzy Logging" class="md-nav__link">
+    Deploy Buzzy Logging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-websphere-config" title="Add Websphere Config" class="md-nav__link">
     Add Websphere Config
   </a>
@@ -1307,13 +1314,6 @@
         <li class="md-nav__item">
   <a href="#add-ibm-connections-widgets" title="Add IBM Connections widgets" class="md-nav__link">
     Add IBM Connections widgets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-sso" title="Setup SSO" class="md-nav__link">
-    Setup SSO
   </a>
   
 </li>
@@ -1498,6 +1498,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#deploy-buzzy-logging" title="Deploy Buzzy Logging" class="md-nav__link">
+    Deploy Buzzy Logging
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-websphere-config" title="Add Websphere Config" class="md-nav__link">
     Add Websphere Config
   </a>
@@ -1507,13 +1514,6 @@
         <li class="md-nav__item">
   <a href="#add-ibm-connections-widgets" title="Add IBM Connections widgets" class="md-nav__link">
     Add IBM Connections widgets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#setup-sso" title="Setup SSO" class="md-nav__link">
-    Setup SSO
   </a>
   
 </li>
@@ -1546,6 +1546,7 @@
 <li>minio setup and running</li>
 <li>SMTP gateway setup for email notifications</li>
 <li><a href="/assets/config/buzzy.yml">Config file</a> downloaded</li>
+<li><a href="/assets/config/buzzy-logging.yml">Logging Config file</a> downloaded</li>
 <li>Dockerhub account setup with access to Buzzy repository</li>
 </ol>
 <h3 id="configure-kubectl">Configure kubectl<a class="headerlink" href="#configure-kubectl" title="Permanent link">&para;</a></h3>
@@ -1574,8 +1575,9 @@
 <h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
 <p>Please follow <a href="/buzzy/buzzy-oauth/">these instructions</a></p>
 <h3 id="deploy-buzzy">Deploy Buzzy<a class="headerlink" href="#deploy-buzzy" title="Permanent link">&para;</a></h3>
+<p>NOTE: Is using self-signed certificates you will need to uncomment NODE_TLS_REJECT_UNAUTHORIZED at lines 55 &amp; 56</p>
 <ol>
-<li>edit buzzy.yml and enter details at the following lines:  </li>
+<li>Edit buzzy.yml and enter details at the following lines:  </li>
 </ol>
 <table>
 <thead>
@@ -1588,88 +1590,103 @@
 <tbody>
 <tr>
 <td>spec.containers.env.value</td>
-<td>50</td>
+<td>58</td>
 <td>URL you are deploying Buzzy to, including https://</td>
 </tr>
 <tr>
 <td>spec.containers.env.value</td>
-<td>54</td>
+<td>62</td>
 <td>Enter your mongoDB credentials</td>
 </tr>
 <tr>
 <td>spec.containers.env.value</td>
-<td>56</td>
+<td>64</td>
 <td>Enter your mongoDB debug credentials</td>
 </tr>
 <tr>
 <td>spec.containers.env.value</td>
-<td>58</td>
+<td>66</td>
 <td>Enter your SMTP details</td>
 </tr>
 <tr>
 <td>spec.containers.env.AWS_BUZZY_FILES</td>
-<td>71-77</td>
+<td>79-88</td>
 <td>Your individual AWS details for file storage</td>
 </tr>
 <tr>
 <td>spec.containers.env.MAIL_URL</td>
-<td>126</td>
+<td>137</td>
 <td>Enter your SMTP details as above</td>
 </tr>
 <tr>
 <td>spec.containers.env.BUZZY_ADMIN_EMAIL</td>
-<td>128</td>
+<td>139</td>
 <td>OPTIONAL: Enter Admin user email, used as the primary owner of the default buzzes and resources that appear on the palette</td>
 </tr>
 <tr>
 <td>spec.containers.env.DEFAULT_OAUTH_PROVIDERS</td>
-<td>129-142</td>
-<td>Details for the OAuth provider(s) to be setup. ClientID and ClientSecret are from the OAuth setup in the previous step.</td>
+<td>140-153</td>
+<td>Details for the OAuth provider(s) to be setup. ClientID and ClientSecret are from the OAuth setup in the previous step</td>
 </tr>
 <tr>
 <td>spec.containers.env.BUZZY_ADMIN_IDS</td>
-<td>143</td>
+<td>154</td>
 <td>Enter Admin user ids</td>
 </tr>
 <tr>
+<td>spec.containers.env.BUZZY_LOGGING_TOKEN</td>
+<td>156</td>
+<td>Token used for access to the Buzzy logging server</td>
+</tr>
+<tr>
 <td>spec.containers.env.BUZZY_CREATE_DEFAULT_ACCOUNTS</td>
-<td>160</td>
+<td>171</td>
 <td>Default accounts created. Set isAdmin for these accounts to be considered the same as BUZZY_ADMIN_EMAIL. Make the email the same as one from the OAuth provider to be able to view and edit the provider settings</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.AWS_BUZZY_FILES</td>
-<td>246</td>
+<td>257</td>
 <td>More AWS details for files</td>
 </tr>
 <tr>
+<td>spec.containers.env.public.IBMConnectionsOnPrem.signInDomains</td>
+<td>280</td>
+<td>IBM Connections URLs you are connecting to this Buzzy instance</td>
+</tr>
+<tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.NAME</td>
-<td>382</td>
+<td>389</td>
 <td>Company Name</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIN</td>
-<td>385</td>
+<td>401</td>
 <td>URL of your main logo</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.LOGO_MAIL</td>
-<td>386</td>
+<td>402</td>
 <td>URL of us in Email</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.EMAIL_FOOTER</td>
-<td>389</td>
+<td>405</td>
 <td>Email Footer</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.PROMO_URL</td>
-<td>391</td>
+<td>408</td>
 <td>Splash image</td>
 </tr>
 <tr>
 <td>spec.containers.env.public.BUZZY_CUSTOM.WELCOME_IMAGE</td>
-<td>393</td>
+<td>409</td>
 <td>Welcome Image</td>
+</tr>
+<tr>
+<td>spec.containers.env.public.BUZZY_CUSTOM.BUZZY_LOGGING_SERVER</td>
+<td>445</td>
+<td>URL of the Buzzy logging server</td>
 </tr>
 </tbody>
 </table>
@@ -1680,7 +1697,7 @@ service has NodePort (ie 30289 which maps to 30buz on keypads) <br />
 accessible on <code>&lt;server-ip&gt;:30289</code></li>
 <li>
 <p>Add new DNS record for Buzzy URL <br />
-ie <code>buzzy.isw.net.au</code></p>
+ie <code>buzzy.net.au</code></p>
 </li>
 <li>
 <p>Login to Buzzy with the account set up in BUZZY_CREATE_DEFAULT_ACCOUNTS above and confirm the org and provider details are correct</p>
@@ -1689,19 +1706,67 @@ ie <code>buzzy.isw.net.au</code></p>
 <p>Restart the Buzzy Application</p>
 </li>
 </ol>
+<h3 id="deploy-buzzy-logging">Deploy Buzzy Logging<a class="headerlink" href="#deploy-buzzy-logging" title="Permanent link">&para;</a></h3>
+<p>NOTE: This is optional and will not work if you are using IHS</p>
+<ol>
+<li>Edit buzzy-logging.yml and enter details at the following lines:  </li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>spec.containers.env.value</td>
+<td>51</td>
+<td>URL you are deploying Buzzy logging to, including https://</td>
+</tr>
+<tr>
+<td>spec.containers.env.value</td>
+<td>55</td>
+<td>Enter your mongoDB credentials</td>
+</tr>
+<tr>
+<td>spec.containers.env.value</td>
+<td>57</td>
+<td>Enter your mongoDB debug credentials</td>
+</tr>
+<tr>
+<td>spec.containers.env.value</td>
+<td>59</td>
+<td>Enter your SMTP details</td>
+</tr>
+<tr>
+<td>spec.containers.env.public.BUZZY_LOGGING_SERVER</td>
+<td>64</td>
+<td>URL you are deploying Buzzy logging to, including https://</td>
+</tr>
+<tr>
+<td>spec.containers.env.public.BUZZY_APP_SERVER</td>
+<td>65</td>
+<td>Buzzy URL</td>
+</tr>
+<tr>
+<td>spec.rules.host</td>
+<td>105</td>
+<td>URL you are deploying Buzzy logging to, excluding https://</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Create your services <br />
+<code>kubectl apply -f buzzy-logging.yml</code>   </li>
+<li>Add new DNS record for Buzzy URL <br />
+ie <code>logging.buzzy.net.au</code></li>
+</ol>
 <h3 id="add-websphere-config">Add Websphere Config<a class="headerlink" href="#add-websphere-config" title="Permanent link">&para;</a></h3>
 <p>Please follow <a href="/buzzy/buzzy-wasconfig/">these instructions</a></p>
 <h3 id="add-ibm-connections-widgets">Add IBM Connections widgets<a class="headerlink" href="#add-ibm-connections-widgets" title="Permanent link">&para;</a></h3>
 <p>Please follow <a href="/buzzy/buzzy-widgets/">these instructions</a></p>
-<h3 id="setup-sso">Setup SSO<a class="headerlink" href="#setup-sso" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Login with email address - eg as Admin  </li>
-<li>Create a new Organization, under Organizations</li>
-<li>Go to Organization -&gt; Settings -&gt; Add Provider -&gt; IBM Connections On Premise. Use the OAuth ID &amp; Secret setup previously.</li>
-<li>Create a new team - choose a really short team name as users will need to type this in and it's case sensitive.  </li>
-<li>Restart the Buzzy server  </li>
-<li>Login with Connections On Prem button and type the team name in.  </li>
-</ul>
                 
                   
                 
