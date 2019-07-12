@@ -42,7 +42,7 @@
     
     
       
-        <title>Attaching files - Kudos Docs</title>
+        <title>Attaching Files to Cards - Kudos Docs</title>
       
     
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Attaching files
+                Attaching Files to Cards
               </span>
             
           
@@ -186,14 +186,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../../.." title="Welcome" class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." title="Welcome" class="md-tabs__link">
         Welcome
       </a>
     
@@ -205,7 +207,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../" title="Kudos Boards" class="md-tabs__link">
+        <a href="../../" title="Kudos Boards" class="md-tabs__link md-tabs__link--active">
           Kudos Boards
         </a>
       
@@ -319,10 +321,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Kudos Boards
@@ -914,10 +918,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6" checked>
     
     <label class="md-nav__link" for="nav-2-6">
       How To Guide
@@ -1034,6 +1040,94 @@
     <a href="../use-auth0/" title="Using Auth0 with Kudos Boards" class="md-nav__link">
       Using Auth0 with Kudos Boards
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Attaching Files to Cards
+      </label>
+    
+    <a href="./" title="Attaching Files to Cards" class="md-nav__link md-nav__link--active">
+      Attaching Files to Cards
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#office-365-ibm-connections" title="Office 365 &amp; IBM Connections" class="md-nav__link">
+    Office 365 &amp; IBM Connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auth0-google-facebook-linkedin" title="Auth0, Google, Facebook, LinkedIn" class="md-nav__link">
+    Auth0, Google, Facebook, LinkedIn
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-a-file-to-a-card" title="Attaching a File to a Card" class="md-nav__link">
+    Attaching a File to a Card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#removing-an-attached-file" title="Removing an Attached File" class="md-nav__link">
+    Removing an Attached File
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-can-remove-files" title="Who Can Remove Files?" class="md-nav__link">
+    Who Can Remove Files?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-are-files-stored" title="Where are Files Stored?" class="md-nav__link">
+    Where are Files Stored?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deleting-a-card-that-has-attachments" title="Deleting a Card that has Attachments" class="md-nav__link">
+    Deleting a Card that has Attachments
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1462,13 +1556,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#increasing-the-upload-limit" title="Increasing the Upload Limit" class="md-nav__link">
-    Increasing the Upload Limit
-  </a>
-  
-</li>
-      
       
       
       
@@ -1486,7 +1573,7 @@
               
                 
                 
-                  <h1>Attaching files</h1>
+                  <h1>Attaching Files to Cards</h1>
                 
                 <p><img style="float: right" src="/assets/images/boards-logo.jpg" height="100" alt="My Boards" /></p>
 <p>Kudos Boards allows files under <code>20mb</code> to be attached to cards directly.</p>
@@ -1514,8 +1601,6 @@
 <p>If you are using Office 365 or IBM Connections, your files are stored within these environments.</p>
 <h3 id="deleting-a-card-that-has-attachments">Deleting a Card that has Attachments<a class="headerlink" href="#deleting-a-card-that-has-attachments" title="Permanent link">&para;</a></h3>
 <p>When you archive a card, the attachments will still be accessible however, if you delete the card permanently then the attachments will also be deleted.</p>
-<h3 id="increasing-the-upload-limit">Increasing the Upload Limit<a class="headerlink" href="#increasing-the-upload-limit" title="Permanent link">&para;</a></h3>
-<p>Please contact <a href="mailto:support@kudosboards.com">support@kudosboards.com</a> to request an increase in upload limit.</p>
                 
                   
                 
@@ -1532,6 +1617,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../use-auth0/" title="Using Auth0 with Kudos Boards" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Using Auth0 with Kudos Boards
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../quick-tips-for-boards/" title="Quick Tips for Boards" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Quick Tips for Boards
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
