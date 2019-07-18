@@ -1714,109 +1714,84 @@
 <thead>
 <tr>
 <th>Key</th>
-<th>Line</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ROOT_URL</td>
-<td>41</td>
 <td>URL you are deploying Buzzy to, including https://</td>
 </tr>
 <tr>
 <td>MONGO_URL</td>
-<td>45</td>
 <td>Enter your mongoDB credentials and URL</td>
 </tr>
 <tr>
 <td>MONGO_OPLOG_URL</td>
-<td>47</td>
 <td>Enter your mongoDB credentials and URL</td>
 </tr>
 <tr>
-<td>MAIL_URL</td>
-<td>49</td>
-<td>Enter your SMTP details</td>
-</tr>
-<tr>
 <td>METEOR_SETTINGS.AWS_BUZZY_FILES</td>
-<td>62-72</td>
 <td>Your s3 file storage config</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.MAIL_URL</td>
-<td>120</td>
 <td>Enter your SMTP details (same as above)</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.BUZZY_ADMIN_EMAIL</td>
-<td>122</td>
 <td>OPTIONAL: Enter Admin user email, used as the primary owner of the default buzzes and resources that appear on the palette</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.DEFAULT_OAUTH_PROVIDERS</td>
-<td>123-135</td>
 <td>Details for the OAuth provider to be set up (e.g. IBM Connections). ClientID and ClientSecret are from the OAuth setup in the previous step</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.BUZZY_LOGGING_TOKEN</td>
-<td>138</td>
 <td>Token used for access to the Buzzy logging server. Must be the same in the buzzy-logging.yml</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.BUZZY_CREATE_DEFAULT_ACCOUNTS</td>
-<td>153</td>
 <td>Default accounts created. Set isAdmin for these accounts to be considered the same as BUZZY_ADMIN_EMAIL. Make the email the same as one from the OAuth provider to be able to view and edit the provider settings</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.AWS_BUZZY_FILES</td>
-<td>231</td>
 <td>public AWS details for files</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.IBMConnectionsOnPrem.signInDomains</td>
-<td>255</td>
 <td>IBM Connections URLs you are connecting to this Buzzy instance</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_CUSTOM.NAME</td>
-<td>368</td>
 <td>Company Name</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_CUSTOM.LOGO_MAIN</td>
-<td>371</td>
 <td>URL of your main logo</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_CUSTOM.LOGO_MAIL</td>
-<td>372</td>
 <td>URL of us in Email</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_CUSTOM.EMAIL_FOOTER</td>
-<td>375</td>
 <td>Email Footer</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_CUSTOM.PROMO_URL</td>
-<td>377</td>
 <td>Splash image</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_CUSTOM.WELCOME_IMAGE</td>
-<td>379</td>
 <td>Welcome Image</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_LOGGING_SERVER</td>
-<td>406</td>
 <td>URL of the Buzzy logging server</td>
 </tr>
 <tr>
 <td>Ingress.spec.rules.host</td>
-<td>487</td>
 <td>host name for the buzzy app</td>
 </tr>
 </tbody>
@@ -1847,49 +1822,36 @@ NOTE: Buzzy logging server srequires Websocket support and as such it will not w
 <thead>
 <tr>
 <th>Key</th>
-<th>Line</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>ROOT_URL</td>
-<td>41</td>
 <td>URL you are deploying Buzzy logging to, including https://</td>
 </tr>
 <tr>
 <td>MONGO_URL</td>
-<td>45</td>
 <td>Enter your mongoDB credentials and URL</td>
 </tr>
 <tr>
 <td>MONGO_OPLOG_URL</td>
-<td>47</td>
 <td>Enter your mongoDB credentials and URL</td>
 </tr>
 <tr>
-<td>MAIL_URL</td>
-<td>49</td>
-<td>Enter your SMTP details</td>
-</tr>
-<tr>
 <td>METEOR_SETTINGS.BUZZY_LOGGING_TOKEN</td>
-<td>52</td>
 <td>Token used for access to the Buzzy logging server. Must be the same in the buzzy.yml</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_LOGGING_SERVER</td>
-<td>54</td>
 <td>URL you are deploying Buzzy logging to, including https://</td>
 </tr>
 <tr>
 <td>METEOR_SETTINGS.public.BUZZY_APP_SERVER</td>
-<td>55</td>
 <td>Buzzy URL</td>
 </tr>
 <tr>
 <td>Ingress.spec.rules.host</td>
-<td>95</td>
 <td>hostname for Buzzy logging, excluding https://</td>
 </tr>
 </tbody>
