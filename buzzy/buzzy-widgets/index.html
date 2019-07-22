@@ -1368,13 +1368,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#register-widget" title="Register Widget" class="md-nav__link">
-    Register Widget
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#activity-stream-widget" title="Activity Stream widget" class="md-nav__link">
     Activity Stream widget
   </a>
@@ -1519,13 +1512,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#register-widget" title="Register Widget" class="md-nav__link">
-    Register Widget
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#activity-stream-widget" title="Activity Stream widget" class="md-nav__link">
     Activity Stream widget
   </a>
@@ -1559,25 +1545,18 @@ ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell
 </code></pre>
 <p>Edit the widgets-config.xml file. Under the <resource type="community"> section, then under <widgets>, then within <definitions> add the following.</p>
 <pre><code>&lt;!-- BUZZY --&gt;
-&lt;widgetDef defId="Buzzy" modes="view fullpage" url="https://&lt;BUZZY_URL&gt;/widget/widget.xml" themes="wpthemeNarrow wpthemeWide wpthemeBanner" uniqueInstance="true"&gt;
-  &lt;itemSet&gt;
-    &lt;item name="resourceId" value="{resourceId}"/&gt;
-  &lt;/itemSet&gt;
-&lt;/widgetDef&gt;
+&lt;widgetDef defId="BuzzyOnPremURLWidgetCS" modes="view fullpage" url="{webresourcesSvcRef}/web/com.ibm.social.urliWidget.web.resources/widget/urlWidget.xml" themes="wpthemeNarrow wpthemeWide wpthemeBanner"&gt;
+              &lt;itemSet&gt;
+              &lt;item name="resourceId" value="{resourceId}"/&gt;
+                &lt;item name="width" value="100%"/&gt;
+                &lt;item name="height" value="500px"/&gt;
+                &lt;item name="url" value="https://&lt;BUZZY_URL&gt;/connectionsstart?pagestyle=white&amp;amp;leannav=true"/&gt;
+              &lt;/itemSet&gt;
+        &lt;/widgetDef&gt;
 &lt;!-- END BUZZY --&gt;
 </code></pre>
 <p>Check in the widgets-config.xml file.</p>
 <pre><code>ProfilesConfigService.checkInWidgetConfig()
-</code></pre>
-<h3 id="register-widget">Register Widget<a class="headerlink" href="#register-widget" title="Permanent link">&para;</a></h3>
-<p>Required for IBM Connections 6.0 CR1 onwards</p>
-<pre><code>    execfile("newsAdmin.py")
-
-    NewsWidgetCatalogService.addWidget(title="Buzzy", url="http://&lt;BUZZY_URL&gt;/widget/widget.xml" ,secureUrl="https://&lt;BUZZY_URL&gt;/widget/widget.xml", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
-
-    NewsWidgetCatalogService.enableWidget("&lt;ID_RETURNED&gt;")
-
-    NewsWidgetCatalogService.clearWidgetCaches()
 </code></pre>
 <hr />
 <h3 id="activity-stream-widget">Activity Stream widget<a class="headerlink" href="#activity-stream-widget" title="Permanent link">&para;</a></h3>
