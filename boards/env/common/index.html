@@ -1549,15 +1549,19 @@
 </tr>
 <tr>
 <td><code>core.env.NOTIFIER_EMAIL_HOST</code></td>
-<td>SMTP gateway URL, ie <code>smtp.ethereal.com</code></td>
+<td>SMTP gateway hostname, ie <code>smtp.ethereal.com</code></td>
 </tr>
 <tr>
 <td><code>core.env.NOTIFIER_EMAIL_USERNAME</code></td>
-<td>SMTP gateway <code>username</code></td>
+<td><strong>Optional</strong>: SMTP gateway authentication.<br/>Setting a value will enable authentication and the default port to <code>587</code></td>
 </tr>
 <tr>
 <td><code>core.env.NOTIFIER_EMAIL_PASSWORD</code></td>
-<td>SMTP gateway <code>password</code></td>
+<td><strong>Optional</strong>: SMTP gateway authentication password</td>
+</tr>
+<tr>
+<td><code>core.env.NOTIFIER_EMAIL_PORT</code></td>
+<td><strong>Optional</strong>: SMTP gateway port. <br/>Default: <code>25</code> (<strong>OR</strong> <code>587</code> if <code>NOTIFIER_EMAIL_USERNAME</code> is set)</td>
 </tr>
 <tr>
 <td><code>provider.env.WIDGET_ID</code></td>
