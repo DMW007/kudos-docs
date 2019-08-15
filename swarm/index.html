@@ -1503,6 +1503,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ssl-setup" title="SSL setup" class="md-nav__link">
+    SSL setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#server-access" title="Server access" class="md-nav__link">
     Server access
   </a>
@@ -1635,6 +1642,13 @@
         <li class="md-nav__item">
   <a href="#setup-ansible" title="Setup Ansible" class="md-nav__link">
     Setup Ansible
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssl-setup" title="SSL setup" class="md-nav__link">
+    SSL setup
   </a>
   
 </li>
@@ -1790,12 +1804,24 @@ When configuring the servers, you will need to enable the following network rule
 <li>http(s) traffic should be allowed to the Gateway only</li>
 <li>ssh traffic should be allowed to all servers</li>
 <li>Where possible all servers should be on an additional (internal only) subnet, this allows us to further lock down access to NFS shares</li>
+<li>If you have access to the servers from your local machine then you can run the scripts directly, however if this is not the case then you will need to use an ssh jump box as depicted below.</li>
 </ul>
 <p><img alt="Network Diagram" src="/assets/swarm-net.png" /></p>
 <hr />
 <h2 id="setup-ansible">Setup Ansible<a class="headerlink" href="#setup-ansible" title="Permanent link">&para;</a></h2>
 <p>See <a href="/tools/ansible/">Ansible setup guide</a>.</p>
-<p>Download and extract <a href="/assets/docker-swarm-blank.zip">This zip file</a></p>
+<p>Download and extract <a href="/assets/docker-swarm-blank.zip">This zip file</a> to a convenient location, you will run the ansible scripts below from this directory.</p>
+<hr />
+<h2 id="ssl-setup">SSL setup<a class="headerlink" href="#ssl-setup" title="Permanent link">&para;</a></h2>
+<p>There are four domains in this guide that will require certificates, these can be covered by a single wildcard certificate or by individual certificates.</p>
+<ul>
+<li>boards.example.com</li>
+<li>boards-api.example.com</li>
+<li>portainer.example.com</li>
+<li>proxy.swarm.example.com (optional traefik proxy dashboard)</li>
+</ul>
+<p>You will need to obtain pem encoded certificates (including any required intermediate certificates) and keys for these domains. These should be named alike (e.g. boards.crt and boards.key).</p>
+<p>Place all the certificates and keys in the directory <code>ansible/roles/docker-swarm/files/ssl/</code>.</p>
 <hr />
 <h2 id="server-access">Server access<a class="headerlink" href="#server-access" title="Permanent link">&para;</a></h2>
 <p>Ansible uses ssh to communicate with the servers so you'll need to be able to access them from your shell directly.</p>
@@ -1807,7 +1833,7 @@ e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
 </code></pre>
 <hr />
 <h2 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h2>
-<p>Download <a href="/assets/config/swarm/servers.yml">this hosts file</a> and update the values as follows:</p>
+<p>Download <a href="/assets/config/swarm/servers.yml">this hosts file</a>, save it in the hosts directory and update the values as follows:</p>
 <table>
 <thead>
 <tr>
@@ -1850,7 +1876,7 @@ e.g. ssh -i /home/nicky/.ssh/id_rsa nicky@10.10.10.1
 </tr>
 <tr>
 <td>all.vars.ssl_certs</td>
-<td>For ssl to work on your environment, you need to have a pem encoded certificate and keyfile for each domain you plan to serve on. You should name these files name.crt and name.key and then add all of the names in this field</td>
+<td>The names of all SSL certificates as defined above</td>
 </tr>
 <tr>
 <td>all.vars.dashboard_host</td>
