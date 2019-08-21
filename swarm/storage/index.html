@@ -1594,7 +1594,7 @@
                 
                 
                 <h1 id="deploy-mongodb-s3-storage">Deploy MongoDB &amp; S3 Storage<a class="headerlink" href="#deploy-mongodb-s3-storage" title="Permanent link">&para;</a></h1>
-<p>Kudos Boards requires an S3 object store, and a Mongo database.  This documentation will deploy a Minio S3 storage container &amp; MongoDB replicaSet into the Swarm setup.</p>
+<p>Kudos Boards requires an S3 object store, and a Mongo database. This documentation will deploy a Minio S3 storage container &amp; MongoDB replicaSet into the Swarm setup.</p>
 <p>If you already have externally hosted mongo database and/or S3 storage please contact us for assistance in utilising them. <a href="mailto:support@kudosboards.com">support@kudosboards.com</a></p>
 <h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1613,11 +1613,11 @@
 <tbody>
 <tr>
 <td>x-minio-access</td>
-<td>Your minio ACCESS KEY as defined in your docker swarm config</td>
+<td>Provide an access key to use (min 3 chars, alpha numeric and "-"), you will need to provide this to any services that require access to minio</td>
 </tr>
 <tr>
 <td>x-minio-secret</td>
-<td>Your minio SECRET KEY as defined in your docker swarm config</td>
+<td>Provide a secret key to use (min 8 chars, alpha numeric and "-"), you will need to provide this to any services that require access to minio</td>
 </tr>
 </tbody>
 </table>
