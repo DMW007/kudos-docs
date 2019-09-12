@@ -1706,27 +1706,27 @@
 <tr>
 <td>IBM Connections (on premise)</td>
 <td><a href="/boards/connections/auth-on-prem/">Kudos instructions</a></td>
-<td><code>[BOARDS_URL]/auth/connections/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/connections/callback</code></td>
 </tr>
 <tr>
 <td>Microsoft Office 365</td>
 <td><a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure app registrations</a></td>
-<td><code>[BOARDS_URL]/auth/msgraph/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/msgraph/callback</code></td>
 </tr>
 <tr>
 <td>Google</td>
 <td><a href="https://console.developers.google.com/apis/credentials">Google Console</a></td>
-<td><code>[BOARDS_URL]/auth/google/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/google/callback</code></td>
 </tr>
 <tr>
 <td>LinkedIn</td>
 <td><a href="https://www.linkedin.com/developers/apps">LinkedIn</a></td>
-<td><code>[BOARDS_URL]/auth/linkedin/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/linkedin/callback</code></td>
 </tr>
 <tr>
 <td>Facebook</td>
 <td><a href="https://developers.facebook.com/apps/2087069981334024/fb-login/settings/">Facebook developer centre</a></td>
-<td><code>[BOARDS_URL]/auth/facebook/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/facebook/callback</code></td>
 </tr>
 </tbody>
 </table>
@@ -1743,23 +1743,23 @@
 <tbody>
 <tr>
 <td><code>x-minio-access</code></td>
-<td>Your minio <code>ACCESS_KEY</code> as defined in your docker swarm config</td>
+<td>Minio <code>ACCESS_KEY</code> as defined in your docker swarm config</td>
 </tr>
 <tr>
 <td><code>x-minio-secret</code></td>
-<td>Your minio <code>SECRET_KEY</code> as defined in your docker swarm config</td>
+<td>Minio <code>SECRET_KEY</code> as defined in your docker swarm config</td>
 </tr>
 <tr>
 <td><code>x-app-env.APP_URI</code></td>
-<td>Your <code>[BOARDS_URL]</code></td>
+<td><code>https://[BOARDS_URL]</code></td>
 </tr>
 <tr>
 <td><code>services.webfront.deploy.labels</code></td>
-<td>Update the <code>traefik.frontend.rule</code> your <code>[BOARDS_URL]</code></td>
+<td>Update the <code>traefik.frontend.rule</code> your <code>[BOARDS_URL]</code> (no protocol)</td>
 </tr>
 <tr>
 <td><code>services.core.deploy.labels</code></td>
-<td>Update the <code>traefik.frontend.rule</code> with your <code>[API_URL]</code></td>
+<td>Update the <code>traefik.frontend.rule</code> with your <code>[API_URL]</code> (no protocol)</td>
 </tr>
 </tbody>
 </table>

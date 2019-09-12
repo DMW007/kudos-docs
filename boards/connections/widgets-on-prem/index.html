@@ -1617,14 +1617,14 @@
 <pre><code>execfile("profilesAdmin.py")
 ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell())
 </code></pre>
-<p>Edit the widgets-config.xml file. Find the resource element with the type of community, e.g. <code>&lt;resource ... type="community" ... &gt;</code>, then under <code>&lt;widgets&gt;</code>, then within <code>&lt;definitions&gt;</code> add the following, replacing <code>&lt;BOARDS_URL&gt;</code> with your URL:</p>
+<p>Edit the widgets-config.xml file. Find the resource element with the type of community, e.g. <code>&lt;resource ... type="community" ... &gt;</code>, then under <code>&lt;widgets&gt;</code>, then within <code>&lt;definitions&gt;</code> add the following, replacing <code>[BOARDS_URL]</code> with your URL:</p>
 <pre><code>&lt;!-- Kudos Boards --&gt;
 &lt;widgetDef defId="Kudos Boards" modes="view fullpage" url="{webresourcesSvcRef}/web/com.ibm.social.urliWidget.web.resources/widget/urlWidget.xml" themes="wpthemeNarrow wpthemeWide wpthemeBanner" uniqueInstance="true"&gt;
   &lt;itemSet&gt;
   &lt;item name="resourceId" value="{resourceId}"/&gt;
     &lt;item name="width" value="100%"/&gt;
     &lt;item name="height" value="500px"/&gt;
-    &lt;item name="url" value="https://&lt;BOARDS_URL&gt;/boards/community/connections"/&gt;
+    &lt;item name="url" value="https://[BOARDS_URL]/boards/community/connections"/&gt;
   &lt;/itemSet&gt;
 &lt;/widgetDef&gt;
 &lt;!-- END Kudos Boards --&gt;
@@ -1645,7 +1645,7 @@ ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell
 <p>Click the <code>Add Mapping</code> button.</p>
 <p>Add a Mapping for the Kudos Boards service to the Kudos client. Ensure OAuth Client is set to conn-ee and the Service name is Kudos Boards.
 Click the Ok button</p>
-<p>Enter the following, replacing <code>&lt;BOARDS_URL&gt;</code> with your URL:</p>
+<p>Enter the following, replacing <code>[BOARDS_URL]</code> with your URL:</p>
 <table>
 <thead>
 <tr>
@@ -1660,19 +1660,19 @@ Click the Ok button</p>
 </tr>
 <tr>
 <td>URL Address</td>
-<td><code>http://&lt;BOARDS_URL&gt;/stream/connections</code></td>
+<td><code>http://[BOARDS_URL]/stream/connections</code></td>
 </tr>
 <tr>
 <td>Secure URL Address</td>
-<td><code>https://&lt;BOARDS_URL&gt;/stream/connections</code></td>
+<td><code>https://[BOARDS_URL]/stream/connections</code></td>
 </tr>
 <tr>
 <td>ICON URL</td>
-<td><code>http://&lt;BOARDS_URL&gt;/favicon.ico</code></td>
+<td><code>http://[BOARDS_URL]/favicon.ico</code></td>
 </tr>
 <tr>
 <td>ICON SECURE URL</td>
-<td><code>https://&lt;BOARDS_URL&gt;/favicon.ico</code></td>
+<td><code>https://[BOARDS_URL]/favicon.ico</code></td>
 </tr>
 </tbody>
 </table>
@@ -1693,10 +1693,10 @@ Click the Ok button</p>
 <!-- This is not needed for the iframe widget
 ### Register Widget
 
-Required for IBM Connections 6.0 CR1 onwards, replacing `<BOARDS_URL>` with your URL:
+Required for IBM Connections 6.0 CR1 onwards, replacing `[BOARDS_URL]` with your URL:
 
     execfile("newsAdmin.py")
-    NewsWidgetCatalogService.addWidget(title="Kudos Boards", url="http://<BOARDS_URL>/boards/community/connections" ,secureUrl="https://<BOARDS_URL>/boards/community/connections", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
+    NewsWidgetCatalogService.addWidget(title="Kudos Boards", url="http://[BOARDS_URL]/boards/community/connections" ,secureUrl="https://[BOARDS_URL]/boards/community/connections", categoryName=WidgetCategories.NONE, isHomepageSpecific=0, isDefaultOpened=0, multipleInstanceAllowed=0, isGadget=0, policyFlags=[GadgetPolicyFlags.TRUSTED], prereqs=['communities'], appContexts=["IWIDGETS"])
     NewsWidgetCatalogService.enableWidget("<ID_RETURNED>")
     NewsWidgetCatalogService.clearWidgetCaches()
 -->

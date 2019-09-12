@@ -1797,17 +1797,17 @@
 <tbody>
 <tr>
 <td>Example of <code>BOARDS_URL</code></td>
-<td><code>https://boards.example.com</code></td>
-<td><code>https://example.com/boards</code></td>
+<td><code>boards.example.com</code></td>
+<td><code>example.com/boards</code></td>
 </tr>
 <tr>
 <td>Example of <code>API_URL</code></td>
-<td><code>https://api.example.com</code></td>
-<td><code>https://example.com/api-boards</code></td>
+<td><code>api.example.com</code></td>
+<td><code>example.com/api-boards</code></td>
 </tr>
 <tr>
 <td>Requirement</td>
-<td>1. Reverse proxy able to match any current domains as well as the new one for Kudos Boards (either by using SNI or a compatible certificate for all domains).</br>2. Certificate coverage for the 2 domains</td>
+<td>1. Reverse proxy able to match any current domains as well as the new one for Kudos Boards (either by using SNI or a compatible certificate for all domains).</br>2. Certificate coverage for the 2 domains.</td>
 <td>Ability to proxy the 2 paths</td>
 </tr>
 <tr>
@@ -1818,7 +1818,12 @@
 <tr>
 <td>Notes</td>
 <td>IBM HTTP WebServer supports only one certificate. You must have a Wildcard certificate to cover all of your domains including the new Boards domains (ie *.example.com).</td>
-<td>Additional config required to make Boards webfront handle redirects, details below</td>
+<td>Additional config required to make Boards webfront handle redirects, details below.</td>
+</tr>
+<tr>
+<td>For Connections Header</td>
+<td>Additional <a href="/boards/connections/header-on-prem/">WebSphere application</a> must be installed</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
@@ -1840,27 +1845,27 @@
 <tr>
 <td>IBM Connections<br>(on premise)</td>
 <td><a href="/boards/connections/auth-on-prem/">Kudos instructions</a></td>
-<td><code>[BOARDS_URL]/auth/connections/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/connections/callback</code></td>
 </tr>
 <tr>
 <td>Microsoft Office 365</td>
 <td><a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure app registrations</a></td>
-<td><code>[BOARDS_URL]/auth/msgraph/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/msgraph/callback</code></td>
 </tr>
 <tr>
 <td>Google</td>
 <td><a href="https://console.developers.google.com/apis/credentials">Google Console</a></td>
-<td><code>[BOARDS_URL]/auth/google/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/google/callback</code></td>
 </tr>
 <tr>
 <td>LinkedIn</td>
 <td><a href="https://www.linkedin.com/developers/apps">LinkedIn</a></td>
-<td><code>[BOARDS_URL]/auth/linkedin/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/linkedin/callback</code></td>
 </tr>
 <tr>
 <td>Facebook</td>
 <td><a href="https://developers.facebook.com/apps/2087069981334024/fb-login/settings/">Facebook developer centre</a></td>
-<td><code>[BOARDS_URL]/auth/facebook/callback</code></td>
+<td><code>https://[BOARDS_URL]/auth/facebook/callback</code></td>
 </tr>
 </tbody>
 </table>
@@ -1927,7 +1932,7 @@
 <tbody>
 <tr>
 <td><code>global.env.APP_URI</code></td>
-<td>Your <code>BOARDS_URL</code></td>
+<td><code>https://[BOARDS_URL]</code></td>
 </tr>
 <tr>
 <td><code>global.env.MONGO_USER</code></td>
@@ -1959,11 +1964,11 @@
 </tr>
 <tr>
 <td><code>webfront.ingress.hosts</code></td>
-<td>Your <code>BOARDS_URL</code> url as above without http</td>
+<td><code>[BOARDS_URL]</code> (no protocol)</td>
 </tr>
 <tr>
 <td><code>core.ingress.hosts</code></td>
-<td>Your <code>API_URL</code> without the protocol e.g. api.kudosboards.com</td>
+<td><code>[API_URL]</code> (no protocol, e.g. api.kudosboards.com)</td>
 </tr>
 </tbody>
 </table>
@@ -1986,7 +1991,7 @@
 <hr />
 <h3 id="ibm-connections-integrations">IBM Connections integrations<a class="headerlink" href="#ibm-connections-integrations" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="/boards/connections/header-on-prem/">Header</a></li>
+<li><a href="/boards/connections/header-on-prem/">Header</a> (<em>Note: only required if Boards is hosted on a different domain to Connections</em>)</li>
 <li><a href="/boards/connections/apps-menu-on-prem/">Apps Menu</a></li>
 <li><a href="/boards/connections/widgets-on-prem/">Widgets</a></li>
 </ul>
