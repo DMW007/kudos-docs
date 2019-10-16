@@ -1531,6 +1531,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updates" title="Updates" class="md-nav__link">
+    Updates
+  </a>
+  
+</li>
+      
       
       
       
@@ -1600,6 +1607,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updates" title="Updates" class="md-nav__link">
+    Updates
+  </a>
+  
+</li>
+      
       
       
       
@@ -1657,6 +1671,14 @@
 <li>Browse to your customised config file</li>
 <li>Click "Deploy the stack"</li>
 </ol>
+<hr />
+<h3 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h3>
+<p>The Storage services can be updated through the Portainer interface, or alternatively these commands should force latest images to run</p>
+<pre><code>docker service update --force --image bitnami/mongodb:latest storage/mongo
+docker service update --force --image minio/minio:latest storage/minio
+</code></pre>
+
+<hr />
                 
                   
                 

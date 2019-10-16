@@ -740,6 +740,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updates" title="Updates" class="md-nav__link">
+    Updates
+  </a>
+  
+</li>
+      
       
       
       
@@ -1658,6 +1665,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#updates" title="Updates" class="md-nav__link">
+    Updates
+  </a>
+  
+</li>
+      
       
       
       
@@ -1795,6 +1809,24 @@ api.kudosboards.com -&gt; swarm.isw.net.au
 <h3 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h3>
 <p>You can also run Kudos Boards with externally hosted mongo database and/or S3 storage.
 For assistance with this contact <a href="mailto:support@kudosboards.com">support@kudosboards.com</a></p>
+<hr />
+<h3 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h3>
+<p>The Boards services can be updated through the Portainer interface, or alternatively these commands should force latest images to run</p>
+<pre><code>docker service update --force --image redis:latest boards/redis
+docker service update --force --image iswkudos/kudos-boards-docker:webfront boards/webfront
+docker service update --force --image iswkudos/kudos-boards-docker:core boards/core
+docker service update --force --image iswkudos/kudos-boards-docker:boards boards/app
+docker service update --force --image iswkudos/kudos-boards-docker:user boards/user
+docker service update --force --image iswkudos/kudos-boards-docker:licence boards/licence
+docker service update --force --image iswkudos/kudos-boards-docker:provider boards/provider
+docker service update --force --image iswkudos/kudos-boards-docker:notification boards/notification
+</code></pre>
+
+<p>If you must update the Portainer/Traefik images, try these commands:</p>
+<p>```
+docker service update --force --image portainer/portainer:latest portainer/portainer
+docker service update --force --image portainer/agent:latest portainer/portainer
+docker service update --force --image traefik:alpine proxy/proxy</p>
 <hr />
                 
                   
