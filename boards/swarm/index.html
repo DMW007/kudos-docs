@@ -1823,10 +1823,11 @@ docker service update --force --image iswkudos/kudos-boards-docker:notification 
 </code></pre>
 
 <p>If you must update the Portainer/Traefik images, try these commands:</p>
-<p>```
-docker service update --force --image portainer/portainer:latest portainer/portainer
+<pre><code>docker service update --force --image portainer/portainer:latest portainer/portainer
 docker service update --force --image portainer/agent:latest portainer/portainer
-docker service update --force --image traefik:alpine proxy/proxy</p>
+docker service update --force --image traefik:alpine proxy/proxy
+</code></pre>
+
 <hr />
                 
                   
