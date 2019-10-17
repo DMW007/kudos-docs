@@ -1524,15 +1524,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use" title="How to use" class="md-nav__link">
-    How to use
+  <a href="#process-overview" title="Process Overview" class="md-nav__link">
+    Process Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#after-migrate-complete" title="After migrate complete" class="md-nav__link">
-    After migrate complete
+  <a href="#deploy-helm-chart" title="Deploy Helm Chart" class="md-nav__link">
+    Deploy Helm Chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrate-activities" title="Migrate Activities" class="md-nav__link">
+    Migrate Activities
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logs" title="Logs" class="md-nav__link">
+    Logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#after-migration-complete" title="After Migration Complete" class="md-nav__link">
+    After Migration Complete
   </a>
   
 </li>
@@ -1556,6 +1577,7 @@
                 
                 <h1 id="migration-of-activities-to-kudos-boards">Migration of Activities to Kudos Boards<a class="headerlink" href="#migration-of-activities-to-kudos-boards" title="Permanent link">&para;</a></h1>
 <p>As part of the installation process for Kudos Boards (Activities Plus) you must run the migration service to move the existing Activities into Kudos Boards.</p>
+<h2 id="process-overview">Process Overview<a class="headerlink" href="#process-overview" title="Permanent link">&para;</a></h2>
 <p>This service will:</p>
 <ol>
 <li>access Activities data in the existing Connections SQL database</li>
@@ -1564,7 +1586,7 @@
 <li>write Boards data into the Component Pack mongo database</li>
 <li>write file attachments into S3 storage</li>
 </ol>
-<p>The following variables are required in order to perform this migration:</p>
+<p>Ensure you have updated the following variables as applicable in your <code>boards-cp.yaml</code> file downloaded previously</p>
 <table>
 <thead>
 <tr>
@@ -1656,11 +1678,32 @@
 </tr>
 </tbody>
 </table>
-<h2 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="deploy-helm-chart">Deploy Helm Chart<a class="headerlink" href="#deploy-helm-chart" title="Permanent link">&para;</a></h2>
+<p>Please deploy the following chart with the same configuration <code>boards-cp.yaml</code> file used to deploy the kudos-boards-cp chart</p>
+<pre><code>helm upgrade kudos-boards-cp-activity-migration https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-cp-activity-migration-1.0.0.tgz -i -f ./boards-cp.yaml --namespace connections --recreate-pods
+</code></pre>
+<hr />
+<h2 id="migrate-activities">Migrate Activities<a class="headerlink" href="#migrate-activities" title="Permanent link">&para;</a></h2>
 <p>The migration interface is accessible at <code>https://[CONNECTIONS_URL]/boards/app/admin/migration</code> to select which Activities to migrate (ie ignore completed/deleted).</p>
 <p>You can also set the <code>env.IMMEDIATELY_PROCESS_ALL</code> if you wish to migrate every Activity without the UI.</p>
-<h2 id="after-migrate-complete">After migrate complete<a class="headerlink" href="#after-migrate-complete" title="Permanent link">&para;</a></h2>
-<p>Please turn off the Activities application in WebSphere ISC</p>
+<hr />
+<h2 id="logs">Logs<a class="headerlink" href="#logs" title="Permanent link">&para;</a></h2>
+<p>You can check the pod logs for the kudos-boards-cp-activity-migration to see progress of the running migration</p>
+<p>For example</p>
+<p><img alt="Example" src="/assets/boards/cp/migration-logs.png" /></p>
+<hr />
+<h2 id="after-migration-complete">After Migration Complete<a class="headerlink" href="#after-migration-complete" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>The Migration service can be removed. Please use the following command</p>
+<pre><code>helm delete kudos-boards-cp-activity-migration --purge
+</code></pre>
+</li>
+<li>
+<p>Turn off the Activities application in WebSphere ISC</p>
+</li>
+</ol>
                 
                   
                 
