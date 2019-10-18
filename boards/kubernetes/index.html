@@ -736,8 +736,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-boards-services" title="Deploy Boards services" class="md-nav__link">
-    Deploy Boards services
+  <a href="#deploy-boards-chart" title="Deploy Boards Chart" class="md-nav__link">
+    Deploy Boards Chart
   </a>
   
 </li>
@@ -1714,8 +1714,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-boards-services" title="Deploy Boards services" class="md-nav__link">
-    Deploy Boards services
+  <a href="#deploy-boards-chart" title="Deploy Boards Chart" class="md-nav__link">
+    Deploy Boards Chart
   </a>
   
 </li>
@@ -1975,9 +1975,9 @@
 <p><strong>Boards Variables</strong>:</p>
 <p>Follow instructions on <a href="/boards/env/common/">this page</a></p>
 <hr />
-<h3 id="deploy-boards-services">Deploy Boards services<a class="headerlink" href="#deploy-boards-services" title="Permanent link">&para;</a></h3>
+<h3 id="deploy-boards-chart">Deploy Boards Chart<a class="headerlink" href="#deploy-boards-chart" title="Permanent link">&para;</a></h3>
 <p>Install the Boards services via our Helm chart</p>
-<pre><code>helm upgrade -i -f ./boards.yaml --namespace boards --recreate-pods boards https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-2.0.1.tgz
+<pre><code>helm upgrade boards https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-2.0.2.tgz -i -f ./boards.yaml --namespace boards --recreate-pods
 </code></pre>
 <hr />
 <h3 id="add-proxy-config">Add Proxy Config<a class="headerlink" href="#add-proxy-config" title="Permanent link">&para;</a></h3>
