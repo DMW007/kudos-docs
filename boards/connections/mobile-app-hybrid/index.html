@@ -1695,12 +1695,17 @@
 <p>Basic instructions for adding Kudos Boards into the HCL Connections mobile application</p>
 <hr />
 <h3 id="mobile-app-integration">Mobile App Integration<a class="headerlink" href="#mobile-app-integration" title="Permanent link">&para;</a></h3>
-<p>Check out the mobile-config.xml file.</p>
+<ol>
+<li>
+<p>Check-out <code>mobile-config.xml</code></p>
 <pre><code>execfile("mobileAdmin.py")
 MobileConfigService.checkOutConfig("/LCCheckedOut", AdminControl.getCell())
 </code></pre>
-<p>Edit the mobile-config.xml file. Find the Applications element and add the following Application:</p>
-<pre><code>&lt;Application name="Boards" enabled="true"&gt;
+</li>
+<li>
+<p>Edit <code>mobile-config.xml</code></p>
+<ul>
+<li>Find the <code>Applications</code> element and add the following <code>Application</code>:<pre><code>&lt;Application name="Boards" enabled="true"&gt;
   &lt;ApplicationIcon&gt;
     &lt;Android&gt;
       &lt;Hdpi&gt;http://kudosboards.com/img/logo-small.png&lt;/Hdpi&gt;
@@ -1722,12 +1727,27 @@ MobileConfigService.checkOutConfig("/LCCheckedOut", AdminControl.getCell())
   &lt;ApplicationURL&gt;https://kudosboards.com/auth/connections/[CONNECTIONS_HOSTNAME_BASE64]&lt;/ApplicationURL&gt;
 &lt;/Application&gt;
 </code></pre>
-<p>Where <code>[CONNECTIONS_HOSTNAME_BASE64]</code> is your Connections hostname base64 encoded.  E.g.</br>
+</li>
+</ul>
+<blockquote>
+<p>where <code>[CONNECTIONS_HOSTNAME_BASE64]</code> is your Connections hostname base64 encoded.  E.g.</br>
       <code>connections.example.com</code> =&gt; <code>Y29ubmVjdGlvbnMuZXhhbXBsZS5jb20=</code></br></p>
-<p>For Kudos Boards to appear in the app menu, add 'Boards' to the ApplicationList</p>
-<p>Check in the widgets-config.xml file.</p>
+</blockquote>
+<ul>
+<li>Find the <code>ApplicationsList</code> element and append <code>Boards</code>. For example:<pre><code>&lt;ApplicationsList&gt;profiles,communities,files,filesync,wikis,activities,forums,blogs,bookmarks,Boards&lt;/ApplicationsList&gt;
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p>Save and check-in <code>mobile-config.xml</code></p>
 <pre><code>MobileConfigService.checkInConfig("/LCCheckedOut", AdminControl.getCell())
 </code></pre>
+</li>
+<li>
+<p>Sync the <code>Nodes</code> as required</p>
+</li>
+</ol>
                 
                   
                 
