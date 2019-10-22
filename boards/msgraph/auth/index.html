@@ -1699,9 +1699,11 @@
                   <h1>Auth</h1>
                 
                 <h2 id="authenticating-kudos-boards-docker-with-office-365">Authenticating Kudos Boards Docker with Office 365<a class="headerlink" href="#authenticating-kudos-boards-docker-with-office-365" title="Permanent link">&para;</a></h2>
-<p>You must configure an OAuth Application in your Office 365 Tenant in order to use Kudos Boards with O365. To access this configuration you must be logged in as a tenant admin</p>
+<p>This document details the process to enable login to your private instance of Kudos Boards with your private Office 365 tenant.</p>
+<p><img alt="outcome of guide" src="/assets/msgraph/boards-login.png" /></p>
 <hr />
 <h2 id="register-oauth-application">Register OAuth Application<a class="headerlink" href="#register-oauth-application" title="Permanent link">&para;</a></h2>
+<p>You must configure an OAuth Application in your Office 365 Tenant in order to use Kudos Boards with O365. To access this configuration you must be logged in as a Microsoft tenant admin</p>
 <h3 id="open-the-azure-app-portal">Open the <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure App Portal</a><a class="headerlink" href="#open-the-azure-app-portal" title="Permanent link">&para;</a></h3>
 <p>Click <code>New Registration</code></p>
 <p><img alt="click new registration" src="/assets/msgraph/appreg.png" /></p>
@@ -1836,7 +1838,7 @@ https://[BOARDS_URL]/auth/msgraph/callback
 <li>
 <p>Click <code>Accept</code> on the following popup to grant the required permissions for Kudos Boards</p>
 <p><img alt="permission popup" src="../../../assets/msgraph/administrator_approval_view.png" /></p>
-<p>Congratulations! Your uses can now login via Office 365 and start using Kudos Boards!</p>
+<p>Congratulations! All users in your tenant can now login to Kudos Boards via Office 365!</p>
 <p><img alt="login options" src="/assets/msgraph/boards-login.png" /></p>
 </li>
 </ol>
