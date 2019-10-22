@@ -2075,6 +2075,9 @@
 <p>Install the Boards services via our Helm chart</p>
 <pre><code>helm upgrade boards https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-2.0.2.tgz -i -f ./boards.yaml --namespace boards --recreate-pods
 </code></pre>
+<blockquote>
+<p><strong>Note:</strong> <code>--recreate-pods</code> ensures all images are up to date. This will cause downtime.</p>
+</blockquote>
 <hr />
 <h3 id="add-proxy-config">Add Proxy Config<a class="headerlink" href="#add-proxy-config" title="Permanent link">&para;</a></h3>
 <h2 id="connections-on-premise-update-was-config">Connections On Premise - update WAS config<a class="headerlink" href="#connections-on-premise-update-was-config" title="Permanent link">&para;</a></h2>

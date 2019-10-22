@@ -1814,14 +1814,16 @@ https://[BOARDS_URL]/auth/msgraph/callback
 </code></pre>
 </li>
 <li>
-<p>Redeploy Boards Helm Chart</p>
-<p>For Component Pack</p>
-<pre><code>helm upgrade kudos-boards-cp https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-cp-1.0.0.tgz -i -f ./boards.yaml --namespace connections --recreate-pods
+<p>Redeploy Boards Helm Chart as per command for Kudos Boards:</p>
+<p><a href="/boards/cp/#deploy-boards-helm-chart">HCL Component Pack</a></p>
+<pre><code>helm upgrade kudos-boards-cp https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-cp-1.0.0.tgz -i -f ./boards-cp.yaml --namespace connections --recreate-pods
 </code></pre>
-<p>For Kubernetes</p>
+<p><a href="/boards/kubernetes/#deploy-boards-chart">for Docker - Kubernetes</a></p>
 <pre><code>helm upgrade boards https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-2.0.2.tgz -i -f ./boards.yaml --namespace boards --recreate-pods
 </code></pre>
-<p>Where <code>--recreate-pods</code> will ensure all images are updated to <code>latest</code></p>
+<blockquote>
+<p><strong>Note:</strong> <code>--recreate-pods</code> ensures all images are up to date. This will cause downtime.</p>
+</blockquote>
 </li>
 </ol>
 <h2 id="approve-permissions">Approve Permissions<a class="headerlink" href="#approve-permissions" title="Permanent link">&para;</a></h2>

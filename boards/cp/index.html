@@ -1856,6 +1856,9 @@ For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href=
 <p>Install the Boards services via our Helm chart</p>
 <pre><code>helm upgrade kudos-boards-cp https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-cp-1.0.0.tgz -i -f ./boards-cp.yaml --namespace connections --recreate-pods
 </code></pre>
+<blockquote>
+<p><strong>Note:</strong> <code>--recreate-pods</code> ensures all images are up to date. This will cause downtime.</p>
+</blockquote>
 <hr />
 <h3 id="add-proxy-config">Add Proxy Config<a class="headerlink" href="#add-proxy-config" title="Permanent link">&para;</a></h3>
 <h2 id="connections-on-premise-update-was-config">Connections On Premise - update WAS config<a class="headerlink" href="#connections-on-premise-update-was-config" title="Permanent link">&para;</a></h2>
