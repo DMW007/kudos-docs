@@ -1725,6 +1725,33 @@ CONNECTIONS_CLIENT_ID=kudosboards
 CONNECTIONS_CLIENT_SECRET=[VALUE_PRINTED]
 </code></pre>
 </li>
+<li>
+<p>Auto Authorize</p>
+<blockquote>
+<p><strong>Note:</strong> this step is optional but recommended and can be done at any time.</p>
+</blockquote>
+<p>Steps to configure the Kudos Boards application for auto-authorize (also <a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/admin/t_admin_registeroauthclientwprovider.html">documented here</a>)</p>
+<ul>
+<li>
+<p>Add the new line to the following section in <code>[cellname]/oauth20/connectionsProvider.xml</code></p>
+<pre><code>&lt;parameter name="oauth20.autoauthorize.clients" type="ws" customizable="true"&gt;
+  &lt;value&gt;kudosboards&lt;/value&gt;
+&lt;/parameter&gt;
+</code></pre>
+<blockquote>
+<p><strong> Note:</strong> keep any existing values and add the new line for <code>kudosboards</code></p>
+</blockquote>
+</li>
+<li>
+<p>Recreate the provider via this command:</p>
+<pre><code>./wsadmin.sh -lang jython -conntype SOAP -c "print AdminTask.createOAuthProvider('[-providerName connectionsProvider -fileName  [PATH_TO_CONFIG_FILE]/oauth20/connectionsProvider.xml]')" -user connectionsadmin -password passw0rd
+</code></pre>
+<blockquote>
+<p><strong>Note:</strong> update the wsadmin credentials and the <code>[PATH_TO_CONFIG_FILE]</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
 </ol>
                 
                   
