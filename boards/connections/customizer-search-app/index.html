@@ -1638,38 +1638,12 @@
     Copy Files to Customizer Server
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#todo-where-to-get-pluginjs" title="TODO: Where to get plugin.js" class="md-nav__link">
-    TODO: Where to get plugin.js
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
   <a href="#connections-customizer-app-registry" title="Connections Customizer App Registry" class="md-nav__link">
     Connections Customizer App Registry
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#todo-where-to-get-appreg-manifestjson" title="TODO: Where to get appreg-manifest.json" class="md-nav__link">
-    TODO: Where to get appreg-manifest.json
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1701,9 +1675,12 @@
 <p><em>These instructions are for Connections on-premise.</em></p>
 <p>If you want to learn more about using Connections Customizer, have a read of the developer documentation on <a href="https://github.com/ibmcnxdev/customizer/blob/master/docs/HCLConnectionsCustomizer.md">GitHub</a>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<p><a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_config_customizer_intro.html">Complete Setup of Connections Customizer</a></p>
+<ul>
+<li><a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_config_customizer_intro.html">Complete Setup of Connections Customizer</a></li>
+<li><a href="/assets/connections/boards-search-customizer.zip"><code>boards-search-customizer.zip</code></a></li>
+</ul>
 <h2 id="reverse-proxy-configuration">Reverse Proxy Configuration<a class="headerlink" href="#reverse-proxy-configuration" title="Permanent link">&para;</a></h2>
-<p>As part of the Connections Customizer set up, you configured a reverse proxy. </p>
+<p>As part of the Connections Customizer set up, you configured a reverse proxy.</p>
 <p>Our Customizer app has integration points in both the Search Sidebar and full Search page. The rule in your reverse proxy conf that directs requests to <code>mw-proxy</code> (customizer) should include all paths where the Search sidebar appears and the Search page. You might already be directing all traffic through Customizer, which will also work.</p>
 <pre><code>location ~ ^/(files/customizer|files/app|communities/service/html|forums/html|search/web|homepage/web|social/home|mycontacts|wikis/home|blogs|news|activities/service/html|profiles/html|viewer) {
       proxy_pass http://MW_PROXY_SERVICE:30301;
@@ -1711,17 +1688,24 @@
 </code></pre>
 
 <h2 id="copy-files-to-customizer-server">Copy Files to Customizer Server<a class="headerlink" href="#copy-files-to-customizer-server" title="Permanent link">&para;</a></h2>
-<p>The script file that is injected by Customizer needs to be copied into a directory on the <code>mw-proxy</code> server. </p>
-<ul>
-<li>Copy <code>plugin.js</code> into <code>/pv-connections/customizations/boards-search-customizer</code></li>
-</ul>
-<h3 id="todo-where-to-get-pluginjs">TODO: Where to get <code>plugin.js</code><a class="headerlink" href="#todo-where-to-get-pluginjs" title="Permanent link">&para;</a></h3>
-<h2 id="connections-customizer-app-registry">Connections Customizer App Registry<a class="headerlink" href="#connections-customizer-app-registry" title="Permanent link">&para;</a></h2>
+<p>The script file that is injected by Customizer needs to be copied into a directory on the <code>mw-proxy</code> server.</p>
 <ol>
 <li>
-<p>Go to the Connections Customizer App Registry, e.g  <code>https://connections.example.com/appreg</code></p>
-<p><em>To access App Registry, you need to have the <code>admin</code> Security Role for the Common application. This is configured in the WebSphere console</em></p>
+<p>Extract files from <code>boards-search-customizer.zip</code></p>
 </li>
+<li>
+<p>In <code>plugin.js</code> replace <code>[YOUR_CONNECTIONS_HOST]</code> with your connections hostname.</p>
+</li>
+<li>
+<p>Copy <code>plugin.js</code> into <code>/pv-connections/customizations/boards-search-customizer</code></p>
+</li>
+</ol>
+<h2 id="connections-customizer-app-registry">Connections Customizer App Registry<a class="headerlink" href="#connections-customizer-app-registry" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Go to the Connections Customizer App Registry, e.g <code>https://connections.example.com/appreg</code></li>
+</ol>
+<p><em>To access App Registry, you need to have the <code>admin</code> Security Role for the Common application. This is configured in the WebSphere console</em></p>
+<ol>
 <li>
 <p>Add a new app.</p>
 </li>
@@ -1729,18 +1713,17 @@
 <p>Open Code Editor.</p>
 </li>
 <li>
-<p>Copy the entire contents of <code>appreg-manifest.json</code> into the code editor and click <code>Save</code>.</p>
-<p><em>This saves you from completing all of the form fields for creating the app. You can edit the app now to customize names or directories if necessary.</em></p>
-<h3 id="todo-where-to-get-appreg-manifestjson">TODO: Where to get <code>appreg-manifest.json</code><a class="headerlink" href="#todo-where-to-get-appreg-manifestjson" title="Permanent link">&para;</a></h3>
+<p>Import or copy the entire contents of <code>appreg-manifest.json</code> from <code>boards-search-customizer.zip</code> into the code editor and click <code>Save</code>.</p>
 </li>
 </ol>
+<p><em>This saves you from completing all of the form fields for creating the app. You can edit the app now to customize names or directories if necessary.</em></p>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Use the Search Sidebar to search for content in Boards from different paths in Connections (e.g. homepage, profiles, activities, forums)</p>
 </li>
 <li>
-<p>Use advanced search (<code>/search/web/jsp/advancedSearch.jsp</code>) to see Boards results integrated in the full search results page. </p>
+<p>Use advanced search (<code>/search/web/jsp/advancedSearch.jsp</code>) to see Boards results integrated in the full search results page.</p>
 </li>
 </ol>
 <p><em>You need to have content in Boards to see any results.</em></p>
