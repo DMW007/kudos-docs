@@ -42,7 +42,7 @@
     
     
       
-        <title>Connections Search Integration with Connections Customizer - Kudos Docs</title>
+        <title>Search Integration with Connections Customizer - Kudos Docs</title>
       
     
     
@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#connections-search-integration-with-connections-customizer" tabindex="1" class="md-skip">
+      <a href="#search-integration-with-connections-customizer" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Connections Search Integration with Connections Customizer
+                Search Integration with Connections Customizer
               </span>
             
           
@@ -1627,8 +1627,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#reverse-proxy-configuration" title="Reverse Proxy Configuration" class="md-nav__link">
-    Reverse Proxy Configuration
+  <a href="#configure-reverse-proxy" title="Configure Reverse Proxy" class="md-nav__link">
+    Configure Reverse Proxy
   </a>
   
 </li>
@@ -1641,8 +1641,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connections-customizer-app-registry" title="Connections Customizer App Registry" class="md-nav__link">
-    Connections Customizer App Registry
+  <a href="#register-boards-search-in-customizer" title="Register Boards Search in Customizer" class="md-nav__link">
+    Register Boards Search in Customizer
   </a>
   
 </li>
@@ -1671,22 +1671,25 @@
               
                 
                 
-                <h1 id="connections-search-integration-with-connections-customizer">Connections Search Integration with Connections Customizer<a class="headerlink" href="#connections-search-integration-with-connections-customizer" title="Permanent link">&para;</a></h1>
-<p><em>These instructions are for Connections on-premise.</em></p>
+                <h1 id="search-integration-with-connections-customizer">Search Integration with Connections Customizer<a class="headerlink" href="#search-integration-with-connections-customizer" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p><strong>Note:</strong> These instructions are for HCL Connections On-Premise</p>
+</blockquote>
 <p>If you want to learn more about using Connections Customizer, have a read of the developer documentation on <a href="https://github.com/ibmcnxdev/customizer/blob/master/docs/HCLConnectionsCustomizer.md">GitHub</a>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_config_customizer_intro.html">Complete Setup of Connections Customizer</a></li>
-<li><a href="/assets/connections/boards-search-customizer.zip"><code>boards-search-customizer.zip</code></a></li>
-</ul>
-<h2 id="reverse-proxy-configuration">Reverse Proxy Configuration<a class="headerlink" href="#reverse-proxy-configuration" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Connections Customizer is setup as <a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_config_customizer_intro.html">per documentation</a></li>
+<li>Download <a href="/assets/connections/boards-search-customizer.zip">boards-search-customizer.zip</a></li>
+</ol>
+<hr />
+<h2 id="configure-reverse-proxy">Configure Reverse Proxy<a class="headerlink" href="#configure-reverse-proxy" title="Permanent link">&para;</a></h2>
 <p>As part of the Connections Customizer set up, you configured a reverse proxy.</p>
 <p>Our Customizer app has integration points in both the Search Sidebar and full Search page. The rule in your reverse proxy conf that directs requests to <code>mw-proxy</code> (customizer) should include all paths where the Search sidebar appears and the Search page. You might already be directing all traffic through Customizer, which will also work.</p>
 <pre><code>location ~ ^/(files/customizer|files/app|communities/service/html|forums/html|search/web|homepage/web|social/home|mycontacts|wikis/home|blogs|news|activities/service/html|profiles/html|viewer) {
       proxy_pass http://MW_PROXY_SERVICE:30301;
   }
 </code></pre>
-
+<hr />
 <h2 id="copy-files-to-customizer-server">Copy Files to Customizer Server<a class="headerlink" href="#copy-files-to-customizer-server" title="Permanent link">&para;</a></h2>
 <p>The script file that is injected by Customizer needs to be copied into a directory on the <code>mw-proxy</code> server.</p>
 <ol>
@@ -1694,18 +1697,21 @@
 <p>Extract files from <code>boards-search-customizer.zip</code></p>
 </li>
 <li>
-<p>If you want to restrict messages between boards and your connections environment, replace <code>targetOrigin</code> with your connections host (e.g. <code>https://connections.example.com</code>)</p>
+<p>If you want to restrict messages between Kudos Boards and your Connections environment, replace <code>targetOrigin</code> with your connections host (e.g. <code>https://connections.example.com</code>)</p>
 </li>
 <li>
 <p>Copy <code>plugin.js</code> into <code>/pv-connections/customizations/boards-search-customizer</code></p>
 </li>
 </ol>
-<h2 id="connections-customizer-app-registry">Connections Customizer App Registry<a class="headerlink" href="#connections-customizer-app-registry" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="register-boards-search-in-customizer">Register Boards Search in Customizer<a class="headerlink" href="#register-boards-search-in-customizer" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>Go to the Connections Customizer App Registry, e.g <code>https://connections.example.com/appreg</code></p>
-<p><em>To access App Registry, you need to have the <code>admin</code> Security Role for the Common application. This is configured in the WebSphere console</em></p>
-</li>
+<li>Go to the Connections Customizer App Registry, e.g <code>https://connections.example.com/appreg</code></li>
+</ol>
+<blockquote>
+<p>Note: To access App Registry, you need to have the <code>admin</code> Security Role for the Common application. This is configured in the WebSphere console</p>
+</blockquote>
+<ol>
 <li>
 <p>Add a new app.</p>
 </li>
@@ -1714,9 +1720,12 @@
 </li>
 <li>
 <p>Import or copy the entire contents of <code>appreg-manifest.json</code> from <code>boards-search-customizer.zip</code> into the code editor and click <code>Save</code>.</p>
-<p><em>This saves you from completing all of the form fields for creating the app. You can edit the app now to customize names or directories if necessary.</em></p>
 </li>
 </ol>
+<blockquote>
+<p>This saves you from completing all of the form fields for creating the app. You can edit the app now to customize names or directories if necessary.</p>
+</blockquote>
+<hr />
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -1724,9 +1733,11 @@
 </li>
 <li>
 <p>Use advanced search (<code>/search/web/jsp/advancedSearch.jsp</code>) to see Boards results integrated in the full search results page.</p>
+<blockquote>
+<p>Note: you need to have content in Boards to see any results.</p>
+</blockquote>
 </li>
 </ol>
-<p><em>You need to have content in Boards to see any results.</em></p>
                 
                   
                 
