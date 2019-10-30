@@ -42,7 +42,7 @@
     
     
       
-        <title>Search Integration with Connections Customizer - Kudos Docs</title>
+        <title>Connections Search Integration - Kudos Docs</title>
       
     
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Search Integration with Connections Customizer
+                Connections Search Integration
               </span>
             
           
@@ -186,14 +186,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../../.." title="Welcome" class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." title="Welcome" class="md-tabs__link">
         Welcome
       </a>
     
@@ -205,7 +207,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../" title="Kudos Boards" class="md-tabs__link">
+        <a href="../../" title="Kudos Boards" class="md-tabs__link md-tabs__link--active">
           Kudos Boards
         </a>
       
@@ -319,10 +321,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Kudos Boards
@@ -350,10 +354,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2">
       Boards Cloud
@@ -381,10 +387,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2" type="checkbox" id="nav-2-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2" type="checkbox" id="nav-2-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2-2">
       Integrations
@@ -412,10 +420,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2-2" type="checkbox" id="nav-2-2-2-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2-2-2" type="checkbox" id="nav-2-2-2-2" checked>
     
     <label class="md-nav__link" for="nav-2-2-2-2">
       IBM Connections On-Prem
@@ -472,6 +482,84 @@
     <a href="../widgets-hybrid/" title="Connections Widgets" class="md-nav__link">
       Connections Widgets
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Connections Search Integration
+      </label>
+    
+    <a href="./" title="Connections Search Integration" class="md-nav__link md-nav__link--active">
+      Connections Search Integration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-reverse-proxy" title="Configure Reverse Proxy" class="md-nav__link">
+    Configure Reverse Proxy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#copy-files-to-customizer-server" title="Copy Files to Customizer Server" class="md-nav__link">
+    Copy Files to Customizer Server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#register-boards-search-in-customizer" title="Register Boards Search in Customizer" class="md-nav__link">
+    Register Boards Search in Customizer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" title="Testing" class="md-nav__link">
+    Testing
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1676,6 +1764,7 @@
 <p><strong>Note:</strong> These instructions are for HCL Connections On-Premise</p>
 </blockquote>
 <p>If you want to learn more about using Connections Customizer, have a read of the developer documentation on <a href="https://github.com/ibmcnxdev/customizer/blob/master/docs/HCLConnectionsCustomizer.md">GitHub</a>.</p>
+<p><img alt="Outcome" src="/assets/connections/search_main.png" /></p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Connections Customizer is setup as <a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_config_customizer_intro.html">per documentation</a></li>
@@ -1711,6 +1800,7 @@
 <blockquote>
 <p>Note: To access App Registry, you need to have the <code>admin</code> Security Role for the Common application. This is configured in the WebSphere console</p>
 </blockquote>
+<p><img alt="App Registration Page" src="/assets/connections/appreg.png" /></p>
 <ol>
 <li>
 <p>Add a new app.</p>
@@ -1726,18 +1816,18 @@
 <p>This saves you from completing all of the form fields for creating the app. You can edit the app now to customize names or directories if necessary.</p>
 </blockquote>
 <hr />
+<p><img alt="App Editor" src="/assets/connections/appreg2.png" /></p>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>Use the Search Sidebar to search for content in Boards from different paths in Connections (e.g. homepage, profiles, activities, forums)</p>
-</li>
-<li>
-<p>Use advanced search (<code>/search/web/jsp/advancedSearch.jsp</code>) to see Boards results integrated in the full search results page.</p>
-<blockquote>
-<p>Note: you need to have content in Boards to see any results.</p>
-</blockquote>
-</li>
+<li>Use the Search Sidebar to search for content in Boards from different paths in Connections (e.g. homepage, profiles, activities, forums)</li>
 </ol>
+<p><img alt="Search Sidebar" src="/assets/connections/search_panel.png" /></p>
+<ol>
+<li>Use advanced search (<code>/search/web/jsp/advancedSearch.jsp</code>) to see Boards results integrated in the full search results page.</li>
+</ol>
+<p><img alt="Advanced Search Standalone Section" src="/assets/connections/search_main2.png" /></p>
+<pre><code>&gt; Note: you need to have content in Boards to see any results.
+</code></pre>
                 
                   
                 
@@ -1754,6 +1844,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../widgets-hybrid/" title="Connections Widgets" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Connections Widgets
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../mobile-app-hybrid/" title="Connections Mobile App" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Connections Mobile App
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
