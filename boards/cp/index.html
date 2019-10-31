@@ -1715,9 +1715,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hcl-connections-integrations" title="HCL Connections integrations" class="md-nav__link">
-    HCL Connections integrations
+  <a href="#integrations" title="Integrations" class="md-nav__link">
+    Integrations
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hcl-connections" title="HCL Connections" class="md-nav__link">
+    HCL Connections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-teams" title="Microsoft Teams" class="md-nav__link">
+    Microsoft Teams
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1802,7 +1822,7 @@ For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href=
 </tr>
 <tr>
 <td>Microsoft Office 365</td>
-<td><a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade">Azure app registration</a></td>
+<td><a href="/boards/msgraph/auth/">Kudos instructions</a></td>
 <td><code>https://[CONNECTIONS_URL]/boards/auth/msgraph/callback</code></td>
 </tr>
 </tbody>
@@ -1862,7 +1882,7 @@ For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href=
 <p><strong>Boards variables</strong>:</p>
 <p>Are <a href="/boards/env/common/">detailed here</a>.</p>
 <p><strong>Activity migration variables</strong>:</p>
-<p>The Activity migration chart will be deployed separately but use the same config file.  The variables are <a href="/boards/cp/migration">described here</a>.</p>
+<p>The Activity migration chart will be deployed separately but use the same config file. The variables are <a href="/boards/cp/migration">described here</a>.</p>
 <hr />
 <h3 id="deploy-boards-helm-chart">Deploy Boards Helm Chart<a class="headerlink" href="#deploy-boards-helm-chart" title="Permanent link">&para;</a></h3>
 <p>Install the Boards services via our Helm chart</p>
@@ -1885,11 +1905,16 @@ For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href=
 </blockquote>
 <p>Please follow <a href="/boards/cp/httpd/">these instructions</a></p>
 <hr />
-<h2 id="hcl-connections-integrations">HCL Connections integrations<a class="headerlink" href="#hcl-connections-integrations" title="Permanent link">&para;</a></h2>
+<h2 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">&para;</a></h2>
+<h3 id="hcl-connections">HCL Connections<a class="headerlink" href="#hcl-connections" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="/boards/connections/apps-menu-on-prem/">Apps Menu</a></li>
 <li><a href="/boards/connections/widgets-on-prem/">Widgets</a></li>
 <li><a href="/boards/connections/customizer-search-app/">Boards Search</a></li>
+</ul>
+<h3 id="microsoft-teams">Microsoft Teams<a class="headerlink" href="#microsoft-teams" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="/boards/msgraph/teams-on-prem/">Install On-Premise App</a></li>
 </ul>
 <hr />
 <h2 id="migrate-activities-data">Migrate Activities data<a class="headerlink" href="#migrate-activities-data" title="Permanent link">&para;</a></h2>
