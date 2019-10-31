@@ -42,7 +42,7 @@
     
     
       
-        <title>Auth - Kudos Docs</title>
+        <title>Authentication - Kudos Docs</title>
       
     
     
@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#authenticating-kudos-boards-docker-with-office-365" tabindex="1" class="md-skip">
+      <a href="#authenticating-kudos-boards-with-office-365" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Auth
+                Authentication
               </span>
             
           
@@ -186,14 +186,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../../.." title="Welcome" class="md-tabs__link md-tabs__link--active">
+      <a href="../../.." title="Welcome" class="md-tabs__link">
         Welcome
       </a>
     
@@ -205,7 +207,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../" title="Kudos Boards" class="md-tabs__link">
+        <a href="../../" title="Kudos Boards" class="md-tabs__link md-tabs__link--active">
           Kudos Boards
         </a>
       
@@ -319,10 +321,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Kudos Boards
@@ -638,10 +642,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
     <label class="md-nav__link" for="nav-2-3">
       Boards Docker
@@ -729,10 +735,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-4" type="checkbox" id="nav-2-3-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-4" type="checkbox" id="nav-2-3-4" checked>
     
     <label class="md-nav__link" for="nav-2-3-4">
       Integrations
@@ -849,6 +857,154 @@
     <a href="../../verse/addin-on-prem/" title="IBM Verse" class="md-nav__link">
       IBM Verse
     </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-4-3" type="checkbox" id="nav-2-3-4-3" checked>
+    
+    <label class="md-nav__link" for="nav-2-3-4-3">
+      Office 365
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-2-3-4-3">
+        Office 365
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Authentication
+      </label>
+    
+    <a href="./" title="Authentication" class="md-nav__link md-nav__link--active">
+      Authentication
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#register-oauth-application" title="Register OAuth Application" class="md-nav__link">
+    Register OAuth Application
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#open-the-azure-app-portal" title="Open the Azure App Portal" class="md-nav__link">
+    Open the Azure App Portal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-redirect" title="Configure Redirect" class="md-nav__link">
+    Configure Redirect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-required-scopes" title="Configure Required Scopes" class="md-nav__link">
+    Configure Required Scopes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-permissions" title="Check Permissions" class="md-nav__link">
+    Check Permissions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-oauth-in-boards" title="Configure OAuth in Boards" class="md-nav__link">
+    Configure OAuth in Boards
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approve-permissions" title="Approve Permissions" class="md-nav__link">
+    Approve Permissions
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../notification-bot/" title="Teams Notification" class="md-nav__link">
+      Teams Notification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../teams-on-prem/" title="Teams App" class="md-nav__link">
+      Teams App
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1625,16 +1781,11 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#authenticating-kudos-boards-docker-with-office-365" title="Authenticating Kudos Boards Docker with Office 365" class="md-nav__link">
-    Authenticating Kudos Boards Docker with Office 365
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#register-oauth-application" title="Register OAuth Application" class="md-nav__link">
@@ -1708,9 +1859,7 @@
               
                 
                 
-                  <h1>Auth</h1>
-                
-                <h2 id="authenticating-kudos-boards-docker-with-office-365">Authenticating Kudos Boards Docker with Office 365<a class="headerlink" href="#authenticating-kudos-boards-docker-with-office-365" title="Permanent link">&para;</a></h2>
+                <h1 id="authenticating-kudos-boards-with-office-365">Authenticating Kudos Boards with Office 365<a class="headerlink" href="#authenticating-kudos-boards-with-office-365" title="Permanent link">&para;</a></h1>
 <p>This document details the process to enable login to your private instance of Kudos Boards with your private Office 365 tenant.</p>
 <p><img alt="outcome of guide" src="/assets/msgraph/boards-login.png" /></p>
 <hr />
@@ -1828,13 +1977,13 @@ https://[BOARDS_URL]/auth/msgraph/callback
 <li>
 <p>Redeploy Boards Helm Chart as per command for Kudos Boards:</p>
 <p><a href="/boards/cp/#deploy-boards-helm-chart">HCL Component Pack</a></p>
-<pre><code>helm upgrade kudos-boards-cp https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-cp-1.0.0.tgz -i -f ./boards-cp.yaml --namespace connections --recreate-pods
+<pre><code>helm upgrade kudos-boards-cp https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-cp-1.0.0.tgz -i -f ./boards-cp.yaml -n connections
 </code></pre>
 <p><a href="/boards/kubernetes/#deploy-boards-chart">for Docker - Kubernetes</a></p>
-<pre><code>helm upgrade boards https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-2.0.2.tgz -i -f ./boards.yaml --namespace boards --recreate-pods
+<pre><code>helm upgrade boards https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-2.0.2.tgz -i -f ./boards.yaml -n boards
 </code></pre>
 <blockquote>
-<p><strong>Note:</strong> <code>--recreate-pods</code> ensures all images are up to date. This will cause downtime.</p>
+<p><strong>Note:</strong> <code>--recreate-pods</code> is not required this time as this is only an env variable change</p>
 </blockquote>
 </li>
 </ol>
@@ -1872,6 +2021,41 @@ https://[BOARDS_URL]/auth/msgraph/callback
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../verse/addin-on-prem/" title="IBM Verse" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                IBM Verse
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../notification-bot/" title="Teams Notification" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Teams Notification
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

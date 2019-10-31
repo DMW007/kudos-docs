@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#register-oauth" tabindex="1" class="md-skip">
+      <a href="#authenticating-kudos-boards-with-hcl-connections" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -448,6 +448,8 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         Authentication
@@ -461,6 +463,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -468,6 +472,13 @@
         <li class="md-nav__item">
   <a href="#register-oauth" title="Register OAuth" class="md-nav__link">
     Register OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-auto-auth" title="Configure Auto Auth" class="md-nav__link">
+    Configure Auto Auth
   </a>
   
 </li>
@@ -893,6 +904,66 @@
     <a href="../../verse/addin-on-prem/" title="IBM Verse" class="md-nav__link">
       IBM Verse
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3-4-3" type="checkbox" id="nav-2-3-4-3">
+    
+    <label class="md-nav__link" for="nav-2-3-4-3">
+      Office 365
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-2-3-4-3">
+        Office 365
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../msgraph/auth/" title="Authentication" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../msgraph/notification-bot/" title="Teams Notification" class="md-nav__link">
+      Teams Notification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../msgraph/teams-on-prem/" title="Teams App" class="md-nav__link">
+      Teams App
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
         
@@ -1669,6 +1740,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1676,6 +1749,13 @@
         <li class="md-nav__item">
   <a href="#register-oauth" title="Register OAuth" class="md-nav__link">
     Register OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-auto-auth" title="Configure Auto Auth" class="md-nav__link">
+    Configure Auto Auth
   </a>
   
 </li>
@@ -1697,9 +1777,8 @@
               
                 
                 
-                  <h1>Authentication</h1>
-                
-                <p><img alt="Outcome" src="/assets/connections/auth.png" /></p>
+                <h1 id="authenticating-kudos-boards-with-hcl-connections">Authenticating Kudos Boards with HCL Connections<a class="headerlink" href="#authenticating-kudos-boards-with-hcl-connections" title="Permanent link">&para;</a></h1>
+<p><img alt="Outcome" src="/assets/connections/auth.png" /></p>
 <h2 id="register-oauth">Register OAuth<a class="headerlink" href="#register-oauth" title="Permanent link">&para;</a></h2>
 <p>In order for Kudos Boards to authenticate with your Connections environment, you must define a new OAuth widget.</p>
 <hr />
@@ -1737,13 +1816,13 @@ CONNECTIONS_CLIENT_ID=kudosboards
 CONNECTIONS_CLIENT_SECRET=[VALUE_PRINTED]
 </code></pre>
 </li>
-<li>
-<p>Auto Authorize</p>
+</ol>
+<h2 id="configure-auto-auth">Configure Auto Auth<a class="headerlink" href="#configure-auto-auth" title="Permanent link">&para;</a></h2>
+<p>Steps to configure the Kudos Boards application for auto-authorize (also <a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/admin/t_admin_registeroauthclientwprovider.html">documented here</a>)</p>
 <blockquote>
 <p><strong>Note:</strong> this step is optional but recommended and can be done at any time.</p>
 </blockquote>
-<p>Steps to configure the Kudos Boards application for auto-authorize (also <a href="https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/admin/t_admin_registeroauthclientwprovider.html">documented here</a>)</p>
-<ul>
+<ol>
 <li>
 <p>Add the new line to the following section in <code>[cellname]/oauth20/connectionsProvider.xml</code></p>
 <pre><code>&lt;parameter name="oauth20.autoauthorize.clients" type="ws" customizable="true"&gt;
@@ -1764,8 +1843,6 @@ CONNECTIONS_CLIENT_SECRET=[VALUE_PRINTED]
 </li>
 <li>
 <p>Restart the WebSphere servers</p>
-</li>
-</ul>
 </li>
 </ol>
                 

@@ -146,6 +146,21 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://docs.kudosapps.com/boards/msgraph/auth/</loc>
+     <lastmod>2019-10-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/msgraph/notification-bot/</loc>
+     <lastmod>2019-10-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/boards/msgraph/teams-on-prem/</loc>
+     <lastmod>2019-10-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.kudosapps.com/boards/hybrid/</loc>
      <lastmod>2019-10-31</lastmod>
      <changefreq>daily</changefreq>
