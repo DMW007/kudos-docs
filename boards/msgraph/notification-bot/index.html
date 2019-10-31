@@ -13,7 +13,7 @@
         <meta name="description" content="Enterprise productivity solutions">
       
       
-        <link rel="canonical" href="https://docs.kudosapps.com/boards/msgraph/teams-on-prem/">
+        <link rel="canonical" href="https://docs.kudosapps.com/boards/msgraph/notification-bot/">
       
       
         <meta name="author" content="Andrew Reynolds">
@@ -42,7 +42,7 @@
     
     
       
-        <title>Teams on prem - Kudos Docs</title>
+        <title>Notification bot - Kudos Docs</title>
       
     
     
@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#kudos-boards-on-premise-with-microsoft-teams" tabindex="1" class="md-skip">
+      <a href="#microsoft-teams-notification-bot" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Teams on prem
+                Notification bot
               </span>
             
           
@@ -1630,37 +1630,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#kudos-boards-on-premise-with-microsoft-teams" title="Kudos Boards On-Premise with Microsoft Teams" class="md-nav__link">
-    Kudos Boards On-Premise with Microsoft Teams
+  <a href="#microsoft-teams-notification-bot" title="Microsoft Teams Notification Bot" class="md-nav__link">
+    Microsoft Teams Notification Bot
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#pre-requisites" title="Pre-requisites" class="md-nav__link">
-    Pre-requisites
+  <a href="#pre-requisites" title="Pre-Requisites" class="md-nav__link">
+    Pre-Requisites
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#install-application" title="Install Application" class="md-nav__link">
-    Install Application
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verification" title="Verification" class="md-nav__link">
-    Verification
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-to" title="How To" class="md-nav__link">
-    How To
+  <a href="#register-bot" title="Register Bot" class="md-nav__link">
+    Register Bot
   </a>
   
 </li>
@@ -1687,89 +1673,78 @@
               
                 
                 
-                  <h1>Teams on prem</h1>
+                  <h1>Notification bot</h1>
                 
-                <h2 id="kudos-boards-on-premise-with-microsoft-teams">Kudos Boards On-Premise with Microsoft Teams<a class="headerlink" href="#kudos-boards-on-premise-with-microsoft-teams" title="Permanent link">&para;</a></h2>
-<h3 id="pre-requisites">Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
-<ol>
+                <h2 id="microsoft-teams-notification-bot">Microsoft Teams Notification Bot<a class="headerlink" href="#microsoft-teams-notification-bot" title="Permanent link">&para;</a></h2>
+<p>This bot will be used for notification in teams from actions taken in Kudos Boards.</p>
+<hr />
+<h3 id="pre-requisites">Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permanent link">&para;</a></h3>
+<ul>
 <li>
-<p>Microsoft Teams</p>
-</li>
-<li>
-<p>Office 365 tenant admin account</p>
-</li>
-<li>
-<p>OAuth client is configured as <a href="/boards/msgraph/auth/">per doc</a></p>
-</li>
-<li>
-<p>Notification Bot configured as <a href="/boards/msgraph/notification-bot/">per doc</a></p>
+<p><strong>Boards deployment is accessible from the Web (no VPN)</strong></p>
 <blockquote>
-<p><strong>Optional</strong> - not available to internal Kudos Boards deployments</p>
+<p>Note: Microsoft Teams notifications requires 2-way web communication.</p>
+<p>For example, the following URL must be accessible by Microsoft's servers: <code>https://[BOARDS_URL]/webhook/teams</code></p>
+<p>i.e. <code>https://[CONNECTIONS_URL]/boards/webhook/teams</code></p>
 </blockquote>
 </li>
-</ol>
+</ul>
 <hr />
-<h3 id="install-application">Install Application<a class="headerlink" href="#install-application" title="Permanent link">&para;</a></h3>
+<h3 id="register-bot">Register Bot<a class="headerlink" href="#register-bot" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Download Kudos Boards Application File</p>
+<p>Open <a href="https://dev.botframework.com/bots/new">Bot Registration</a> and sign-in with a Microsoft Tenant admin</p>
+</li>
+<li>
+<p>Enter the following values</p>
+<pre><code>Kudos Boards
+kudosboards
+https://[BOARDS_URL]/webhook/teams
+[MSGRAPH_CLIENT_ID]
+</code></pre>
+<p>Where:</p>
 <ul>
-<li>
-<p>Login to Kudos Boards with your Microsoft Tenant Admin account</p>
-</li>
-<li>
-<p>Click the <code>Configuration</code> icon and then <code>Manage Org</code></p>
-</li>
+<li><code>[BOARDS_URL]</code> is the URL to your Kudos Boards installation</li>
+<li><code>[MSGRAPH_CLIENT_ID]</code> is the OAuth Client ID from <a href="/boards/msgraph/auth/">Auth setup</a></li>
 </ul>
-<p><img alt="example" src="/assets/boards/admin.png" /></p>
-<ul>
-<li>Click on your Organisation</li>
-</ul>
-<p><img alt="example" src="/assets/msgraph/teams/admin-orgs.png" /></p>
-<ul>
-<li>Click on your Microsoft client</li>
-</ul>
-<p><img alt="example" src="/assets/msgraph/teams/admin-org.png" /></p>
-<ul>
-<li>Click <code>Download Teams app package</code></li>
-</ul>
-<p><img alt="example" src="/assets/msgraph/teams/app-download.png" /></p>
-</li>
-<li>
-<p>Open the <a href="https://teams.microsoft.com">Teams App</a></p>
-<p>Click <code>Apps</code> -&gt; <code>Upload a custom app</code> -&gt; <code>Upload for [COMPANY_NAME]</code></p>
-<blockquote>
-<p>where <code>[COMPANY_NAME]</code> is the name of your company</p>
-</blockquote>
-<p><img alt="example" src="/assets/msgraph/teams/teams1.png" /></p>
-</li>
-<li>
-<p>Upload the Zip file you downloaded above</p>
-<p><img alt="example" src="/assets/msgraph/teams/teams2.png" /></p>
-</li>
-<li>
-<p>The Kudos Boards app will now appear under the section <code>[COMPANY_NAME]</code></p>
-<p><img alt="example" src="/assets/msgraph/teams/teams3.png" /></p>
+<p>For example:</p>
+<pre><code>Kudos Boards
+kudosboards
+https://connections.example.com/boards/webhook/teams
+b0e1e4a3-3df0-4c0a-8a2a-c1d630bb52b8
+</code></pre>
+<p><img alt="enter these values" src="/assets/msgraph/teams/bot1.png" /></p>
 </li>
 </ol>
 <hr />
-<h3 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>Click on <code>Kudos Boards</code></p>
-</li>
-<li>
-<p>Click <code>Add</code></p>
-<p><img alt="example" src="/assets/msgraph/teams/add-app.png" /></p>
-</li>
-<li>
-<p>Kudos Boards personal will now open</p>
-<p><img alt="example" src="/assets/msgraph/teams/personal.png" /></p>
+<p>Scroll down, read/agree to the terms and click <code>Register</code></p>
+<p><img alt="register" src="/assets/msgraph/teams/bot2.png" /></p>
 </li>
 </ol>
 <hr />
-<h3 id="how-to">How To<a class="headerlink" href="#how-to" title="Permanent link">&para;</a></h3>
-<p>For a full how-to guide on using Kudos Boards in Microsoft Teams, please see <a href="/boards/msgraph/teams/">our documentation</a>.</p>
+<ol>
+<li>
+<p>Click the <code>Teams</code> icon</p>
+<p><img alt="click teams" src="/assets/msgraph/teams/bot3.png" /></p>
+</li>
+</ol>
+<hr />
+<ol>
+<li>
+<p>Click <code>Save</code></p>
+<p><img alt="save" src="/assets/msgraph/teams/bot4.png" /></p>
+</li>
+</ol>
+<hr />
+<ol>
+<li>
+<p>The bot setup is complete</p>
+<p><img alt="save" src="/assets/msgraph/teams/bot5.png" /></p>
+</li>
+</ol>
+<hr />
                 
                   
                 
