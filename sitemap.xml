@@ -91,6 +91,11 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc></loc>
+     
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.kudosapps.com/boards/kubernetes/</loc>
      <lastmod>2019-12-04</lastmod>
      <changefreq>daily</changefreq>
