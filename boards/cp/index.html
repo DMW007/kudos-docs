@@ -42,7 +42,7 @@
     
     
       
-        <title>Kudos Docs</title>
+        <title>For HCL Connections - Kudos Docs</title>
       
     
     
@@ -120,7 +120,7 @@
                 Kudos Docs
               </span>
               <span class="md-header-nav__topic">
-                Kudos Boards for HCL Connections CP
+                For HCL Connections
               </span>
             
           
@@ -186,14 +186,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Welcome" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Welcome" class="md-tabs__link">
         Welcome
       </a>
     
@@ -205,7 +207,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../" title="Kudos Boards" class="md-tabs__link">
+        <a href="../" title="Kudos Boards" class="md-tabs__link md-tabs__link--active">
           Kudos Boards
         </a>
       
@@ -332,10 +334,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Kudos Boards
@@ -651,10 +655,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3" checked>
     
     <label class="md-nav__link" for="nav-2-3">
       Boards Docker
@@ -670,11 +676,173 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../cp.md" title="For HCL Connections" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        For HCL Connections
+      </label>
+    
+    <a href="./" title="For HCL Connections" class="md-nav__link md-nav__link--active">
       For HCL Connections
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" title="Prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssl-network-setup" title="SSL / Network setup" class="md-nav__link">
+    SSL / Network setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setup-oauth" title="Setup OAuth" class="md-nav__link">
+    Setup OAuth
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-kubectl" title="Configure kubectl" class="md-nav__link">
+    Configure kubectl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" title="Storage" class="md-nav__link">
+    Storage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#s3" title="S3" class="md-nav__link">
+    S3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mongo" title="Mongo" class="md-nav__link">
+    Mongo
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licence-key" title="Licence Key" class="md-nav__link">
+    Licence Key
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-config-file" title="Update Config file" class="md-nav__link">
+    Update Config file
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-boards-helm-chart" title="Deploy Boards Helm Chart" class="md-nav__link">
+    Deploy Boards Helm Chart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-proxy-config" title="Add Proxy Config" class="md-nav__link">
+    Add Proxy Config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connections-on-premise-update-was-config" title="Connections On Premise - update WAS config" class="md-nav__link">
+    Connections On Premise - update WAS config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrations" title="Integrations" class="md-nav__link">
+    Integrations
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hcl-connections" title="HCL Connections" class="md-nav__link">
+    HCL Connections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-teams" title="Microsoft Teams" class="md-nav__link">
+    Microsoft Teams
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrate-activities-data" title="Migrate Activities data" class="md-nav__link">
+    Migrate Activities data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribing-to-latest-updates-from-kudos-team" title="Subscribing to latest updates from Kudos Team" class="md-nav__link">
+    Subscribing to latest updates from Kudos Team
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -2100,6 +2268,41 @@ For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href=
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../auth0/" title="Auth0" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Auth0
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../kubernetes/" title="For Kubernetes" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                For Kubernetes
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
