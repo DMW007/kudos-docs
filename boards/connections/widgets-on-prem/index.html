@@ -1899,17 +1899,33 @@ ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell
 </code></pre>
 <hr />
 <h3 id="activity-stream-widget">Activity Stream widget<a class="headerlink" href="#activity-stream-widget" title="Permanent link">&para;</a></h3>
-<p>Access <code>Homepage</code>-&gt;<code>Administrator</code></p>
+<ol>
+<li>
+<p>Open <code>Homepage</code> =&gt; <code>Administration</code></p>
+<p>Click <code>Add another app</code></p>
+<p><img alt="Example" src="/assets/connections/homepage-admin.png" /></p>
+</li>
+<li>
 <p>Select the following:</p>
 <ul>
-<li>Open Social Gadget</li>
-<li>Trusted and Use SSO</li>
-<li>Show for Activity Stream events</li>
-<li>All servers</li>
+<li><code>OpenSocial Gadget</code></li>
+<li><code>Trusted</code> and <code>Use SSO</code></li>
+<li><code>Show for Activity Stream events</code></li>
+<li><code>All servers</code></li>
 </ul>
 <p>Click the <code>Add Mapping</code> button.</p>
-<p>Add a Mapping for the Kudos Boards service to the Kudos client. Ensure OAuth Client is set to conn-ee and the Service name is Kudos Boards.
-Click the Ok button</p>
+<p><img alt="Example" src="/assets/connections/homepage-admin2.png" /></p>
+</li>
+<li>
+<p>Enter values:</p>
+<ul>
+<li>OAuth Client: <code>conn-ee</code></li>
+<li>Service name: <code>Kudos Boards</code></li>
+</ul>
+<p>Click <code>Ok</code></p>
+<p><img alt="Example" src="/assets/connections/homepage-admin3.png" /></p>
+</li>
+<li>
 <p>Enter the following, replacing <code>[BOARDS_URL]</code> with your URL:</p>
 <table>
 <thead>
@@ -1920,40 +1936,43 @@ Click the Ok button</p>
 </thead>
 <tbody>
 <tr>
-<td>Title</td>
-<td>Kudos Boards Activity Stream</td>
+<td>App Title</td>
+<td>Kudos Boards Stream</td>
 </tr>
 <tr>
 <td>URL Address</td>
-<td><code>http://[BOARDS_URL]/stream/connections</code></td>
-</tr>
-<tr>
-<td>Secure URL Address</td>
 <td><code>https://[BOARDS_URL]/stream/connections</code></td>
 </tr>
 <tr>
-<td>ICON URL</td>
-<td><code>http://[BOARDS_URL]/favicon.ico</code></td>
+<td>Icon URL</td>
+<td><code>https://[BOARDS_URL]/favicon.ico</code></td>
 </tr>
 <tr>
-<td>ICON SECURE URL</td>
+<td>Icon Secure URL</td>
 <td><code>https://[BOARDS_URL]/favicon.ico</code></td>
 </tr>
 </tbody>
 </table>
 <p>Select:</p>
 <ul>
-<li>Use HCL Connections specific tags</li>
-<li>Opened by default</li>
+<li><code>Use HCL Connections specific tags</code></li>
+<li><code>Opened by default</code></li>
 </ul>
+<p>For example:</p>
+<p><img alt="Example" src="/assets/connections/homepage-admin4.png" /></p>
+</li>
+<li>
 <p>Select the following Prerequisites:</p>
 <ul>
-<li>oauthprovider</li>
-<li>webresources</li>
-<li>oauth</li>
-<li>opensocial</li>
+<li><code>oauthprovider</code></li>
+<li><code>oauth</code></li>
+<li><code>opensocial</code></li>
+<li><code>webresources</code></li>
 </ul>
-<p>Scroll down and Click Save</p>
+<p>Scroll down and click <code>Save</code>
+<img alt="Example" src="/assets/connections/homepage-admin5.png" /></p>
+</li>
+</ol>
 <hr />
 <!-- This is not needed for the iframe widget
 ### Register Widget
