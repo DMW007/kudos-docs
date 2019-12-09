@@ -928,6 +928,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../connections/migration/" title="Activity Migration" class="md-nav__link">
+      Activity Migration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../connections/auth-on-prem/" title="Authentication" class="md-nav__link">
       Authentication
     </a>
@@ -2029,7 +2041,7 @@
 <hr />
 <h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Kubernetes or IBM Cloud Private is installed and running</li>
+<li>Kubernetes is installed and running</li>
 <li>WebSphere environment with Web Server (or another reverse proxy)</li>
 <li><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">kubectl</a> is installed</li>
 <li><a href="https://docs.helm.sh/using_helm/#installing-helm">helm</a> is installed</li>
@@ -2173,7 +2185,7 @@
 </ol>
 <hr />
 <h3 id="update-config-file">Update Config file<a class="headerlink" href="#update-config-file" title="Permanent link">&para;</a></h3>
-<p>Download our <a href="/assets/config/kubernetes/boards.yaml">config file</a> and update the values as below.</p>
+<p>Download our <a href="/assets/config/kubernetes/boards.yaml">config file</a> and update all example values as required. Details as below.</p>
 <p><strong>Kubernetes Variables</strong>:</p>
 <table>
 <thead>
@@ -2230,7 +2242,7 @@
 <hr />
 <h3 id="deploy-boards-chart">Deploy Boards Chart<a class="headerlink" href="#deploy-boards-chart" title="Permanent link">&para;</a></h3>
 <p>Install the Boards services via our Helm chart</p>
-<pre><code>helm upgrade boards https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-2.0.2.tgz -i -f ./boards.yaml --namespace boards --recreate-pods
+<pre><code>helm upgrade boards https://docs.kudosapps.com/assets/config/kubernetes/kudos-boards-3.0.0.tgz -i -f ./boards.yaml --namespace boards --recreate-pods
 </code></pre>
 <blockquote>
 <p><strong>Note:</strong> <code>--recreate-pods</code> ensures all images are up to date. This will cause downtime.</p>
@@ -2250,8 +2262,8 @@
 <li><a href="/boards/connections/header-on-prem/">Header</a> (<em>Note: only required if Boards is hosted on a different domain to Connections</em>)</li>
 <li><a href="/boards/connections/apps-menu-on-prem/">Apps Menu</a></li>
 <li><a href="/boards/connections/widgets-on-prem/">Widgets</a></li>
+<li><a href="/boards/connections/migration">Migrate your Activities to Boards</a></li>
 </ul>
-<hr />
                 
                   
                 

@@ -399,22 +399,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#boards-docker-on-premise-in-kubernetes" title="Boards Docker (On-Premise) in Kubernetes" class="md-nav__link">
-    Boards Docker (On-Premise) in Kubernetes
+  <a href="#boards-docker-on-premise" title="Boards Docker (On-Premise)" class="md-nav__link">
+    Boards Docker (On-Premise)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#boards-docker-on-premise-in-docker-swarm" title="Boards Docker (On-Premise) in Docker Swarm" class="md-nav__link">
-    Boards Docker (On-Premise) in Docker Swarm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boards-hybrid-cloud-integrated-with-hcl-connections-on-premise" title="Boards Hybrid - Cloud integrated with HCL Connections On-Premise" class="md-nav__link">
-    Boards Hybrid - Cloud integrated with HCL Connections On-Premise
+  <a href="#boards-hybrid" title="Boards Hybrid" class="md-nav__link">
+    Boards Hybrid
   </a>
   
 </li>
@@ -863,6 +856,18 @@
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="connections/migration/" title="Activity Migration" class="md-nav__link">
+      Activity Migration
+    </a>
+  </li>
+
         
           
           
@@ -1868,22 +1873,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#boards-docker-on-premise-in-kubernetes" title="Boards Docker (On-Premise) in Kubernetes" class="md-nav__link">
-    Boards Docker (On-Premise) in Kubernetes
+  <a href="#boards-docker-on-premise" title="Boards Docker (On-Premise)" class="md-nav__link">
+    Boards Docker (On-Premise)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#boards-docker-on-premise-in-docker-swarm" title="Boards Docker (On-Premise) in Docker Swarm" class="md-nav__link">
-    Boards Docker (On-Premise) in Docker Swarm
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#boards-hybrid-cloud-integrated-with-hcl-connections-on-premise" title="Boards Hybrid - Cloud integrated with HCL Connections On-Premise" class="md-nav__link">
-    Boards Hybrid - Cloud integrated with HCL Connections On-Premise
+  <a href="#boards-hybrid" title="Boards Hybrid" class="md-nav__link">
+    Boards Hybrid
   </a>
   
 </li>
@@ -1913,21 +1911,17 @@
                 <h1 id="kudos-boards-versions">Kudos Boards Versions<a class="headerlink" href="#kudos-boards-versions" title="Permanent link">&para;</a></h1>
 <p>We are proud to say that Kudos Boards is able to run in many configurations to suit your individual requirements.</p>
 <ol>
-<li>Boards Cloud</li>
-<li>Boards Docker (On-Premise) in Kubernetes</li>
-<li>Boards Docker (On-Premise) in Docker Swarm</li>
-<li>Boards Hybrid - Cloud integrated with IBM Connections On-Premise</li>
-</ol>
-<p><strong>Browser Support</strong></p>
-<p>We support the most recent two versions of the following browsers:</p>
-<ul>
-<li>Chrome</li>
-<li>Safari</li>
-<li>Firefox</li>
-<li>Microsoft Edge</li>
+<li><a href="/boards/cloud/">Boards Cloud</a></li>
+<li>Boards Docker (On-Premise)<ul>
+<li><a href="/boards/cp/">HCL Connections Component Pack</a></li>
+<li><a href="/boards/kubernetes/">Standalone Kubernetes</a>
+<!-- - <a href="/boards/swarm/">in Docker Swarm</a> --></li>
 </ul>
-<h2 id="how-to-decide-which-version">How To Decide Which Version?<a class="headerlink" href="#how-to-decide-which-version" title="Permanent link">&para;</a></h2>
+</li>
+<li><a href="/boards/hybrid/">Boards Hybrid</a> (Cloud integrated with HCL Connections On-Premise)</li>
+</ol>
 <hr />
+<h2 id="how-to-decide-which-version">How To Decide Which Version?<a class="headerlink" href="#how-to-decide-which-version" title="Permanent link">&para;</a></h2>
 <h3 id="boards-cloud">Boards Cloud<a class="headerlink" href="#boards-cloud" title="Permanent link">&para;</a></h3>
 <p>This version is hosted by the ISW Kudos team at <a href="https://kudosboards.com">https://kudosboards.com</a>.</br>
 Free trials are available!</p>
@@ -1937,32 +1931,41 @@ Free trials are available!</p>
 <li>Always up to date with the latest functionality</li>
 <li>Backup strategies already in place</li>
 </ul>
+<p>See <a href="/boards/cloud/">here</a> for more information.</p>
 <hr />
-<h3 id="boards-docker-on-premise-in-kubernetes">Boards Docker (On-Premise) in Kubernetes<a class="headerlink" href="#boards-docker-on-premise-in-kubernetes" title="Permanent link">&para;</a></h3>
+<h3 id="boards-docker-on-premise">Boards Docker (On-Premise)<a class="headerlink" href="#boards-docker-on-premise" title="Permanent link">&para;</a></h3>
+<blockquote>
 <p>Our Boards Cloud product, installed locally in your infrastructure</p>
+</blockquote>
 <p><strong>Advantages</strong></p>
 <ul>
-<li>Can be installed in any existing Kubernetes environment (ie alongside HCL Connections Component Pack)</li>
+<li>Can be installed in any existing Kubernetes environment (ie HCL Connections Component Pack)</li>
 <li>Can use the same Component Pack Mongo database</li>
 <li>Control over your own data and backup strategies</li>
 <li>Simple to update</li>
 </ul>
+<p>See install details for <a href="/boards/hybrid/">Kubernetes</a> or <a href="/boards/cp/">HCL Connections Component Pack</a>.</p>
 <hr />
-<h3 id="boards-docker-on-premise-in-docker-swarm">Boards Docker (On-Premise) in Docker Swarm<a class="headerlink" href="#boards-docker-on-premise-in-docker-swarm" title="Permanent link">&para;</a></h3>
-<p>Our Boards Cloud product, installed locally in your infrastructure. This is designed for those without existing Kubernetes environments.</p>
-<p><strong>Advantages</strong></p>
-<ul>
-<li>Lightweight, on-premise clustered deployment.</li>
-<li>Control over your own data and backup strategies</li>
-<li>Simple to update</li>
-</ul>
-<hr />
-<h3 id="boards-hybrid-cloud-integrated-with-hcl-connections-on-premise">Boards Hybrid - Cloud integrated with HCL Connections On-Premise<a class="headerlink" href="#boards-hybrid-cloud-integrated-with-hcl-connections-on-premise" title="Permanent link">&para;</a></h3>
+<!-- ### Boards Docker (On-Premise) in Docker Swarm
+Our Boards Cloud product, installed locally in your infrastructure. This is designed for those without existing Kubernetes environments.
+
+__Advantages__
+
+- Lightweight, on-premise clustered deployment.
+- Control over your own data and backup strategies
+- Simple to update
+
+--- -->
+
+<h3 id="boards-hybrid">Boards Hybrid<a class="headerlink" href="#boards-hybrid" title="Permanent link">&para;</a></h3>
+<p>(Cloud integrated with HCL Connections On-Premise.)</p>
+<blockquote>
 <p>This version is the best of both worlds if you already have HCL Connections but want the latest and greatest Boards functionality without managing more servers!  Kudos Boards Cloud can integrate with your existing HCL Connections on-premise installation.</p>
+</blockquote>
 <p><strong>Advantages</strong></p>
 <ul>
 <li>All of the benefits of the Cloud above (hosted, managed, backed up)!!</li>
-<li>Integrates into your existing IBM Connections On-Premise (WebSphere)</li>
+<li>Integrates into your existing HCL Connections On-Premise (WebSphere)</li>
 <li>
 <p>Looks and feels like another application similar to Communities/Blogs etc with:</p>
 <ul>
@@ -1977,9 +1980,18 @@ Free trials are available!</p>
 </ul>
 <p><strong>Requirements</strong></p>
 <ul>
-<li>Your IBM Connections URL must be accessible from the web (no VPN)</li>
+<li>Your HCL Connections URL must be accessible from the web (no VPN)</li>
 </ul>
 <p>See <a href="/boards/hybrid/">installation details</a> for more information.</p>
+<hr />
+<p><strong>Browser Support</strong></p>
+<p>We support the most recent two versions of the following browsers:</p>
+<ul>
+<li>Chrome</li>
+<li>Safari</li>
+<li>Firefox</li>
+<li>Microsoft Edge</li>
+</ul>
                 
                   
                 
