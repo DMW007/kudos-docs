@@ -2117,30 +2117,13 @@
 </ol>
 <hr />
 <h3 id="ssl-network-setup">SSL / Network setup<a class="headerlink" href="#ssl-network-setup" title="Permanent link">&para;</a></h3>
-<p>Kudos Boards in Connections Component Pack (CP) uses the existing CP infrastructure. The following is the default network configuration:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>URL</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>BOARDS_URL</code></td>
-<td><code>[CONNECTIONS_URL]/boards</code></td>
-<td><code>connections.example.com/boards</code></td>
-</tr>
-<tr>
-<td><code>API_URL</code></td>
-<td><code>[CONNECTIONS_URL]/api-boards</code></td>
-<td><code>connections.example.com/api-boards</code></td>
-</tr>
-</tbody>
-</table>
-<p>These values will then be used in the following documentation.
-For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href="/boards/cp/httpd/">please see here</a></p>
+<p>Kudos Boards in Connections Component Pack (CP) uses the existing CP infrastructure.</p>
+<p>The UI and API each require a unique route:</p>
+<ul>
+<li>UI for Boards: <code>[CONNECTIONS_URL]/boards</code>. We will refer to this as <code>BOARDS_URL</code></li>
+<li>API Gateway: <code>[CONNECTIONS_URL]/api-boards</code>. We will refer to this as <code>API_URL</code></li>
+</ul>
+<p>For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href="/boards/cp/httpd/">please see here</a></p>
 <hr />
 <h3 id="setup-oauth">Setup OAuth<a class="headerlink" href="#setup-oauth" title="Permanent link">&para;</a></h3>
 <p>You will need to setup an OAuth application with one (or more) of these providers for Kudos Boards to function. please refer to the following documentation:</p>
@@ -2204,7 +2187,7 @@ For more details on configuring an IBM HTTP WebServer as reverse proxy, <a href=
 <tbody>
 <tr>
 <td><code>global.env.APP_URI</code></td>
-<td><code>https://[BOARDS_URL]</code> (e.g. <code>connections.example.com/boards</code>)</td>
+<td><code>https://[BOARDS_URL]</code> (e.g. <code>https://connections.example.com/boards</code>)</td>
 </tr>
 <tr>
 <td><code>webfront.ingress.hosts</code></td>
