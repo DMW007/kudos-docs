@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#step-12-customising-kudos-strings-properties-images-optional" tabindex="1" class="md-skip">
+      <a href="#customising-kudos-strings-properties-images-optional" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -1787,36 +1787,30 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-12-customising-kudos-strings-properties-images-optional" title="Step 12: Customising Kudos Strings, Properties &amp; Images (Optional)" class="md-nav__link">
-    Step 12: Customising Kudos Strings, Properties &amp; Images (Optional)
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#task-121-customising-kudos-strings" title="Task 12.1 – Customising Kudos Strings" class="md-nav__link">
-    Task 12.1 – Customising Kudos Strings
+  <a href="#customising-kudos-strings-properties-images-optional" title="Customising Kudos Strings, Properties &amp; Images (Optional)" class="md-nav__link">
+    Customising Kudos Strings, Properties &amp; Images (Optional)
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#task-122-customising-kudos-properties" title="Task 12.2 – Customising Kudos Properties" class="md-nav__link">
-    Task 12.2 – Customising Kudos Properties
+      
+        <li class="md-nav__item">
+  <a href="#customising-kudos-strings" title="Customising Kudos Strings" class="md-nav__link">
+    Customising Kudos Strings
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#task-123-customising-kudos-images" title="Task 12.3 – Customising Kudos Images" class="md-nav__link">
-    Task 12.3 – Customising Kudos Images
+      
+        <li class="md-nav__item">
+  <a href="#customising-kudos-properties" title="Customising Kudos Properties" class="md-nav__link">
+    Customising Kudos Properties
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#customising-kudos-images" title="Customising Kudos Images" class="md-nav__link">
+    Customising Kudos Images
+  </a>
   
 </li>
       
@@ -1839,56 +1833,51 @@
                 
                   <h1>Customising</h1>
                 
-                <h4 id="step-12-customising-kudos-strings-properties-images-optional">Step 12: Customising Kudos Strings, Properties &amp; Images (Optional)<a class="headerlink" href="#step-12-customising-kudos-strings-properties-images-optional" title="Permanent link">&para;</a></h4>
-<p>You only need to perform this step if you wish to customise the user interface strings used in Kudos or the default properties used by the application, e.g. to use a custom
-context root etc. If you do not wish to do any of the above, you do not need to follow this step.</p>
-<h5 id="task-121-customising-kudos-strings">Task 12.1 – Customising Kudos Strings<a class="headerlink" href="#task-121-customising-kudos-strings" title="Permanent link">&para;</a></h5>
-<p>The files for customising Kudos Strings need to be placed in the directory given by the Websphere Variable PROFILES_STATS_DIR. These files are then automatically copied
-into the application directory upon start up.</p>
-<pre><code>Please Note:
-</code></pre>
-
+                <h3 id="customising-kudos-strings-properties-images-optional">Customising Kudos Strings, Properties &amp; Images (Optional)<a class="headerlink" href="#customising-kudos-strings-properties-images-optional" title="Permanent link">&para;</a></h3>
+<p>You only need to perform this step if you wish to customise the user interface strings used in Kudos or the default properties used by the application, e.g. to use a custom context root etc. If you do not wish to do any of the above, you do not need to follow this step.</p>
+<h3 id="customising-kudos-strings">Customising Kudos Strings<a class="headerlink" href="#customising-kudos-strings" title="Permanent link">&para;</a></h3>
+<p>The files for customising Kudos Strings need to be placed in the directory given by the Websphere Variable PROFILES_STATS_DIR. These files are then automatically copied into the application directory upon start up.</p>
+<p>Please Note:</p>
 <ul>
 <li><strong>These files are in JSON format and it is critical that the syntax of these files is valid for the customisation to take effect.</strong></li>
-<li><strong>This step can be performed at any stage after the installation and is not required to complete the installation.</strong><ol>
+<li>
+<p><strong>This step can be performed at any stage after the installation and is not required to complete the installation.</strong></p>
+<ol>
 <li>Create a folder called KudosStrings in the directory given by the PROFILES_STATS_DIR WebSphere Variable.</li>
 <li>Create a text file called UserInterfaceLang.js in the KudosStrings directory.</li>
-<li>Open the default UserInterfaceLang.js file from the location <installedAppsDir>/<cell name>/Kudos.ear/Kudos.war/defaultLang/</li>
+<li>Open the default UserInterfaceLang.js file from the location <code>&lt;installedAppsDir&gt;</code>/<code>&lt;cell name&gt;</code>/Kudos.ear/Kudos.war/defaultLang/</li>
 <li>Add the strings you wish to customise to the newly created UserInterfaceLang.js file from the original file while maintaining a similar format.
-   e.g.: below is a sample customised UserInterfaceLang.js file which overwrites 7 properties:</li>
+    e.g.: below is a sample customised UserInterfaceLang.js file which overwrites 7 properties:</li>
 </ol>
 </li>
 </ul>
 <pre><code>{
-NAME_LABEL : &quot;User Name&quot;,
-MESSAGE_LABEL : &quot;Notes&quot;,
-MY_NETWORK : &quot;My Circle&quot;,
-EVERYONE : &quot;All&quot;,
-THIS_COMMUNITY : &quot;Community&quot;,
-CONGRATULATIONS_PROFILE_COMPLETE_MSG : &quot;Congratulations on completing your profile!&quot;,
-GRID_VIEW:&quot;Grid View&quot;
+    NAME_LABEL : &quot;User Name&quot;,
+    MESSAGE_LABEL : &quot;Notes&quot;,
+    MY_NETWORK : &quot;My Circle&quot;,
+    EVERYONE : &quot;All&quot;,
+    THIS_COMMUNITY : &quot;Community&quot;,
+    CONGRATULATIONS_PROFILE_COMPLETE_MSG : &quot;Congratulations on completing your profile!&quot;,
+    GRID_VIEW:&quot;Grid View&quot;
 }
-Note - only add the strings you wish to customise as this procedure will overwrite the existing strings for all other languages with the provided values.
 </code></pre>
 
+<p><strong>Note:</strong> only add the strings you wish to customise as this procedure will overwrite the existing strings for all other languages with the provided values.</p>
 <p>If you wish to add specific customisations for different languages:</p>
 <ol>
 <li>Create a sub-folder with the locale name within the KudosStrings directory (See List of Language Codes)</li>
 <li>Create a language specific version of UserInterfaceLang.js file as per Steps 3 &amp; 4 above.</li>
 <li>Place it in the locale sub-folder.</li>
 </ol>
-<pre><code>Example:
+<p>Example:</p>
+<pre><code>English: PROFILES_STATS_DIR/ KudosStrings/en/UserInterfaceLang.js
+English-UK: PROFILES_STATS_DIR/ KudosStrings/en-gb/UserInterfaceLang.js
+French: PROFILES_STATS_DIR/ KudosStrings/fr/UserInterfaceLang.js
 </code></pre>
-
-<pre><code>English - PROFILES_STATS_DIR/ KudosStrings/en/UserInterfaceLang.js
-English-UK- PROFILES_STATS_DIR/ KudosStrings/en-gb/UserInterfaceLang.js
-French - PROFILES_STATS_DIR/ KudosStrings/fr/UserInterfaceLang.js
-</code></pre>
-
 <ol>
 <li>After all the string, property and image customisations are completed, restart the Kudos application via the WebSphere Application Server ISC.</li>
 </ol>
-<h5 id="task-122-customising-kudos-properties">Task 12.2 – Customising Kudos Properties<a class="headerlink" href="#task-122-customising-kudos-properties" title="Permanent link">&para;</a></h5>
+<h3 id="customising-kudos-properties">Customising Kudos Properties<a class="headerlink" href="#customising-kudos-properties" title="Permanent link">&para;</a></h3>
 <p>The files for customising Kudos Properties need to be placed in the directory given by the Websphere Variable PROFILES_STATS_DIR. These files are then automatically
 copied into the application directory upon start up.</p>
 <p>Available properties files to customise:</p>
@@ -1897,43 +1886,42 @@ copied into the application directory upon start up.</p>
 <li><strong>messages.properties</strong> – Strings used in Kudos emails &amp; Activity Stream entries</li>
 <li><strong>resource.properties</strong> – Miscellaneous settings, i.e. database aliases etc.</li>
 </ul>
-<pre><code>Please Note:
-</code></pre>
-
+<p>Please Note:</p>
 <ul>
 <li><strong>These files are in JSON format and it is critical that the syntax of these files is valid for the customisation to take effect.</strong></li>
 <li><strong>This step can be performed at any stage after the installation and is not required to complete the installation.</strong><ol>
 <li>Create a folder called KudosProperties in the directory given by the PROFILES_STATS_DIR Websphere Variable.</li>
 <li>Copy the property file(s) to be edited into the KudosProperties folder from the location
-   <installedAppsDir>/<cell name>/Kudos.ear/Kudos.war/defaultProperties/</li>
+   <code>&lt;installedAppsDir&gt;</code>/<code>&lt;cell name&gt;</code>/Kudos.ear/Kudos.war/defaultProperties/</li>
 <li>Open the KudosProperties folder’s newly copied files and edit the properties as required before saving.</li>
 <li>After all the string, property and image customisations are completed, restart the Kudos application via the WebSphere Application Server ISC.</li>
 </ol>
 </li>
 </ul>
-<h5 id="task-123-customising-kudos-images">Task 12.3 – Customising Kudos Images<a class="headerlink" href="#task-123-customising-kudos-images" title="Permanent link">&para;</a></h5>
+<h3 id="customising-kudos-images">Customising Kudos Images<a class="headerlink" href="#customising-kudos-images" title="Permanent link">&para;</a></h3>
 <p>The custom images need to be placed in the directory given by the Websphere Variable PROFILES_STATS_DIR.
 These files are then automatically copied into the application directory upon start up.</p>
-<pre><code>Please Note:
-</code></pre>
-
+<p>Please Note:</p>
 <ul>
-<li><strong>This step can be performed at any stage after the installation and is not required to complete the installation.</strong><ol>
-<li>Determine the image(s) to be customised in the KudosImages folder from the location
-   <installedAppsDir>/<cell name>/Kudos.ear/Kudos.war/defaultImages/</li>
-</ol>
-</li>
-</ul>
-<pre><code>Common files customised include:
-kudos_stream.png (as seen in the Homepage Activity Stream)
-mobile_&lt;MOBILE_DEVICE&gt;.png (i.e. mobile_android.png etc – as seen for Kudos mobile)
-</code></pre>
-
+<li>
+<p><strong>This step can be performed at any stage after the installation and is not required to complete the installation.</strong></p>
 <ol>
-<li>Create a folder called KudosImages in the directory given by the PROFILES_STATS_DIR Websphere Variable.</li>
+<li>
+<p>Determine the image(s) to be customised in the KudosImages folder from the location
+   <code>&lt;installedAppsDir&gt;</code>/<code>&lt;cell name&gt;</code>/Kudos.ear/Kudos.war/defaultImages/</p>
+<pre><code>Common files customised include:
+    kudos_stream.png (as seen in the Homepage Activity Stream)
+    mobile_`&lt;MOBILE_DEVICE&gt;`.png (i.e. mobile_android.png etc – as seen for Kudos mobile)
+</code></pre>
+</li>
+<li>
+<p>Create a folder called KudosImages in the directory given by the PROFILES_STATS_DIR Websphere Variable.</p>
+</li>
 <li>Place a copy of the custom image into the KudosImages folder with the same name as the image file you wish to overwrite.</li>
 <li>After all the string, property and image customisations are completed, restart the Kudos application via the WebSphere Application Server ISC.</li>
 </ol>
+</li>
+</ul>
                 
                   
                 
