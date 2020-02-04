@@ -94,7 +94,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#step-10-configure-awards-permissions" tabindex="1" class="md-skip">
+      <a href="#create-groups-for-access-control-via-the-badge-configurator" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -1787,29 +1787,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#step-10-configure-awards-permissions" title="Step 10: Configure Awards Permissions" class="md-nav__link">
-    Step 10: Configure Awards Permissions
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#task-101-create-groups-for-access-control-via-the-badge-configurator" title="Task 10.1 – Create groups for access control via the Badge Configurator" class="md-nav__link">
-    Task 10.1 – Create groups for access control via the Badge Configurator
+  <a href="#create-groups-for-access-control-via-the-badge-configurator" title="Create groups for access control via the Badge Configurator" class="md-nav__link">
+    Create groups for access control via the Badge Configurator
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#task-102-set-the-access-groups-for-each-of-the-awards" title="Task 10.2 – Set the access groups for each of the Awards" class="md-nav__link">
-    Task 10.2 – Set the access groups for each of the Awards
+      
+        <li class="md-nav__item">
+  <a href="#set-the-access-groups-for-each-of-the-awards" title="Set the access groups for each of the Awards" class="md-nav__link">
+    Set the access groups for each of the Awards
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1832,28 +1819,11 @@
                 
                   <h1>Awards</h1>
                 
-                <h4 id="step-10-configure-awards-permissions">Step 10: Configure Awards Permissions<a class="headerlink" href="#step-10-configure-awards-permissions" title="Permanent link">&para;</a></h4>
-<p>Within Kudos Awards, each Award is configurable to only allow a selected group of people to award and receive the award, allowing for better control of Awards. To this
-effect the Award definitions contain two fields – <strong>Groups with Access</strong> : Groups who have access to award this badge; and <strong>Awardees:</strong> Groups who can be awarded this badge.
-As part of this step you will need to configure these attributes for each Award definition for your environment.</p>
-<h5 id="task-101-create-groups-for-access-control-via-the-badge-configurator">Task 10.1 – Create groups for access control via the Badge Configurator<a class="headerlink" href="#task-101-create-groups-for-access-control-via-the-badge-configurator" title="Permanent link">&para;</a></h5>
-<pre><code>Open the User Groups Tab in the
-Badges Configurator widget and
-create groups required to set
-access control permissions for
-Awards.
-</code></pre>
-
-<pre><code>Groups can now be created by
-selecting people, Communities,
-other groups, importing a CSV file
-of emails or advanced profile
-attributes.
-</code></pre>
-
-<pre><code>Examples:
-</code></pre>
-
+                <p>Within Kudos Awards, each Award is configurable to only allow a selected group of people to award and receive the award, allowing for better control of Awards. To this effect the Award definitions contain two fields – <strong>Groups with Access</strong> : Groups who have access to award this badge; and <strong>Awardees:</strong> Groups who can be awarded this badge. As part of this step you will need to configure these attributes for each Award definition for your environment.</p>
+<h3 id="create-groups-for-access-control-via-the-badge-configurator">Create groups for access control via the Badge Configurator<a class="headerlink" href="#create-groups-for-access-control-via-the-badge-configurator" title="Permanent link">&para;</a></h3>
+<p>Open the User Groups Tab in the Badges Configurator widget and create groups required to set access control permissions for Awards.</p>
+<p>Groups can now be created by selecting people, Communities, other groups, importing a CSV file of emails or advanced profile attributes.</p>
+<p>Examples:</p>
 <ul>
 <li>Create a <em>Management</em> Group to
 award the <em>Employee of the year
@@ -1862,30 +1832,28 @@ Award</em> ;</li>
 Awardees to the <em>Salesman of the
 Year</em> Award; etc.</li>
 </ul>
-<h5 id="task-102-set-the-access-groups-for-each-of-the-awards">Task 10.2 – Set the access groups for each of the Awards<a class="headerlink" href="#task-102-set-the-access-groups-for-each-of-the-awards" title="Permanent link">&para;</a></h5>
-<pre><code>Open the Awards Tab in the Badges Configurator
-widget and for each of the Award definitions listed in the
-table perform the following steps:
-</code></pre>
-
+<h3 id="set-the-access-groups-for-each-of-the-awards">Set the access groups for each of the Awards<a class="headerlink" href="#set-the-access-groups-for-each-of-the-awards" title="Permanent link">&para;</a></h3>
+<p>Open the Awards Tab in the Badges Configurator widget and for each of the Award definitions listed in the table perform the following steps:</p>
 <ol>
 <li>Click on the Award definition to open it for editing.</li>
-<li>Set the <strong>Groups with Access</strong> field: Select the groups
+<li>
+<p>Set the <strong>Groups with Access</strong> field: Select the groups
     who you wish to grant permissions to Award this
-    badge; i.e. Who can award this badge?
-    <strong><em>Note</em></strong> <em>: Users selected in this step will need to add the</em>
-    <em>Kudos Awarder widget to their widgets page as per</em>
-    <strong><em>Task 5.8 B</em></strong> <em>to access the Awards.</em></li>
-<li>Set the <strong>Awardees</strong> field: Select the groups who you
-    wish this Award to be made applicable to, i.e. Who
-    can be awarded this badge. The people selected in
-    this step will see this Award under the
-    <strong>KudosAwards</strong> tab in their Profiles as an achievable
-    award.
-    <strong><em>Note</em></strong> <em>: If you wish to disable a badge, so that it</em>
-    <em>doesn’t appear in anyone’s profile, simply remove</em>
-    <em>all groups from the Awardees field.</em></li>
-<li>Click <strong>Save</strong> to save your changes.</li>
+    badge; i.e. Who can award this badge?</p>
+<p><strong><em>Note</em></strong> <em>: Users selected in this step will need to add the</em>
+<em>Kudos Awarder widget to their widgets page as per</em>
+<strong><em>Task 5.8 B</em></strong> <em>to access the Awards.</em>
+3. Set the <strong>Awardees</strong> field: Select the groups who you
+wish this Award to be made applicable to, i.e. Who
+can be awarded this badge. The people selected in
+this step will see this Award under the
+<strong>KudosAwards</strong> tab in their Profiles as an achievable
+award.</p>
+<p><strong><em>Note</em></strong> <em>: If you wish to disable a badge, so that it</em>
+<em>doesn’t appear in anyone’s profile, simply remove</em>
+<em>all groups from the Awardees field.</em>
+4. Click <strong>Save</strong> to save your changes.</p>
+</li>
 </ol>
                 
                   
