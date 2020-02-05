@@ -1873,10 +1873,11 @@
 <p>The Kudos Badges Configurator Widget is the widget that allows users to define and configure what badges are available for award, and how they are awarded. </p>
 <p>The Kudos Metrics Configurator widget allows users to define and configure Kudos Metrics. These metrics monitor Connections usage (as well as external systems) and determine how Kudos are awarded. This involves the use of technical concepts such as JDBC connections and SQL queries.</p>
 <p>The Kudos Filters Configurator widget allows users to define and configure Kudos Filters. These filters are then applied to Base Metrics to monitor Connections usage (as well as external systems) and determine how Kudos are awarded. This involves the use of technical concepts such as JDBC connections and SQL queries.</p>
-<p>As such, the Configurators habe been designed such that it is available to a specific Connections community where membership can be maintained, and hence the configurators can be secured. The Analytics Interface has been designed with the same concept, which is why the following steps will ask you to create four new communities. For smaller environments, you may wish to have a single community for the Badges, Metrics and Filters configurators.</p>
+<p>As such, the Configurators have been designed such that it is available to a specific Connections community where membership can be maintained, and hence the configurators can be secured. The Analytics Interface has been designed with the same concept, which is why the following steps will ask you to create four new communities. For smaller environments, you may wish to have a single community for the Badges, Metrics and Filters configurators.</p>
 <ol>
 <li>
-<p>Login to Connections, navigate to Communities and click Start a Community</p>
+<p>Login to Connections, navigate to Communities and click Create a Community</p>
+<p><img alt="create community" src="/assets/badges/install/install-widgets/create-community.png" /></p>
 </li>
 <li>
 <p>Enter a name, such as Badges Configurator</p>
@@ -1885,21 +1886,23 @@
 <p>Set Access to Restricted</p>
 </li>
 <li>
-<p>Specify Members as those people you wish to be able to edit Badge definitions. <strong><em>In Connections 5+,</em></strong> <em>users can be specified after clicking the</em> <strong><em>Access Advanced Features</em></strong> <em>link.</em></p>
+<p>Specify Members as those people you wish to be able to edit Badge definitions. Users can be specified after clicking the <strong><em>Access Advanced Features</em></strong> link.</p>
 </li>
 <li>
 <p>Enter any tags, web address and description you wish then click Save.</p>
+<p><img alt="community details" src="/assets/badges/install/install-widgets/community_details.png" /></p>
 </li>
 </ol>
-<p>Note: Configurators requires a large column community layout to function properly. Either ‘3 Columns with side menu and banner’, ‘3 Columns with side menu’ or ‘2 Columns with side menu’.</p>
-<p>You have now created the Badges Configurator Community.</p>
+<p><strong>Note:</strong> Configurators requires a large column community layout to function properly. Either ‘3 Columns with side menu and banner’, ‘3 Columns with side menu’ or ‘2 Columns with side menu’.</p>
+<p>You have now created the first Kudos Configurator Community.</p>
 <p>Take note of the CommunityUUID in the URL address, as we will need this later.</p>
-<p>Please repeat the above steps for the Metrics &amp; Filters communities if you are not using the same Community for these. If you are, please move to <a href="/badges/install/install-widgets/#create-the-kudos-analytics-administrator-community">Create the Kudos Analytics Administrator Community</a></p>
+<p>Please repeat the above steps for the Metrics &amp; Filters communities if you are not using the same Community for these. If you are using the same Community, please move to <a href="/badges/install/install-widgets/#create-the-kudos-analytics-administrator-community">Create the Kudos Analytics Administrator Community</a></p>
 <h3 id="create-the-kudos-analytics-administrator-community">Create the Kudos Analytics Administrator Community<a class="headerlink" href="#create-the-kudos-analytics-administrator-community" title="Permanent link">&para;</a></h3>
 <p>The Kudos Analytics widget allows users to review Connections Usage data over specified time periods. Users have access to both reporting and graph functionalities. The following community will be used to host the Connections Administrator level reports and graphs.</p>
 <ol>
 <li>
 <p>Login to Connections, navigate to Communities and click Start a Community.</p>
+<p><img alt="create community" src="/assets/badges/install/install-widgets/create-community.png" /></p>
 </li>
 <li>
 <p>Enter a name, such as Kudos Analytics.</p>
@@ -1910,8 +1913,11 @@
 <li>
 <p>Specify Members as those people you wish to be able to access Connections Administrator level reports and graphs. <strong><em>In Connections 5+,</em></strong> <em>users can be specified after clicking the</em> <strong><em>Access Advanced Features</em></strong> <em>link.</em></p>
 </li>
-</ol>
+<li>
 <p>Enter any tags, web address and description you wish and click Save.</p>
+<p><img alt="analytics community details" src="/assets/badges/install/install-widgets/analytics_community_details.png" /></p>
+</li>
+</ol>
 <p>You have now created the Kudos Analytics Administrator Community.</p>
 <p>Take note of the CommunityUUID in the URL address, as we will need this later.</p>
 <h3 id="check-out-the-widgets-configxml-file">Check out the widgets-config.xml file<a class="headerlink" href="#check-out-the-widgets-configxml-file" title="Permanent link">&para;</a></h3>
