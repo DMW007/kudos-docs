@@ -81,6 +81,21 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
+     <loc>https://docs.kudosapps.com/badges/update/overview/</loc>
+     <lastmod>2020-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/badges/update/update_app/</loc>
+     <lastmod>2020-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://docs.kudosapps.com/badges/update/refresh_cache/</loc>
+     <lastmod>2020-02-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
      <loc>https://docs.kudosapps.com/boards/</loc>
      <lastmod>2020-02-06</lastmod>
      <changefreq>daily</changefreq>
