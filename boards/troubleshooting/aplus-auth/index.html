@@ -2019,6 +2019,61 @@
     Testing an oauth2 connections configuration
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-was-httpdconf" title="Update WAS httpd.conf" class="md-nav__link">
+    Update WAS httpd.conf
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-and-open-postman-or-another-api-testing-tool" title="Install and open postman or another api testing tool" class="md-nav__link">
+    Install and open postman or another api testing tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-postman-prepare-a-request-as-below" title="In postman prepare a request as below" class="md-nav__link">
+    In postman prepare a request as below
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-connections-auth" title="Open connections auth" class="md-nav__link">
+    Open connections auth
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#click-approve" title="Click approve" class="md-nav__link">
+    Click approve
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copy-code-from-redirected-url" title="Copy code from redirected url" class="md-nav__link">
+    Copy code from redirected url
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paste-the-code-into-postman-and-hit-send-you-should-get-a-response-as-below" title="Paste the code into postman and hit Send, you should get a response as below:" class="md-nav__link">
+    Paste the code into postman and hit Send, you should get a response as below:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -2042,18 +2097,10 @@
                 
                 <h3 id="testing-an-oauth2-connections-configuration">Testing an oauth2 connections configuration<a class="headerlink" href="#testing-an-oauth2-connections-configuration" title="Permanent link">&para;</a></h3>
 <p>This will test a Kudos Boards / Activities Plus oauth setup</p>
-<ul>
-<li>Update was httpd.conf</li>
-</ul>
+<h4 id="update-was-httpdconf">Update WAS httpd.conf<a class="headerlink" href="#update-was-httpdconf" title="Permanent link">&para;</a></h4>
 <p>change ProxyPass and ProxyPassReverse entries to use a different (invalid) port number.</p>
-<ul>
-<li>
-<p>Install and open postman or another api testing tool</p>
-</li>
-<li>
-<p>In postman prepare a request as below:</p>
-</li>
-</ul>
+<h4 id="install-and-open-postman-or-another-api-testing-tool">Install and open postman or another api testing tool<a class="headerlink" href="#install-and-open-postman-or-another-api-testing-tool" title="Permanent link">&para;</a></h4>
+<h4 id="in-postman-prepare-a-request-as-below">In postman prepare a request as below<a class="headerlink" href="#in-postman-prepare-a-request-as-below" title="Permanent link">&para;</a></h4>
 <p>Method: POST</p>
 <p>Request URL: https://(connections url)/oauth2/endpoint/connectionsProvider/token</p>
 <p>On the Body tab fill in the following:</p>
@@ -2087,30 +2134,21 @@
 </tr>
 </tbody>
 </table>
-<ul>
-<li>Open connections auth</li>
-</ul>
+<h4 id="open-connections-auth">Open connections auth<a class="headerlink" href="#open-connections-auth" title="Permanent link">&para;</a></h4>
 <p>replace connections url in both places below</p>
-<pre><code>  https://(connections url)/oauth2/endpoint/connectionsProvider/authorize?client_id=kudosboards&amp;redirect_uri=https%3A%2F%2F(connections url)%2Fapi-boards%2Fauth%2Fconnections%2Fcallback&amp;response_type=code
+<pre><code>https://(connections url)/oauth2/endpoint/connectionsProvider/authorize?client_id=kudosboards&amp;redirect_uri=https%3A%2F%2F(connections url)%2Fapi-boards%2Fauth%2Fconnections%2Fcallback&amp;response_type=code
 </code></pre>
-<ul>
-<li>
-<p>Click approve</p>
-</li>
-<li>
-<p>Copy code from redirected url</p>
-</li>
-<li>
-<p>Paste the code into postman and hit Send, you should get a response as below:</p>
-<p>{
-    "access_token": "s67MkH8LYMMKiP0q2gtVKQxkD0gBcXJJlSCdvQw3",
-    "token_type": "Bearer",
-    "expires_in": 43199,
-    "scope": "",
-    "refresh_token": "EcO9hDYdU3tL2BE0xRSPNlYIGvZhYV9yezb14YKNglkFPwq4St"
-  }</p>
-</li>
-</ul>
+<h4 id="click-approve">Click approve<a class="headerlink" href="#click-approve" title="Permanent link">&para;</a></h4>
+<h4 id="copy-code-from-redirected-url">Copy code from redirected url<a class="headerlink" href="#copy-code-from-redirected-url" title="Permanent link">&para;</a></h4>
+<h4 id="paste-the-code-into-postman-and-hit-send-you-should-get-a-response-as-below">Paste the code into postman and hit Send, you should get a response as below:<a class="headerlink" href="#paste-the-code-into-postman-and-hit-send-you-should-get-a-response-as-below" title="Permanent link">&para;</a></h4>
+<pre><code>{
+  "access_token": "s67MkH8LYMMKiP0q2gtVKQxkD0gBcXJJlSCdvQw3",
+  "token_type": "Bearer",
+  "expires_in": 43199,
+  "scope": "",
+  "refresh_token": "EcO9hDYdU3tL2BE0xRSPNlYIGvZhYV9yezb14YKNglkFPwq4St"
+}
+</code></pre>
                 
                   
                 
