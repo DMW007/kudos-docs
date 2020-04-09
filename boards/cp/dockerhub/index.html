@@ -2055,17 +2055,25 @@
                 <h2 id="moving-from-your-local-hcl-connections-repository-to-kudos-boards-latest-releases">Moving from your local HCL Connections repository to Kudos Boards latest releases.<a class="headerlink" href="#moving-from-your-local-hcl-connections-repository-to-kudos-boards-latest-releases" title="Permanent link">&para;</a></h2>
 <p>You can get the latest versions of Kudos Boards Docker by subscribing to our own repository in dockerhub as follows:</p>
 <ol>
-<li>Create a dockerhub account if you do not already have one.</li>
-<li>Email support@kudosapps.com requesting access to Kudos Boards Docker repository, include your dockerhub account name in the email.</li>
-<li>Once confirmed by reply email update your config file as per <a href="/assets/config/kubernetes/boards-cp-dockerhub.yaml">this example</a>.</li>
+<li>Create a <a href="https://hub.docker.com">dockerhub</a> account if you do not already have one.</li>
+<li>Email <a href="mailto:support@kudosapps.com">support@kudosapps.com</a> requesting access to Kudos Boards Docker repository, include your dockerhub account name in the email.</li>
 <li>
 <p>Create kubernetes secret with your dockerhub account credentials</p>
 <pre><code>kubectl create secret docker-registry dockerhub --docker-server=docker.io --docker-username=[user] --docker-password=[password] --docker-email=[email] --namespace=connections
 </code></pre>
 </li>
 <li>
+<p>Once confirmed by reply email, update your boards-cp.yaml file as per <a href="/assets/config/kubernetes/boards-cp-dockerhub.yaml">this example</a>.</p>
+</li>
+<li>Change the imagePullSecret to <code>dockerhub</code></li>
+<li>Remove your customised global.repository</li>
+<li>Check our <a href="https://docs.kudosapps.com/boards/cp/releases/">releases</a> page to get the latest release date tag. Add this date tag as imageTagSuffix and uncomment the line as per the example.</li>
+<li>
+<p>Add (blank) image name and tag for each service as per the example. Note some of the services (app, provider, notification) will not be in your boards-cp.yaml file, you should ADD THEM.</p>
+</li>
+<li>
 <p>Run helm to apply the changes.</p>
-<pre><code>helm upgrade kudos-boards-cp [PATH_TO_HELM_CHARTS]/kudos-boards-cp-1.0.0.tgz -i -f ./boards-cp.yaml --namespace connections --recreate-pods
+<pre><code>helm upgrade kudos-boards-cp [PATH_TO_HELM_CHARTS]/kudos-boards-cp-1.1.0.tgz -i -f ./boards-cp.yaml --namespace connections --recreate-pods
 </code></pre>
 </li>
 </ol>
