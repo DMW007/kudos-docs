@@ -2298,29 +2298,22 @@
 <td>Api url</td>
 <td>admin-api.testna.collab.cloud</td>
 </tr>
-<tr>
-<td>DOWNLOADS_URI</td>
-<td>Downloads app uri</td>
-<td>downloads.testna.collab.cloud</td>
-</tr>
-<tr>
-<td>DOWNLOADS_LOCATION</td>
-<td>Location on disk to server downloads from</td>
-<td>~/Downloads</td>
-</tr>
 </tbody>
 </table>
 <h2 id="run-build-update">Run / Build / Update<a class="headerlink" href="#run-build-update" title="Permanent link">&para;</a></h2>
 <ol>
-<li>This project runs the following services in docker using compose:</li>
-<li>redis: local cache</li>
-<li>ldap: handles all ldap queries</li>
-<li>core: api gateway, makes calls to keycloak and connections apis</li>
-<li>webfront: serves static javascript (react) application files</li>
-</ol>
-<p>You can check the logs of any of these with <code>docker-compose logs [service-name]</code></p>
-<ol>
-<li>To update, build and run all of these services, run <code>devops/update.sh</code></li>
+<li>
+<p>This project runs the following services in docker using compose:
+        - redis: local cache
+        - ldap: handles all ldap queries
+        - core: api gateway, makes calls to keycloak and connections apis
+        - webfront: serves static javascript (react) application files</p>
+<pre><code>You can check the logs of any of these with `docker-compose logs [service-name]`
+</code></pre>
+</li>
+<li>
+<p>To update, build and run all of these services, run <code>devops/update.sh</code></p>
+</li>
 </ol>
                 
               
