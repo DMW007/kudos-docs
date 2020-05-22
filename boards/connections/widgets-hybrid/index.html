@@ -2261,25 +2261,37 @@
 <p>Basic instructions for adding Kudos Boards Hybrid widgets into HCL Connections on-premise environments</p>
 <hr />
 <h3 id="community-widget">Community Widget<a class="headerlink" href="#community-widget" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
 <p>Check out the widgets-config.xml file.</p>
 <pre><code>execfile("profilesAdmin.py")
 ProfilesConfigService.checkOutWidgetConfig("/LCCheckedOut", AdminControl.getCell())
 </code></pre>
-<p>Edit the widgets-config.xml file. Find the resource element with the type of community, e.g. <code>&lt;resource ... type="community" ... &gt;</code>, then under <code>&lt;widgets&gt;</code>, then within <code>&lt;definitions&gt;</code> add the following:</p>
+</li>
+<li>
+<p>Edit the widgets-config.xml file.</p>
+<p>Find the resource element with the type of community, e.g. <code>&lt;resource ... type="community" ... &gt;</code>, then under <code>&lt;widgets&gt;</code>, then within <code>&lt;definitions&gt;</code> add the following:</p>
 <pre><code>&lt;!-- Kudos Boards --&gt;
 &lt;widgetDef defId="Kudos Boards" modes="view fullpage" url="{webresourcesSvcRef}/web/com.ibm.social.urliWidget.web.resources/widget/urlWidget.xml" themes="wpthemeNarrow wpthemeWide wpthemeBanner" uniqueInstance="true"&gt;
-  &lt;itemSet&gt;
-  &lt;item name="resourceId" value="{resourceId}"/&gt;
-    &lt;item name="width" value="100%"/&gt;
-    &lt;item name="height" value="500px"/&gt;
-    &lt;item name="url" value="https://kudosboards.com/community/connections"/&gt;
-  &lt;/itemSet&gt;
+    &lt;itemSet&gt;
+        &lt;item name="resourceId" value="{resourceId}"/&gt;
+        &lt;item name="width" value="100%"/&gt;
+        &lt;item name="height" value="500px"/&gt;
+        &lt;item name="url" value="https://kudosboards.com/community/connections"/&gt;
+    &lt;/itemSet&gt;
 &lt;/widgetDef&gt;
 &lt;!-- END Kudos Boards --&gt;
 </code></pre>
+</li>
+<li>
 <p>Check in the widgets-config.xml file.</p>
 <pre><code>ProfilesConfigService.checkInWidgetConfig()
 </code></pre>
+</li>
+<li>
+<p>Restart the <code>Communities</code> application via the ISC</p>
+</li>
+</ol>
 <hr />
 <h3 id="activity-stream-widget">Activity Stream widget<a class="headerlink" href="#activity-stream-widget" title="Permanent link">&para;</a></h3>
 <ol>

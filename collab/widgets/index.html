@@ -2214,12 +2214,12 @@ ProfilesConfigService.checkOutWidgetConfig("/tmp", AdminControl.getCell())
 <p>Find the resource element with the type of community, e.g. <code>&lt;resource ... type="community" ... &gt;</code>, then under <code>&lt;widgets&gt;</code>, then within <code>&lt;definitions&gt;</code> add the following:</p>
 <pre><code>&lt;!-- Activities Plus --&gt;
 &lt;widgetDef defId="Activities Plus" modes="view fullpage" url="{webresourcesSvcRef}/web/com.ibm.social.urliWidget.web.resources/widget/urlWidget.xml" themes="wpthemeNarrow wpthemeWide wpthemeBanner" uniqueInstance="true"&gt;
-&lt;itemSet&gt;
-&lt;item name="resourceId" value="{resourceId}"/&gt;
-    &lt;item name="width" value="100%"/&gt;
-    &lt;item name="height" value="500px"/&gt;
-    &lt;item name="url" value="https://kudosboards.com/community/collab"/&gt;
-&lt;/itemSet&gt;
+    &lt;itemSet&gt;
+        &lt;item name="resourceId" value="{resourceId}"/&gt;
+        &lt;item name="width" value="100%"/&gt;
+        &lt;item name="height" value="500px"/&gt;
+        &lt;item name="url" value="https://kudosboards.com/community/collab"/&gt;
+    &lt;/itemSet&gt;
 &lt;/widgetDef&gt;
 &lt;!-- END Activities Plus --&gt;
 </code></pre>
