@@ -2176,8 +2176,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#activity-stream-widget" class="md-nav__link">
-    Activity Stream widget
+  <a href="#homepage-activity-stream-embeded-experience" class="md-nav__link">
+    Homepage Activity Stream Embeded Experience
   </a>
   
 </li>
@@ -2234,82 +2234,20 @@ ProfilesConfigService.checkOutWidgetConfig("/tmp", AdminControl.getCell())
 </li>
 </ol>
 <hr />
-<h3 id="activity-stream-widget">Activity Stream widget<a class="headerlink" href="#activity-stream-widget" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Open <code>Homepage</code> =&gt; <code>Administration</code></p>
-<p>Click <code>Add another app</code></p>
-<p><img alt="Example" src="/assets/connections/homepage-admin.png" /></p>
-</li>
-<li>
-<p>Select the following:</p>
-<ul>
-<li><code>OpenSocial Gadget</code></li>
-<li><code>Trusted</code> and <code>Use SSO</code></li>
-<li><code>Show for Activity Stream events</code></li>
-<li><code>All servers</code></li>
-</ul>
-<p>Click the <code>Add Mapping</code> button.</p>
-<p><img alt="Example" src="/assets/connections/homepage-admin2.png" /></p>
-</li>
-<li>
-<p>Enter values:</p>
-<ul>
-<li>OAuth Client: <code>conn-ee</code></li>
-<li>Service name: <code>Activities Plus</code></li>
-</ul>
-<p>Click <code>Ok</code></p>
-</li>
-<li>
-<p>Enter the following:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>App Title</td>
-<td>Activities Plus Stream</td>
-</tr>
-<tr>
-<td>URL Address</td>
-<td><code>https://kudosboards.com/stream/collab</code></td>
-</tr>
-<tr>
-<td>Icon URL</td>
-<td><code>http://kudosboards.com/favicon.ico</code></td>
-</tr>
-<tr>
-<td>Icon Secure URL</td>
-<td><code>https://kudosboards.com/favicon.ico</code></td>
-</tr>
-</tbody>
-</table>
-<p>Select:</p>
-<ul>
-<li><code>Use HCL Connections specific tags</code></li>
-<li><code>Opened by default</code></li>
-</ul>
-</li>
-<li>
-<p>Select the following Prerequisites:</p>
-<ul>
-<li><code>oauthprovider</code></li>
-<li><code>oauth</code></li>
-<li><code>opensocial</code></li>
-<li><code>webresources</code></li>
-</ul>
-<p>Scroll down and click <code>Save</code></p>
-<p><img alt="Example" src="/assets/connections/homepage-admin5.png" /></p>
-</li>
-<li>
-<p>Select the newly defined app and click <code>Enable</code></p>
-<p><img alt="Example" src="/assets/connections/homepage-admin6.png" /></p>
-</li>
-</ol>
+<h3 id="homepage-activity-stream-embeded-experience">Homepage Activity Stream Embeded Experience<a class="headerlink" href="#homepage-activity-stream-embeded-experience" title="Permanent link">&para;</a></h3>
+<p>Open wsadmin</p>
+<pre><code>cd /opt/WebSphere/AppServer/profiles/Dmgr01/bin/
+wsadmin -lang jython
+
+
+execfile("newsAdmin.py")
+
+NewsWidgetCatalogService.addWidget(isGadget=1, policyFlags=["GADGET_BASE", "GADGET_TRUSTED", "GADGET_SSO"], proxyPolicy=ProxyPolicy.INTRANET_ACCESS, appContexts=[WidgetContexts.EMBEDXP], title="Activities Plus", url="https://kudosboards.com/widgets/connections/url-gadget.xml", enabled=1, isDefaultOpened=0, prereqs=[])
+</code></pre>
+<p>This will output a Widget ID, for example <code>'3562a039-0d03-43cd-8a1b-3eb3cbc9ab14'</code>. Use this id in the next command to bind the OAuth provider.</p>
+<pre><code>NewsOAuth2ConsumerService.bindGadget(&lt;WIDGET_ID&gt;, "connections_service", "conn-ee", "false")
+NewsWidgetCatalogService.clearWidgetCaches()
+</code></pre>
                 
               
               
