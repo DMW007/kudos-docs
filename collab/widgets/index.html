@@ -2238,9 +2238,9 @@ ProfilesConfigService.checkOutWidgetConfig("/tmp", AdminControl.getCell())
 <p>Open wsadmin</p>
 <pre><code>cd /opt/WebSphere/AppServer/profiles/Dmgr01/bin/
 wsadmin -lang jython
-
-
-execfile("newsAdmin.py")
+</code></pre>
+<p>Register the Gadget</p>
+<pre><code>execfile("newsAdmin.py")
 
 NewsWidgetCatalogService.addWidget(isGadget=1, policyFlags=["GADGET_BASE", "GADGET_TRUSTED", "GADGET_SSO"], proxyPolicy=ProxyPolicy.INTRANET_ACCESS, appContexts=[WidgetContexts.EMBEDXP], title="Activities Plus", url="https://kudosboards.com/widgets/connections/url-gadget.xml", enabled=1, isDefaultOpened=0, prereqs=[])
 </code></pre>
