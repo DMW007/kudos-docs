@@ -17,7 +17,7 @@
         <meta name="author" content="Andrew Reynolds">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.3.0">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.a2408e81.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6e35a1a6.min.css">
       
         <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
       
@@ -50,7 +50,6 @@
     
       
         
-<link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
 <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-1747668-5","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview")})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
@@ -64,6 +63,7 @@
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="orange" data-md-color-accent="light-blue">
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -2175,6 +2175,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#2020-06-17" class="md-nav__link">
+    2020-06-17
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2020-06-05" class="md-nav__link">
     2020-06-05
   </a>
@@ -2220,6 +2227,34 @@
                 
                 <h2 id="kudos-boards-for-hcl-connections-cp">Kudos Boards for HCL Connections CP<a class="headerlink" href="#kudos-boards-for-hcl-connections-cp" title="Permanent link">&para;</a></h2>
 <p><a href="https://docs.kudosapps.com/boards/cp/dockerhub/">Guide to upgrade from CP to Dockerhub images</a></p>
+<hr />
+<h4 id="2020-06-17">2020-06-17<a class="headerlink" href="#2020-06-17" title="Permanent link">&para;</a></h4>
+<p><a href="https://hub.docker.com/repository/docker/iswkudos/kudos-boards/tags?page=1&amp;name=2020-06-17">Dockerhub</a></p>
+<p>Images:</p>
+<pre><code>iswkudos/kudos-boards:user-2020-06-17
+iswkudos/kudos-boards:provider-2020-06-17
+iswkudos/kudos-boards:licence-2020-06-17
+iswkudos/kudos-boards:notification-2020-06-17
+iswkudos/kudos-boards:webfront-2020-06-17
+iswkudos/kudos-boards:core-2020-06-17
+iswkudos/kudos-boards:boards-2020-06-17
+iswkudos/kudos-boards:activity-migration-2020-06-17
+</code></pre>
+
+<p>Fixes:</p>
+<ul>
+<li>Show newly created comments in Todo view</li>
+<li>Support Activity URL redirects</li>
+<li>Community Boards loading issue</li>
+</ul>
+<p>Activity Migration:</p>
+<ul>
+<li>UI control options fix</li>
+<li>Support migration of Activity files with special characters in name</li>
+<li>Support for Activity links</li>
+<li>Protect against system tenant IDs '-Ignore-Organization-ID-' etc</li>
+<li>DB2 support for PEOPLEDB on secondary host</li>
+</ul>
 <hr />
 <h4 id="2020-06-05">2020-06-05<a class="headerlink" href="#2020-06-05" title="Permanent link">&para;</a></h4>
 <p><a href="https://hub.docker.com/repository/docker/iswkudos/kudos-boards/tags?page=1&amp;name=2020-06-05">Dockerhub</a></p>
@@ -2400,14 +2435,14 @@ iswkudos/kudos-boards:boards-2020-03-06
     </div>
     
       <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/bundle.a14cc5fd.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: ["tabs"],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.27c6a5e6.min.js"
+            worker: "../../../assets/javascripts/worker/search.7a2ea5ba.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
